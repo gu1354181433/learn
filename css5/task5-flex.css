@@ -6,14 +6,15 @@ body{
     min-width       : 320px;
 }
 header{
-    position       : fixed;
-    top            : 0;background-color: #5fc0cd;
-    height         : 50px;
-    width          : 100%;
-    color          : #fff;
-    display        : flex;
-    justify-content: space-between;
-    align-items    : center;
+    position        : fixed;
+    top             : 0;
+    background-color: #5fc0cd;
+    height          : 50px;
+    width           : 100%;
+    color           : #fff;
+    display         : flex;
+    justify-content : space-between;
+    align-items     : center;
     
 }
 .header-left{
@@ -37,7 +38,7 @@ footer{
     width           : 100%;
     display         : flex;
     justify-content : space-around;
-    align-items     : center；
+    align-items     : center;
 }
 .footer-left{
     display        : flex;
