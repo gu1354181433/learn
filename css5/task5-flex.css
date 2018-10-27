@@ -143,11 +143,17 @@ footer{
     border-bottom  : 2px solid #e1e5e7;
     width          : 90%;
 }
-.row5-item{
+.row5-item1{
     padding    : 14.5px 0;
     margin-left: 10px;
 }
+.row5-item2{
+    padding-right: 10px;
+    border-right : 2px solid #e1e5e7;
+    color        : #999999;
+    white-space  : nowrap;
+}
 .row-footer{
     width : 100%;
-    height: 60px;
+    height: 80px;
 }
