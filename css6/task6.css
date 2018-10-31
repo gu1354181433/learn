@@ -1,0 +1,197 @@
+body,div,p,ul{
+    margin: 0;
+}
+header{
+    width           : 100%;
+    height          : 50px;
+    position        : fixed;
+    top             : 0;
+    background-color: #5fc0cd;
+    display         : flex;
+    justify-content : space-between;
+    align-items     : center;
+}
+.header-ico1{
+    width : 28px;
+    height: 32px;
+    margin: 10px;
+}
+.header-ico2{
+    width              : 28px;
+    height             : 32px;
+    background-image   : url(sprites.png);
+    background-position: -29px 0;
+    margin             : 10px;
+    
+}
+.header-middle{
+    display         : flex;
+    justify-content : center;
+    background-color: #55a8b3;
+    border-radius   : 5px;
+    
+}
+.header-button1{
+    
+    border          : none;
+    outline         : none;
+    border-radius   : 5px 0 0 5px;
+    color           : #fff;
+    background-color: #55a8b3;
+    font-size       : 20px;
+}
+.header-button2{
+    border          : none;
+    outline         : none;
+    border-radius   : 5px;
+    background-color: #fff;
+    color           : #5fc0cd;
+    font-size       : 20px;
+    padding         : 5px 10px;
+}
+
+ul{
+    list-style : none;
+    white-space: nowrap;
+    padding    : 5px 0;
+}
+.location{
+    width       : 33%;
+    border      : none;
+    border-right: 1px solid #e1e5e7;
+    outline     : 0;
+    padding-left: 20px;
+    color       : #999999;
+}
+.location-right{
+    width       : 34%;
+    border      : none;
+    outline     : 0;
+    padding-left: 20px;
+    color       : #999999;
+}
+.location-middle{
+    width       : 33%;
+    border      : none;
+    border-right: 1px solid #e1e5e7;
+    outline     : 0;
+    padding-left: 25px;
+    color       : #999999;
+}
+.content-top{
+    display        : flex;
+    width          : 100%;
+    height         : 40px;
+    border-bottom  : 1px solid #e1e5e7;
+    align-items    : center;
+    justify-content: center;
+    
+}
+.content{
+    margin: 40px 0 70px 0;
+}
+.item{
+    width        : 100%;
+    border-bottom: 1px solid #e1e5e7;
+    font-size    : 14px;
+}
+.item-1{
+    
+    margin     : 5px;
+    line-height: 21px;
+    color      : #999999;
+}
+.date{
+    display            : inline-block;
+    background-image   : url(sprites.png);
+    width              : 16px;
+    height             : 16px;
+    background-position: -13px 0;
+    vertical-align     : middle;
+    margin-right       : 5px;
+}
+.item-2{
+    line-height    : 21px;
+    display        : flex;
+    justify-content: space-between;
+    margin         : 5px;
+    padding-left   : 25px ;
+    overflow       : hidden;
+    text-overflow  : ellipsis;
+}
+.span1{
+    overflow     : hidden;
+    text-overflow: ellipsis;
+}
+.item-right{
+    display        : flex;
+    justify-content: flex-end;
+    align-items    : center;
+    color          : #ff0000;
+    font-size      : 16px;
+}
+.ico{
+    width      : 10px;
+    height     : 10px;
+    margin     : 0 5px;
+    border-top : 2px solid #5fc0cd;
+    border-left: 2px solid #5fc0cd;
+    transform  : rotate(135deg);
+}
+.add{
+    display            : inline-block;
+    background-image   : url(sprites.png);
+    width              : 16px;
+    height             : 16px;
+    background-position: 3px 0;
+    vertical-align     : middle;
+    margin-right       : 5px;
+}
+footer{
+    width           : 100%;
+    height          : 66px;
+    position        : fixed;
+    bottom          : 0;
+    background-color: #e1e5e7;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+}
+.footer-left{
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    font-size      : 10px;
+    color          : #5fc0cd;
+}
+.house{
+    width              : 30px;
+    height             : 30px;
+    background-image   : url(sprites.png);
+    background-position: -85px 0;
+    margin             : 0 20px;
+}
+.write{
+    width              : 62px;
+    height             : 62px;
+    background-image   : url(sprites.png);
+    background-position: -115px 0;
+    padding            : 0;
+    margin             : 0 20px;
+}
+.footer-right{
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    font-size      : 10px;
+    color          : #999999;
+}
+.man{
+    width              : 28px;
+    height             : 30px;
+    background-image   : url(sprites.png);
+    background-position: -57px 0;
+    margin             : 0 20px;
+}

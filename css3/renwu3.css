@@ -1,0 +1,40 @@
+body,div{
+    margin: 0%;
+    
+}
+body{
+    width           : 100%;
+    background-color: rgb(104, 205, 213);
+    color           : white;
+}
+div{
+    width    : 100%;
+    font-size: 0px;
+}
+.header{
+    width  : 96.87%;
+    padding: 10px 0px 0px 10px;
+}
+.logo{
+    padding-top   : 60px;
+    padding-bottom: 120px;
+    text-align    : center;
+}
+.content{
+    margin        : 0% 15.6%;
+    width         : 68.7%;
+    padding-bottom: 132px;
+    font-size     : 12px;
+    text-align    : left;
+    font-family   : 黑体；
+}
+.footer{
+    width         : 50%;
+    padding-bottom: 154px;
+    text-align    : center;
+    float         : left;
+}
+.font{
+    margin-top: 10px;
+    font-size : 10px;
+}
