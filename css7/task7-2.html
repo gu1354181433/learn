@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="task7-2.css">
+    <title>Document</title>
+    <script type="text/javascript">
+        function autoPlay() {
+                 var myAuto = document.getElementById('bgMusic');
+                 var btn = document.getElementById('audioBtn');
+                 if (myAuto.paused) {
+                     myAuto.play();
+                     btn.classList.remove("pause");
+                     btn.classList.add("play");
+                 } else {
+                     myAuto.pause();
+      
+                     btn.classList.remove("play");
+                     btn.classList.add("pause");
+                 }
+      
+             }
+         </script>
+</head>
+<body>
+    <div class="container-fluid fixed-top header">
+       <div class="row align-items-center justify-content-between header-top">
+          <div class="header-left"></div>
+          <div class="header-middle">投票</div>
+          <div class="header-right"></div>
+       </div> 
+    </div>
+    <div class="container-fluid content-music">
+      <div class="row align-items-center justify-content-between music">
+            <span class="music-word">发言讨论结束，请大家投票</span>  
+        
+            <button class="play" id="audioBtn" onclick="autoPlay()"></button>
+             <audio id="bgMusic" src="财富自由.mp3"  preload loop="loop"></audio>     
+      </div>
+      <div class="triangle"></div>
+    </div>
+     <div class="congtainer-fluid flex-column justify-content-around content">
+         <div class="top-word">点击得票数最多的人头像</div>   
+        <div class="row justify-content-around content-main">
+             <div class="content-box">
+                 <div class="identity align-items-center justify-content-center">水民</div>
+                 <div class="number align-items-center justify-content-center">1号</div>
+                 <img class="skill" src="skill.png" width="115%" alt="">
+             </div>
+             <div class="content-box">
+                <div class="identity align-items-center justify-content-center">水民</div>
+                <div class="number align-items-center justify-content-center">2号</div>
+                <img class="skill" src="skill.png" width="115%" alt="">
+            </div>
+            <div class="content-box">
+                <div class="identity align-items-center justify-content-center">警察</div>
+                <div class="number align-items-center justify-content-center">3号</div>
+                <img class="skill" src="skill.png" width="115%" alt="">
+            </div>
+         </div>
+         <div class="row justify-content-around content-main">
+            <div class="content-box">
+                <div class="identity align-items-center justify-content-center">法官</div>
+                <div class="number align-items-center justify-content-center">4号</div>
+                <img class="skill" src="skill.png" width="115%" alt="">
+            </div>
+            <div class="content-box">
+                <div class="identity align-items-center justify-content-center">狙击手</div>
+                <div class="number align-items-center justify-content-center">5号</div>
+                <img class="skill" src="skill.png" width="115%" alt="">
+            </div>
+            <div class="content-box">
+                <div class="identity align-items-center justify-content-center">医生</div>
+                <div class="number align-items-center justify-content-center">6号</div>
+                <img class="skill" src="skill.png" width="115%" alt="">
+            </div>
+         </div>
+         <div class="row justify-content-around content-main">
+            <div class="content-box">
+                <div class="identity align-items-center justify-content-center">杀手</div>
+                <div class="number align-items-center justify-content-center">7号</div>
+                <img class="skill" src="skill.png" width="115%" alt="">
+            </div>
+            <div class="content-box">
+                <div class="identity align-items-center justify-content-center">水民</div>
+                <div class="number align-items-center justify-content-center">8号</div>
+                <img class="skill" src="skill.png" width="115%" alt="">
+            </div>
+            <div class="content-box">
+                <div class="identity align-items-center justify-content-center">水民</div>
+                <div class="number align-items-center justify-content-center">9号</div>
+                <img class="skill" src="skill.png" width="115%" alt="">
+            </div>
+         </div>
+         <div class="row justify-content-around content-main">
+            <div class="content-box">
+                <div class="identity align-items-center justify-content-center">杀手</div>
+                <div class="number align-items-center justify-content-center">10号</div>
+                <img class="skill" src="skill.png" width="115%" alt="">
+            </div>
+            <div class="content-box">
+                <div class="identity align-items-center justify-content-center">水民</div>
+                <div class="number align-items-center justify-content-center">11号</div>
+                <img class="skill" src="skill.png" width="115%" alt="">
+            </div>
+            <div class="content-box">
+                <div class="identity align-items-center justify-content-center">警察</div>
+                <div class="number align-items-center justify-content-center">12号</div>
+                <img class="skill" src="skill.png" width="115%" alt="">
+            </div>
+         </div>      
+     </div>
+     <div class="container-fluid footer align-items-center justify-content-center">
+         <a href="#" class="btn btn-danger kill align-items-center justify-content-center" data-toggle="modal" data-target="#myModal">投死</a>   
+     </div>
+     <div class="container">
+        <div class="modal fade" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content  align-items-center justify-content-between window ">
+                        <a href="task7-3.html" class="btn btn-danger yes" >确定</a>
+                        <button type="button" class="btn btn-secondary no" data-dismiss="modal">取消</button>    
+            </div>
+          </div>
+        </div>
+        
+      </div>
+            
+</body>
+</html>
