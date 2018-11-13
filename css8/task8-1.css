@@ -1,0 +1,232 @@
+body,p{
+    margin: 0;
+}
+body{
+    background: #fafafa;
+}
+.pic-top{
+    width : 100%;
+    height: 100%;
+}
+.header{
+  
+    display: flex;
+    top    : 0;
+}
+.header p{
+    margin-left: 5%;
+    color      : #29b078;
+    white-space: nowrap;
+}
+.header div{
+    margin-right: 5%;
+}
+.header-green{
+   
+   
+    background: #29b078;
+}
+.navbar a{
+    font-size : 20px;
+    color     : #fff;
+    text-align: center;
+}
+.nav-item div{
+    width     : 56px;
+    height    : 5px;
+    background: #fff;
+    position  : absolute;
+    top       : 57px;
+    display   : none;
+}
+.nav-item:hover div{
+    display: block;
+}
+@media screen and (min-width:768px){
+    .collapse ul{
+        margin-right: 15% ;
+    }
+    .navbar a{
+        margin-right: 20px ;
+    }
+}
+
+.three-ico{
+   display       : table-cell;
+   vertical-align: middle;
+}
+.carousel-indicators li{
+    height       : 10px;
+    width        : 10px;
+    border-radius: 50%;
+    margin       : 0 5px;
+    
+}
+.col-top{
+    width          : 100%;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    height         : 62px;
+}
+.col-md-3 h5{
+    padding: 15px 0;
+    margin : 0;
+}
+.col-md-3 p{
+    color: #999999;
+}
+
+.ico-right{
+    padding: 0 0 0 30px;
+    height : 162px;
+}
+@media screen and (min-width:768px){
+    .ico-right{
+        border-left: 1px dashed #999999;
+    }
+}
+.ico-right div{
+    display    : flex;
+    align-items: center;
+    margin     : 10px 0;
+    color      : #29b078;
+}
+.ico-right img{
+    margin: 0 10px 0 0;
+}
+.col .rounded-circle{
+    width      : 70px;
+    height     : 70px;
+    background : #fff;
+    box-shadow : 1px 1px 3px #888888;
+    line-height: 70px;
+    font-size  : 20px;
+    color      : #29b078;
+}
+.work{
+    font-size: 14px;
+    color    : #999999;
+}
+.student{
+    padding: 2rem 6rem 6rem;
+}
+.student li{
+    width        : 15px;
+    height       : 15px;
+    border-radius: 50%;
+    box-shadow   : 1px 1px 2px #999999;
+    
+}
+.student ul{
+    bottom: 40px;
+}
+.student h5{
+    padding: 20px 0;
+}
+.student p{
+    color: #999999;
+}
+.student ul .active{
+    background: #29b078;
+}
+.company{
+    padding: 2rem 6rem 6rem 6rem;
+}
+.partner-ico{
+    width          : 191px;
+    height         : 120px;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    overflow       : hidden;
+}
+
+.partner{
+    margin    : 1px 3px;
+    background: #fff;
+}
+.company .row{
+    box-shadow: 0.1px 0.1px 2px #c9c8c8;
+    background: #fff;
+}
+.partner:hover{
+    box-shadow: 0 0 6px 2px #d3d3d3;
+}
+.links{
+    background: #fff;
+    padding   : 0 6rem 1rem 6rem;
+    
+}
+.little-circle{
+    margin-right : 10px;
+    width        : 5px;
+    height       : 5px;
+    border-radius: 50%;
+    background   : #999999;
+}
+.d-flex a{
+    font-size      : 14px;
+    text-decoration: none;
+    color          : #999999;
+    white-space    : nowrap;
+}
+.link-ico{
+    display    : flex;
+    align-items: center;
+    
+}
+.link-underline{
+    position  : absolute;
+    bottom    : 2px;
+    width     : 71px;
+    height    : 1px;
+    background: #29b078;
+    display   : none;
+}
+.link-ico:hover .link-underline{
+    display: block
+}
+.footer{
+    background: #29b078;
+    padding   : 0 6rem 2rem 6rem;
+    color     : #fff;
+}
+.footer a{
+    display        : inline-block;
+    height         : 22px;
+    color          : #fff;
+    line-height    : 20px;
+    text-decoration: none;
+}
+.a-underline{
+    width     : 100%;
+    height    : 1px;
+    background: #fff;
+    display   : none;
+}
+a:hover .a-underline{
+    display: block;
+}
+@media screen and (max-width:992px){
+    .footer-media{
+        align-items: center;
+    }
+}
+.footest{
+    display        : flex;
+    justify-content: center;
+    padding        : 10px 0;
+    background     : #29b078;
+    color          : #fff;
+    font-size      : 12px;
+    border-top     : 2px solid #32c086;
+}
+@media screen and (max-width:576px){
+    .footer{
+        padding: 0 2rem 2rem 2rem;
+    }
+    .links{
+        padding: 0 2rem 1rem 2rem;
+    }
+}
