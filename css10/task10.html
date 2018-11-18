@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="task10.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 顶栏 -->
+    <div class="top">
+        <p>客服热线:010-549-78634</p>
+        <div>
+            <a class="login" href="#">登录</a><a class="login" href="#">注册</a>
+        </div>
+    </div>
+    <!-- 四个按钮 -->
+    <div class="four-btn">
+        <button>首页</button>
+        <button>在线定制</button>
+        <button>产品箱</button>
+        <button>质量保证</button>
+    </div>
+    <!-- 导航条 -->
+    <div class="content-top">
+        <div class="strip">
+            <div class="strip-little">
+                <div class="circle">1</div>
+                <div class="strip-word">1.定制纸盒</div>
+            </div>
+            <div class="strip-little">
+                <div class="circle">2</div>
+                <div class="strip-word">2.选择数量</div>
+            </div>
+            <div class="strip-little">
+                <div class="circle">3</div>
+                <div class="strip-word">3.上传附件</div>
+            </div>
+            <div class="strip-little">
+                <div class="circle">4</div>
+                <div class="strip-word">4.确认下单</div>
+            </div>  
+        </div>
+    </div>
+    <!-- 盒子类型选项 -->
+    <div class="content-main">
+        <p class="main-head">请您按照以下步骤来定制您的纸箱</p>
+        <div class="box-line"><img src="box.png" height="14px" alt="">选择箱型</div>
+         <div class="style">
+            <div class="box-style">
+                <span>
+                    <input type="radio" name="style" value="style1" id="1"> 对口箱
+                    <label for="1"></label>
+                </span>
+                <span>
+                    <input type="radio" name="style" value="style2" id="2"> 飞机盒
+                    <label for="2"></label>
+                </span>
+                <span>
+                    <input type="radio" name="style" value="style2"> 天地盖
+                </span>
+            </div>
+            <select name="style" id="">
+                <option value="style">查看详情</option>
+                <option value="size">box1</option>
+                <option value="size">box2</option>
+                <option value="size">box3</option>
+            </select>
+        </div>    
+        <div class="box-line"><img src="ruler.png" height="14px" alt="">确定尺寸</div>
+        <div class="sizeing">
+           <div class="box-size">
+            <div class="size">
+                <span>
+                    <input type="radio" name="size" class="alone" > 外径
+                </span>
+                <span>
+                    长 <input type="text" name="length" id="lengther"> mm
+                </span>
+                <span>
+                    宽 <input type="text" name="length" id="lengther"> mm
+                </span>
+                <span>
+                    高 <input type="text" name="length" id="lengther"> mm
+                </span>
+            </div>
+            <div class="size">
+                <span>
+                    <input type="radio" name="size" class="alone" > 内径
+                </span>
+                <span>
+                    长 <input type="text" name="length" id="lengther"> mm
+                </span>
+                <span>
+                    宽 <input type="text" name="length" id="lengther"> mm
+                </span>
+                <span>
+                    高 <input type="text" name="length" id="lengther"> mm
+                </span>
+            </div>
+           </div>
+           <select name="size" id="">
+                <option value="size" value="12"> 查看详情</option>
+                <option value="size">box1</option>
+                <option value="size">box2</option>
+                <option value="size">box3</option>
+           </select>
+        </div>
+        <div class="box-line"><img src="cut.png" height="14px" alt="">选择材质</div>
+        <div class="box-material">
+           <div class="material">
+            <span>
+                <input type="radio" name="material" value="style1"> 三层A瓦优质
+            </span>
+            <span>
+                <input type="radio" name="material" value="style1"> 三层A瓦优质
+            </span>
+            <span>
+                <input type="radio" name="material" value="style1"> 三层A瓦优质
+            </span>
+            <span>
+                <input type="radio" name="material" value="style1"> 三层A瓦优质
+            </span>
+            <span>
+                <input type="radio" name="material" value="style1"> 三层A瓦优质
+            </span> 
+           </div>
+           <select name="size" id="">
+                <option value="size">查看详情</option>
+                <option value="size">box1</option>
+                <option value="size">box2</option>
+                <option value="size">box3</option>
+           </select>
+        </div>
+        <div class="next">
+            <button>下一步</button>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

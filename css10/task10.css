@@ -1,0 +1,235 @@
+body,p{
+    margin: 0;
+}
+.top{
+    padding        : 0 6rem;
+    background     : #1d7ad9;
+    color          : #fff;
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+}
+.top p{
+    padding: 1rem 0;
+}
+.login{
+    display        : inline-block;
+    text-decoration: none;
+    padding        : 1rem;
+    color          : #fff;
+    border-left    : 1px solid #fff;
+    border-right   : 1px solid #fff;
+}
+.login:hover{
+    background: #fff;
+    color     : #000;
+}
+.four-btn{
+    padding        : 1.5rem 6rem;
+    background     : #e4e4e4;
+    display        : flex;
+    justify-content: flex-end;
+    margin-right   : -2rem;
+}
+.four-btn button{
+    padding      : 0.5rem 1rem;
+    background   : #fff;
+    margin       : 0 1rem;
+    border       : none;
+    border-radius: 3px;
+    outline      : none;
+}
+.four-btn button:hover{
+    background: #1d7ad9;
+    color     : #fff;
+}
+.content-top{
+    padding        : 2rem 6rem 3rem 6rem;
+    display        : flex;
+    justify-content: flex-end;
+}
+.strip{
+    background   : #e4e4e4;
+    border-radius: 2.5px;
+    display      : flex;
+}
+.strip-little{
+    width        : 100px;
+    height       : 4px;
+    border-radius: 2px;
+    position     : relative;
+}
+.circle{
+    width        : 15px;
+    height       : 15px;
+    font-size    : 12px;
+    color        : #fff;
+    line-height  : 15px;
+    border-radius: 50%;
+    position     : absolute;
+    left         : 42.5px;
+    top          : -5.5px;
+    text-align   : center;
+    background   : #e4e4e4;
+}
+.strip-word{
+    font-size: 12px;
+    color    : #e4e4e4;
+    position : absolute;
+    top      : 20px;
+    left     : 15px;
+}
+.strip-little:hover{
+    background: #ff7f02;
+}
+.strip-little:hover .circle{
+    background: #ff7f02;
+}
+.strip-little:hover .strip-word{
+    color: #ff7f02;
+}
+.content-main{
+    padding: 2rem 6rem 3rem 6rem;
+}
+label{
+    display      : inline-block;
+    width        : 11px;
+    height       : 11px;
+    border-radius: 50%;
+    position     : absolute;
+    left         : 3.5px;
+    top          : 5px;
+    border       : 1px solid #e4e4e4;
+    background   : #e4e4e4;
+}
+input[type="radio"]:checked + label { 
+    background-color: #fe6d32;
+    border          : 1px solid #fe6d32;
+}
+input[type="radio"]:checked + label::after{
+    position        : relative;
+    display         : inline-block;
+    width           : 5px;
+    height          : 5px;
+    border-radius   : 50%;
+    content         : "";
+    background-color: #000;
+    
+}
+.main-head{
+    font-size   : 18px;
+    font-weight : bold;
+    padding-left: 10px;
+    margin      : 10px 0;
+    border-left : 2px solid #1d7ad9;
+}
+.box-line{
+    display    : flex;
+    align-items: center;
+    padding    : 10px;
+    background : #e4e4e4;
+    color      : #1d7ad9;
+}
+.box-line img{
+    margin-right: 10px;
+}
+.style{
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+}
+.style select{
+    margin-right: 2rem;
+}
+.box-style{
+    display: flex;
+    padding: 2rem 0 2rem 2rem;
+}
+.box-style input{
+   display: none;
+}
+.box-style span{
+    display      : flex;
+    align-items  : center;
+    padding-right: 2.5rem ;
+    position     : relative;
+}
+.sizeing{
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+}
+.sizeing select{
+    margin-right: 2rem;
+}
+.box-size{
+    padding: 1rem 0 1rem 2rem;
+}
+.size{
+    display: flex;
+    padding: 1rem 0;
+}
+.size input{
+    width: 3rem;
+}
+.size span{
+    display      : flex;
+    align-items  : center;
+    padding-right: 2.5rem ;
+}
+.alone{
+    width: 13px !important;
+}
+.box-material{
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+}
+.box-material select{
+    margin-right: 2rem;
+}
+.material{
+    display: flex;
+    padding: 3rem 0 3rem 2rem;
+}
+.material span{
+    display      : flex;
+    align-items  : center;
+    padding-right: 2.5rem ;
+}
+select{
+    appearance         : none;
+    -webkit-appearance : none;
+    height             : 30px;
+    width              : 90px;
+    background         : url(select.png) no-repeat;
+    background-size    : 18px;
+    background-position: 96.5% center;
+    color              : #a9a9a9;
+    padding-left       : 7px;
+}
+.next{
+    display        : flex;
+    justify-content: center;
+    border-top     : 1px solid #e4e4e4;
+    border-bottom  : 1px solid #e4e4e4;
+}
+.next button{
+    border       : none;
+    margin       : 4rem 0 3rem 0;
+    padding      : 0.5rem 3rem;
+    background   : #e15053;
+    font-size    : 20px;
+    color        : #fff;
+    border-radius: 5px;
+    outline      : none;
+}
+
+
+
+
+
+
+
+
+
