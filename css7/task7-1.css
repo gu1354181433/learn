@@ -1,3 +1,6 @@
+body{
+    background: #f0f0f0;
+}
 .three-bars{
     background-color: #fff;
     width           : 20px;
@@ -33,9 +36,6 @@ right      : 35px;
     color           : #fff;
     font-size       : 20px;
     background-color: #29bde0;
-}
-body{
-    background: #f0f0f0;
 }
 .circle{
     width           : 10px;
