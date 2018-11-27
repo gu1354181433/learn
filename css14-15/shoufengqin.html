@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    * {
+  margin: 0;
+  padding: 0; }
+ 
+ul li {
+  list-style: none; }
+ 
+input {
+  display: none; }
+ 
+.box ul > li {
+  position: relative; }
+ 
+label {
+  display: block;
+  width: 200px;
+  text-indent: 40px;
+  background: linear-gradient(#f9f9f9, #e4e4e4, #d4d4d4);
+  font: 14px/40px "微软雅黑"; }
+  label + ul {
+    width: 180px;
+    overflow: hidden;
+    background: #f5f5f5;
+    padding: 10px;
+    display: none;
+    font: 12px/30px "微软雅黑"; }
+ 
+label::before {
+  content: '-';
+  font-size: 20px;
+  position: absolute;
+  top: 0;
+  left: -24px; }
+ 
+#checkbox1:checked ~ ul {
+  display: block; }
+ 
+#checkbox2:checked ~ ul {
+  display: block; }
+ 
+#checkbox3:checked ~ ul {
+  display: block; }
+ 
+#checkbox4:checked ~ ul {
+  display: block; }
+ 
+#checkbox1:checked + label::before {
+  content: '+'; }
+ 
+#checkbox2:checked + label::before {
+  content: '+'; }
+ 
+#checkbox3:checked + label::before {
+  content: '+'; }
+ 
+#checkbox4:checked + label::before {
+  content: '+'; }
+ 
+/*# sourceMappingURL=07style.css.map */
+</style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li>
+                <input type="checkbox" id="checkbox1">
+                <label for="checkbox1">洋魔方保障</label>
+                <ul>
+                    <li>支付宝快捷支付</li>
+                    <li>支付宝余额支付</li>
+                    <li>新手入门</li>
+                </ul>
+            </li>
+            <li>
+                <input type="checkbox" id="checkbox2">
+                <label for="checkbox2">新手帮助</label>
+                <ul>
+                    <li>申请支付宝</li>
+                    <li>支付宝充值</li>
+                </ul>
+            </li>
+            <li>
+                <input type="checkbox" id="checkbox3">
+                <label for="checkbox3">支付方式</label>
+                <ul>
+                    <li>支付宝快捷支付</li>
+                    <li>支付宝余额支付</li>
+                    <li>新手入门</li>
+                </ul>
+            </li>
+             <li>
+                <input type="checkbox" id="checkbox4">
+                <label for="checkbox4">商家支持</label>
+                <ul>
+                    <li>洋魔方规则</li>
+                    <li>国际招商</li>
+                    <li>服务商招募</li>
+                    <li>商家系统对接</li>
+                    <li>联系我们</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
