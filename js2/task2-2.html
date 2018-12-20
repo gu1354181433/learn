@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="favicon.ico" type="x-icon">
+    <link rel="stylesheet" href="task2-2.css">
+    <script src="task2-2.js"></script>
+    <title>设置人数</title>
+</head>
+<body>
+<!-- 头部栏 -->
+ <div class="header">
+     <div class="header-left" onclick="Open()"></div>
+     <p class="header-center">参数设置</p>
+     <img src="circled-help.png" alt="" height="30px" class="header-right">
+ </div>
+<!-- 显示玩家配比 -->
+ <div class="player">
+    <div class="player-header">
+        <p>玩<br>家<br>配<br>比</p>
+    </div>
+    <!-- 显示框 -->
+    <div class="player-main">
+        <div class="player-border">
+            <div class="playerS">
+                <div class="people">
+                    <div class="killer">
+                        <div class="y-blk"></div>
+                        <p>杀&nbsp; 手 <span id="killer">1</span> 人</p>
+                    </div>
+                    <div class="civilian">
+                        <div class="b-blk"></div>
+                        <p>平&nbsp; 民 <span id="civilian">3</span> 人</p>
+                    </div>
+                </div>
+                <div class="player-num">
+                    <p>杀手玩家是：<span id="kNum"></span></p> 
+                    <p>平民玩家是：<span id="pNum"></span></p> 
+                </div>
+            </div>   
+        </div>
+        <!-- 按钮框 -->
+        <div class="onclick-setting">
+            <div class="setting">
+                <button onclick="set()">点击设置</button>
+                <img src="pen.png" alt="" height="20px">
+            </div>
+        </div>
+    </div>
+ </div>
+<!-- 关键词输入框 -->
+<div class="words">
+    <form class="words-main" action="">
+        <input type="text" placeholder="水民词组" maxlength="10" id="uname">
+        <input type="text" placeholder="杀手词组" maxlength="10" id="kname">
+    </form>
+</div>
+<!-- 设置玩家人数 -->
+<div class="number">
+    <div class="num-player">
+        <p>玩家人数 <input type="text" maxlength="2" value="4" id="num" onkeyup="testNum()"> 人</p>
+    </div>
+    <!-- 滑动条 -->
+    <div class="strip">
+        <div class="minus" onclick="minus()">
+            <div></div>
+        </div>
+        <input type="range" max="18" min="4" step="1" value="4" id="length" onchange="lengthNum()">
+        <div class="plus" onclick="plus()">
+            <div class="plus1"></div>
+            <div class="plus2"></div>
+        </div>
+    </div>
+</div>
+<!-- 底部按钮 -->
+<div class="footer">
+    <button onclick="check()">去发牌</button>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,276 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+/* 头部栏 */
+.header{
+    width          : 100%;
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    background     : #29bde0;
+    position       : fixed;
+    top            : 0;
+    z-index        : 2;
+}
+.header-left{
+    width      : 18px;
+    height     : 18px;
+    margin-left: 20px;
+    border-top : 4px solid #fff;
+    border-left: 4px solid #fff;
+    transform  : rotate(-45deg);
+    cursor     : pointer;
+}
+.header-center{
+    color    : #fff;
+    font-size: 20px;
+}
+.header-right{
+    margin-right: 16px;
+}
+/* 玩家配比 */
+.player{
+    display   : flex;
+    background: #f0f0f0;
+    width     : 100%;
+    padding   : 5rem 1rem 1rem 1rem;
+}
+.player-header{
+    width          : 65px;
+    height         : 300px;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    background     : #fff;
+    border-right   : 1px solid #d9d9d9;
+}
+.player-header p{
+    font-size: 20px;
+}
+/* 显示框 */
+.player-main{
+    flex      : 1;
+    background: #fbfbfb;
+    
+}
+.player-border{
+    width          : 100%;
+    display        : flex;
+    justify-content: center;
+    padding-left   : 1rem;
+    border-bottom  : 1px solid #d9d9d9;
+}
+.playerS{
+    height         : 249px;
+    display        : flex;
+    flex-direction : column;
+    justify-content: flex-start;
+    align-items    : flex-start;
+}
+/* 各身份人数 */
+.people{
+    display: flex;
+}
+.killer{
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+.y-blk{
+    width     : 6px;
+    height    : 6px;
+    background: #fab344;
+}
+.killer p{
+    padding-left: 10px;
+    color       : #b8b8b8;
+}
+.civilian{
+    padding-left   : 20px;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+.b-blk{
+    width     : 6px;
+    height    : 6px;
+    background: #29bde0;
+}
+.civilian p{
+    padding-left: 10px;
+    color       : #b8b8b8;
+}
+/* 玩家身份 列举 */
+.player-num{
+    display        : flex;
+    flex-direction : column;
+    justify-content: flex-start;
+    align-items    : flex-start;
+}
+.player-num p{
+    color: #b8b8b8;
+}
+/* 按钮框 */
+.onclick-setting{
+    width          : 100%;
+    height         : 50px;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+.setting{
+    display    : flex;
+    align-items: center;
+}
+.setting button{
+    border    : none;
+    outline   : none;
+    color     : #29bde0;
+    background: #fbfbfb;
+    font-size : 16px;
+    cursor    : pointer;
+}
+/* 关键词 */
+.words{
+    padding   : 0 1rem;
+    background: #f0f0f0;
+}
+.words-main{
+    background : #fff;
+    padding    : 1rem;
+    padding-top: 0;
+}
+.words-main input{
+    font-size    : 16px;
+    outline      : none;
+    background   : #fff;
+    width        : 100%;
+    height       : 55px;
+    border       : none;
+    border-bottom: 1px solid #d9d9d9;
+}
+.words-main input::-webkit-input-placeholder{
+    color: #d9d9d9;
+}
+.number{
+    width     : 100%;
+    padding   : 1rem 1rem;
+    background: #f0f0f0;
+}
+.num-player{
+    width     : 100%;
+    padding   : 1rem 1rem;
+    background: #fff;
+}
+.num-player p{
+    font-size: 19px;
+}
+.num-player input{
+    border    : none;
+    outline   : none;
+    width     : 26px;
+    background: #f0f0f0;
+    font-size : 19px;
+    color     : #fab344;
+}
+/* 滑动条 */
+.strip{
+    width          : 100%;
+    background     : #fff;
+    padding        : 0.5rem 1rem;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    
+}
+.minus{
+    display        : flex;
+    width          : 20px;
+    height         : 20px;
+    justify-content: center;
+    align-items    : center;
+    border         : 1px solid #f0f0f0;
+}
+.minus div{
+    width     : 14px;
+    height    : 2px;
+    background: #fab344;
+}
+.plus{
+    display        : flex;
+    width          : 20px;
+    height         : 20px;
+    justify-content: center;
+    align-items    : center;
+    position       : relative;
+    border         : 1px solid #f0f0f0;
+}
+.plus1{
+    width     : 14px;
+    height    : 2px;
+    background: #fab344;
+}
+.plus2{
+    width     : 2px;
+    height    : 14px;
+    background: #fab344;
+    position  : absolute;
+    left      : 8px;
+    top       : 2px;
+}
+/* 滑动条样式 */
+input[type=range] {
+    -webkit-appearance: none;
+    width             : 80%;
+    border-radius     : 10px;  /*这个属性设置使填充进度条时的图形为圆角*/
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+} 
+input[type=range]::-webkit-slider-runnable-track {
+    height       : 5px;
+    border-radius: 5px;      /*将轨道设为圆角的*/
+    background   : #fab344;
+}
+input[type=range]:focus {
+    outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+    height             : 25px;
+    width              : 50px;
+    margin-top         : -11px;                  /*使滑块超出轨道部分的偏移量相等*/
+    background         : #ffffff;
+    border-radius      : 3px;                    /*外观设置为圆形*/
+    border             : solid 0.125em #fab344;  /*设置边框*/
+    background-image   : url(three-bar.png);
+    background-repeat  : no-repeat;
+    background-position: -2px -1.5px;
+}
+.footer{
+     width     : 100%;
+     background: #f0f0f0;
+     padding   : 0.5rem 1rem 1rem 1rem;
+}
+.footer button{
+    width          : 100%;
+    height         : 70px;
+    background     : #fab344;
+    border         : none;
+    outline        : none;
+    color          : #fff;
+    font-size      : 24px;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    cursor         : pointer;
+}
+
+
+
+
+
+
+

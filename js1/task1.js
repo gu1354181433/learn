@@ -1,6 +1,6 @@
 var y = "#ffa500";
 function startBtn() {
-    
+    console.time("timer");
    function randomx() { 
        var x = 0;
        for(;x==10||x==0;) {
@@ -35,7 +35,7 @@ function startBtn() {
    function colorF(){
        var color = "#";
        for(var s=0;s<3;s++){
-            var r = Math.round(Math.random()*225);
+            var r = Math.round(Math.random()*255);
             if(r<=15){
                 var color = color+"0"+r.toString(16);
             }
@@ -65,7 +65,7 @@ function startBtn() {
        if(coBln){
            colorS.push(xx);
        }
-       console.log(colorS)
+       console.log(colorS);
    }
    
    for(var a=0;a<3;a++) {
@@ -73,12 +73,12 @@ function startBtn() {
     console.log(Arr);
     console.log(Arr[a]);    
    }
-
+   console.timeEnd("timer");
 }
 var stop;
 function Start(){
     clearInterval(stop);
-   stop = setInterval('startBtn()',1000);
+   stop = setInterval('startBtn()',500);
 }
 function stopBtn(){
     clearInterval(stop);
