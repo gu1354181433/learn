@@ -6,24 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="favicon.ico" type="x-icon">
     <link rel="stylesheet" href="task2-3.css">
+    <script src="task2-3.js"></script>
     <title>查看身份</title>
 </head>
 <body>
 <!-- 头部栏 -->
 <div class="header">
-    <div class="header-left"></div>
+    <div class="header-left" onclick="back()"></div>
     <p class="header-center">查看身份</p>
     <img src="fork.png" alt="" height="26px" class="header-right">
 </div>
 <!-- 中间区域 -->
 <div class="content">
-    <div class="main">
-        <div class="number">3</div>
-        <img src="player1.png" alt="" height="210px">
+    <div class="main" onclick="open1()">
+        <div class="number" id="Num">1</div>
+        <img src="player1.png" alt="" height="190px">
+        <div class="change" id="Open">
+            <div class="open">
+                <img src="killer.png" alt="" height="160px">
+                <div>
+                    <p class="role">角色：<span id="role">平民</span></p>
+                    <p class="word">词组：<span id="word"></span></p>
+                </div>
+                <p class="danger" id="danger">找到与你词组不一样的人</p>
+            </div>          
+        </div>
     </div>
 </div>
 <div class="footer">
-    <button>查看3号身份</button>
+    <button onclick="look()"><p id="see">查看1号身份</p></button>
 </div>    
 </body>
 </html>

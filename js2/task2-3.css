@@ -22,6 +22,7 @@ body{
     border-top : 4px solid #fff;
     border-left: 4px solid #fff;
     transform  : rotate(-45deg);
+    cursor     : pointer;
 }
 .header-center{
     color    : #fff;
@@ -47,6 +48,47 @@ body{
     align-items    : center;
     position       : relative;
 }
+/* 隐藏 翻拍界面 */
+.change{
+    width     : 100%;
+    height    : 440px;
+    background: #ffedc5;
+    display   : none;
+    position  : absolute;
+}
+.open{
+    width          : 100%;
+    height         : 440px;
+    padding-top    : 40px;
+    display        : flex;
+    flex-direction : column;
+    justify-content: flex-start;
+    align-items    : center;
+}
+/* 角色 */
+.open div{
+    text-align: left;
+}
+.role{
+    margin-bottom: 0;
+    color        : #29bde0;
+    font-size    : 20px;
+    font-weight  : bold;
+}
+.word{
+    font-size  : 20px;
+    color      : #f56b81;
+    font-weight: bold;
+}
+.danger{
+    width      : 100%;
+    margin     : 0;
+    border-top : 2px solid #fff;
+    padding    : 20px ;
+    color      : #fbb435;
+    font-weight: bold;
+    text-align : center;
+}
 .number{
     width        : 45px;
     height       : 45px;
@@ -54,6 +96,7 @@ body{
     background   : #fff;
     border       : 2px solid #ffedc5;
     position     : absolute;
+    z-index      : 2;
     top          : -22.5px;
     left         : 50%;
     margin-left  : -22.5px;
@@ -81,7 +124,9 @@ body{
     align-items    : center;
     cursor         : pointer;
 }
-
+.footer p{
+    margin: 0;
+}
 
 
 

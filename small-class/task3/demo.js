@@ -37,7 +37,7 @@ function way3() {
     for(var i=0;i<100000;i++){
         var num= 167772.6215>>0 ;           
         /*  console.log(num);  */      
-        var color3 = "#"+("00000"+((Math.random()*16777216)>>0).toString(16)).slice(-6);
+        var color3 = "#"+("00000"+(Math.floor(Math.random()*16777216)).toString(16)).slice(-6);
         
     }
         document.getElementById("three").style.background = color3;
@@ -86,29 +86,29 @@ document.getElementById("four").style.background = color4();
 // alert(Arr[a]);
 
 function way5(){
-     console.time("timer");
-    for(var i=0;i<100000;i++){
+    console.time("timer");
+   for(var i=0;i<100000;i++){
     var r      = Math.floor(Math.random()*256);
     var g      = Math.floor(Math.random()*256);
     var b      = Math.floor(Math.random()*256);
     var color5 = "rgb("+r+','+g+','+b+")";
     
-    }
+   }
     document.getElementById("five").style.background = color5;
-    console.timeEnd("timer");
+   console.timeEnd("timer");
     console.log(color5);
 }
 function way6(){
-      console.time("timer");
-    for(var i=0;i<100000;i++){
+     console.time("timer");
+   for(var i=0;i<100000;i++){
     var h      = Math.floor(Math.random()*361);
     var s      = Math.floor(Math.random()*101)+"%";
     var l      = Math.floor(Math.random()*101)+"%";
     var color6 = 'hsl('+h +','+ s +','+ l +')';
-    }
+   }
     console.log(color6);
     document.getElementById("six").style.background = color6;
-     console.timeEnd("timer");
+    console.timeEnd("timer");
 }
 function num(){
     var bb = Math.random()*10;

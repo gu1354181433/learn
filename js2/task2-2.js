@@ -7,6 +7,7 @@ function Open(){
     window.location.href = 'task2-1.html';
 }
 //点击设置
+var ID;
 function set(){
    var a = $("num").value;
    if(a<4||a>18){
@@ -18,12 +19,10 @@ function set(){
         $   ("killer").innerHTML   = b;
         $   ("civilian").innerHTML = a-b;
         var arr                    = [];
-        console.log(b);
         //根据总人数生成数组 arr
         for(var i=0;i<a;i++){
             arr.push(i+1);
         }
-        console.log(arr);
         //声明数组copy 用洗牌算法将arr元素全部交给copy
         var copy = [];
         var n    = arr.length;
@@ -31,7 +30,6 @@ function set(){
         while(n){
             var k = Math.floor(Math.random()*n--);
             copy.push(arr.splice(k,1)[0]);
-            console.log(copy);
         }
         //将copy数组信息传给两个变量
         //b代表杀手人数剩下就是平民人数
@@ -66,7 +64,24 @@ function set(){
         $("kNum").innerHTML = kNum;
         $("pNum").innerHTML = pNum;
         console.log(kNum);
+        console.log(pNum);
+        ID        = [];
+        ID.length = a;
+        for (var I=0;I<a;I++){
+            var D = copy[I]-1;
+            if(I<b){
+                ID [D] = "杀手";
+            }
+            else{
+                ID[D] = "平民"
+            }
+        }
+        console.log(ID);
     }
+    var session = JSON.stringify(ID);
+    sessionStorage.setItem("ID",session);
+
+    
 }
 
 //获取输入人数 并限制同步到滑动条
@@ -104,10 +119,31 @@ function plus(){
         alert("人太tm多了");
     }
 }
-function check(){ 
-
-    if(!/^[\u4e00-\u9fa5]+$/g.test(document.getElementById("uname").value)||!/^[\u4e00-\u9fa5]+$/g.test(document.getElementById("kname").value)) {
-        alert("只能输入汉字");
+function text(){
+    var uname   = $("uname").value;
+    var kname   = $("kname").value;
+    var nameArr = [];
+    nameArr.push(uname);
+    nameArr.push(kname);
+    sessionStorage.setItem("word",(JSON.stringify(nameArr)));
+}
+function check(){
+    var uname = $("uname").value;
+    var kname = $("kname").value;
+    if(!/^[\u4e00-\u9fa5]+$/g.test(uname)||!/^[\u4e00-\u9fa5]+$/g.test(kname)||kname==uname) {
+        if(kname==uname){
+            alert("词组不能相同");
+        }
+        else{
+            alert("请输入汉字");
+        }
+    }
+    else{
+        text();
+        if(ID==undefined){
+            set();
+        }
+        window.location.href = 'task2-3.html';
     }
 }
 
