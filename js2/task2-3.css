@@ -96,7 +96,7 @@ body{
     background   : #fff;
     border       : 2px solid #ffedc5;
     position     : absolute;
-    z-index      : 2;
+    z-index      : 1;
     top          : -22.5px;
     left         : 50%;
     margin-left  : -22.5px;

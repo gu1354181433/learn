@@ -60,16 +60,6 @@ $(function(){
             console.log(a);
             sessionStorage.setItem("checked",JSON.stringify(checked));
             if(id==4*day-4){
-                if(id==0){
-                    var ID     = JSON.parse(sessionStorage.getItem("ID"));
-                    var k      = ID.length;
-                    var people = [];
-                    for(var i=0;i<k;i++){
-                        var key = {"name":ID[i],"death":false};
-                        people.push(key);
-                    }
-                    sessionStorage.setItem("people",JSON.stringify(people));
-                }
                 var w = "killer";
                 sessionStorage.setItem("w",w);
                 window.location.href = "task2-kill.html";
@@ -99,7 +89,9 @@ function kill(){
 function back(){
     window.location.href = "task2-2.html";
 }
-
+function sure(){
+    window.location.href = "task2-judge.html";
+}
 
 
 

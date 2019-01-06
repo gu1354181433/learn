@@ -52,6 +52,12 @@ function sure(){
     var killK   = [];
     var killC   = [];
     var dayTime = 0;
+    var people  = [];
+                    for(var i=0;i<a;i++){
+                        var key = {"name":ID[i],"death":false};
+                        people.push(key);
+                    }
+                    sessionStorage.setItem("people",JSON.stringify(people));
     sessionStorage.setItem("dayTime",JSON.stringify(dayTime));
     sessionStorage.setItem("killK",JSON.stringify(killK));
     sessionStorage.setItem("killC",JSON.stringify(killC));

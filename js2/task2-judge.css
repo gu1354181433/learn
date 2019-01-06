@@ -1,0 +1,107 @@
+body{
+    margin          : 0;
+    background-color: #29bde0;
+}
+.header{
+    background-color: #29bde0;
+}
+.header-top{
+    height: 18vw;
+}
+.header-left{
+   width            : 6vw;
+   height           : 6.2vw;
+   background-image : url(bcak.png);
+   background-size  : 54%;
+   background-repeat: no-repeat;
+   margin-left      : 15px;
+}
+.header-middle{
+    font-size: 6vw;
+    color    : #fff;
+}
+.header-right{
+    width           : 5.5vw;
+    height          : 5.5vw;
+    background-image: url(fork.png);
+    background-size : cover;
+    margin-right    : 15px;
+}
+.content{
+    height: 165vw;
+    
+    display       : flex;
+    padding-bottom: 26vw;
+    
+}
+.top-word{
+    padding-top  : 5vw;
+    padding-left : 10vw;
+    font-size    : 3vw;
+    color        : #fff;
+    margin-bottom: 10px;
+
+}
+.content-main{
+     margin        : 0;
+     padding       : 0 5px ;
+     width         : 100%;
+     background    : #29bde0;
+     padding-bottom: 25vw;
+     padding-top   : 18vw;
+}
+.element{
+    background: #29bde0;
+    padding   : 20px;
+}
+.content-box{
+    width     : 24vw;
+    height    : 24vw;
+    background: #f5c97b;
+    border    : 1.4vw solid #fff;
+    position  : relative;
+    
+}
+.identity{
+    display: flex;
+    height : 80%;
+   
+}
+.number{
+    display   : flex;
+    height    : 21%;
+    background: #83b09a;
+    font-size : 2vw;
+    color     : #fff;
+}
+.skill{
+    position: absolute;
+    top     : 24vw;
+    left    : -1.4vw;
+    display : none;
+    z-index : 2;
+}
+.content-box:hover .skill{
+    display: block;
+}
+.footer{
+    display   : flex;
+    position  : fixed;
+    bottom    : 0;
+    background: #29bde0;
+    color     : #fff;
+    font-size : 6vw;
+    height    : 20vw;
+}
+.kill{
+    display     : flex;
+    width       : 70vw;
+    height      : 12vw;
+    background  : #fbb435;
+    font-size   : 6vw;
+    border-color: #fbb435;
+    color       : #fff;
+  }
+
+
+

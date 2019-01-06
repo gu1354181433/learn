@@ -85,6 +85,24 @@ body{
 .gray{
     border-left-color: #dddddd;
 }
+.footer{
+    display   : flex;
+    position  : fixed;
+    bottom    : 0;
+    background: #29bde0;
+    color     : #fff;
+    font-size : 6vw;
+    height    : 20vw;
+}
+.kill{
+    display     : flex;
+    width       : 70vw;
+    height      : 12vw;
+    background  : #fbb435;
+    font-size   : 6vw;
+    border-color: #fbb435;
+    color       : #fff;
+  }
 
 
 
