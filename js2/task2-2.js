@@ -23,7 +23,7 @@ function set(){
         for(var i=0;i<a;i++){
             arr.push(i+1);
         }
-        //声明数组copy 用洗牌算法将arr元素全部交给copy
+        //声明数组copy用洗牌算法将arr元素全部交给copy
         var copy = [];
         var n    = arr.length;
         var k;
@@ -125,7 +125,7 @@ function text(){
     var nameArr = [];
     nameArr.push(uname);
     nameArr.push(kname);
-    sessionStorage.setItem("word",(JSON.stringify(nameArr)));
+    sessionStorage.setItem("words",(JSON.stringify(nameArr)));
 }
 function check(){
     var uname = $("uname").value;

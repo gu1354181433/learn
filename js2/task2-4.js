@@ -3,7 +3,7 @@ var a = ID.length;
 $(function(){
     console.log(ID);
     for(var i=0;i<a;i++){
-        $(".top-word").after(`<div class=" element d-flex justify-content-center col-4">
+        $(".content-main").prepend(`<div class=" element d-flex justify-content-center col-4">
         <div class="content-box">
             <div class=" identity align-items-center justify-content-center">`+ID[(a-i-1)]+`</div>
             <div class="number align-items-center justify-content-center">`+(a-i)+`号</div>
@@ -28,19 +28,37 @@ function autoPlay() {
     } 
     else {
         myAuto.pause();
-
         btn.classList.remove("play");
         btn.classList.add("pause");
      }
 }
+$(function(){
+    $(".header-right").click(function(){
+        //chrome不兼容
+        window.opener = null;
+        window.open('','_self');
+        window.close();
+        
+    })
+})
 function start(){
     $(".identity").css({"background-image":"none","font-size":"4vw"});
-    $(".header-middle").text("杀手杀人");
-    $(".music-word").text("杀手请睁眼，（杀手请告诉法官是否杀人）杀手请选择要杀的对象");
     $(".kill").remove();
     $(".footer").append(`<a class="btn kill align-items-center justify-content-center" onclick="sure()">确定</a>`)
 }
-
+function sure(){
+    var day     = 1;
+    var checked = [];
+    var killK   = [];
+    var killC   = [];
+    var dayTime = 0;
+    sessionStorage.setItem("dayTime",JSON.stringify(dayTime));
+    sessionStorage.setItem("killK",JSON.stringify(killK));
+    sessionStorage.setItem("killC",JSON.stringify(killC));
+    sessionStorage.setItem("day",JSON.stringify(day));
+    sessionStorage.setItem("checked",JSON.stringify(checked));
+        window.location.href = "task2-5.html";
+}
 
 
 

@@ -11,8 +11,8 @@ body{
 .header-left{
    width            : 6vw;
    height           : 6.2vw;
-   background-image : url(bcak.png);
-   background-size  : 54%;
+   background-image : url(rectangle.png);
+   background-size  : 100%;
    background-repeat: no-repeat;
    margin-left      : 15px;
 }
@@ -106,11 +106,9 @@ body{
     
 }
 .identity{
-    display         : flex;
-    height          : 80%;
-    font-size       : 0vw;
-    background-image: url('putao.png');
-    background-size : cover;
+    display: flex;
+    height : 80%;
+
 }
 .number{
     display   : flex;
@@ -147,6 +145,6 @@ body{
     border-color: #fbb435;
     color       : #fff;
   }
-
-
-
+.red{
+    background: red;
+}

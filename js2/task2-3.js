@@ -19,7 +19,7 @@ function look(){
     var see    = $("see");
     var word   = $("word");
     var ID     = JSON.parse(sessionStorage.getItem("ID"));
-    var words  = JSON.parse(sessionStorage.getItem("word"));
+    var words  = JSON.parse(sessionStorage.getItem("words"));
     //显示视图
     if(i==0){   
         Num.innerHTML      = a+1;

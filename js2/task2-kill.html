@@ -9,8 +9,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="task2-4.css">
-    <script src="task2-4.js"></script>
+    <link rel="stylesheet" href="task2-kill.css">
+    <script src="task2-kill.js"></script>
     <title>主页面</title>
 </head>
 <body>
@@ -25,22 +25,21 @@
     <!-- 中间提示栏 -->
     <div class="container-fluid content-music">
       <div class="row align-items-center justify-content-between music">
-            <p class="music-word">发言讨论结束，请大家投票</p>  
+            <p class="music-word">杀手请睁眼，杀手请选择要杀的对象。</p>  
             <!-- 音乐 -->
             <button class="play" id="audioBtn" onclick="autoPlay()"></button>
              <audio id="bgMusic" src="你的意义.mp3"  preload loop="loop"></audio>     
       </div>
       <div class="triangle"></div>
-    </div> 
-    <!-- 详细提示 --> 
-    <div class="top-word col-12">点击得票数最多的人头像</div>  
-    <!-- 主体操作栏 -->
+    </div>    
+    <!-- 详细提示 -->
+    <div class="top-word">点击下方玩家头像，对被杀的人进行标记。</div>
     <div class="row content-main">
         
     </div>
     <!-- 底部按钮 -->
      <div class="container-fluid footer align-items-center justify-content-center">
-         <a class="btn kill align-items-center justify-content-center" onclick="start()">开始游戏</a>   
+         <a class="btn kill align-items-center justify-content-center" onclick="sure()">确定</a>   
      </div>
             
 </body>

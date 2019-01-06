@@ -1,0 +1,97 @@
+body{
+    margin    : 0;
+    background: #f0f0f0;
+}
+.header{
+    background-color: #29bde0;
+    z-index         : 2;
+}
+.header-top{
+    height: 18vw;
+}
+.header-left{
+   width            : 6vw;
+   height           : 6.2vw;
+   background-image : url(bcak.png);
+   background-size  : 54%;
+   background-repeat: no-repeat;
+   margin-left      : 15px;
+}
+.header-middle{
+    font-size: 6vw;
+    color    : #fff;
+}
+.header-right{
+    width           : 5.5vw;
+    height          : 5.5vw;
+    background-image: url(fork.png);
+    background-size : cover;
+    margin-right    : 15px;
+}
+.content{
+    width     : calc(100% - 20px);
+    padding   : 0;
+    margin    : 10px;
+    margin-top: 25vw;
+    background: #fff;
+    border    : 1px solid #dcdcdc;
+    border-top: 0;
+}
+.day{
+    width        : 100%;
+    height       : 55px;
+    border-top   : 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    text-align   : center;
+    line-height  : 55px;
+    margin       : 0;
+}
+.main{
+    width         : 92%;
+    border-left   : 2px solid #adadad;
+    position      : relative;
+    z-index       : 0;
+    padding-bottom: 20px;
+}
+.button{
+    width     : 75%;
+    position  : relative;
+    height    : 50px;
+    margin-top: 15px ;
+}
+.moon{
+    position  : absolute;
+    top       : 23px;
+    left      : -16px;
+    background: #fff;
+}
+.sun{
+    position  : absolute;
+    top       : 88px;
+    left      : -16px;
+    background: #fff;
+}
+.triangle{
+    border-left  : 30px solid #24a7c6;
+    border-right : none;
+    border-top   : 15px solid rgb(255, 255, 255,0);
+    border-bottom: 15px solid rgb(255, 255, 255,0);
+    position     : absolute;
+    transform    : rotate(60deg);
+    top          : 29%;
+    left         : -6px;
+    z-index      : -1;
+}
+.gray{
+    border-left-color: #dddddd;
+}
+
+
+
+
+
+
+
+
+
+
