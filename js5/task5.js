@@ -37,13 +37,22 @@ function fuck(){
                 x.onreadystatechange = function(){
             if (x.readyState==4 && x.status==200)
             {
-                window.location.href = "http://dev.admin.carrots.ptteng.com/#/dashboard";
-            }
-           
-        }
+                var response = JSON.parse(x.responseText);
+                console.log(response);
+                if(response.message=="用户不存在"||response.message=="密码错误"){
+                    alert("密码错误")
+                }
+                else{
+                    if(response.message=="success"){
+                        window.location.href = "http://dev.admin.carrots.ptteng.com/#/dashboard";
+                    }
+                }
+                
+            }   
+         }
         x.open("POST","/carrots-admin-ajax/a/login",true);
         x.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        x.send({name:u,psw:p});
+        x.send("name="+u+"&pwd="+p);
         }
     }
    
