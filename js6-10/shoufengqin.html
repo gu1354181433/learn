@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script>
+        $(function() {
+    /*****************菜单手风琴效果 start******************/
+    var Accordion = function(el, multiple) {
+        this.el = el || {};
+        this.multiple = multiple || false;
+ 
+        // Variables privadas
+        var menus = this.el.find('.menu');
+        
+        // Evento
+        menus.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+    }
+ 
+    Accordion.prototype.dropdown = function(e) {
+        var $el = e.data.el;
+            $this = $(this),
+            $next = $this.next();
+ 
+        $next.slideToggle();
+        $this.parent().toggleClass('open');
+ 
+        if (!e.data.multiple) {
+            $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+        };
+    }  
+    var accordion = new Accordion($('.accordion'), false);
+    /*****************菜单手风琴效果 end******************/
+     
+});
+    </script>
+</head>
+<body>
+    <div id="aside-menu">
+        <ul id="accordion" class="accordion">
+             
+            <li>
+                <div class="menu"><i class="glyphicon glyphicon-tasks"></i> <span>入库管理</span><i class="glyphicon glyphicon-chevron-right pull-right"></i></div>
+                <ul class="submenu">
+                    <li><a href="#">采购订单</a></li>
+                    <li><a href="#">收货</a></li>
+                    <li><a href="#">入库计划</a></li>
+                    <li><a href="#">组托上架</a></li>
+                    <li><a href="#">采购退货</a></li>
+                    <li><a href="#">展示信息</a></li>
+                    <li><a href="#">采购发票</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="menu"><i class="glyphicon glyphicon-user"></i> <span>出库管理</span><i class="glyphicon glyphicon-chevron-right pull-right"></i></div>
+                <ul class="submenu">
+                    <li><a href="#">订单</a></li>
+                    <li><a href="#">出库计划</a></li>
+                    <li><a href="#">出库顺序</a></li>
+                    <li><a href="#">销售退货</a></li>
+                    <li><a href="#">销售发票</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="menu"><i class="glyphicon glyphicon-user"></i> <span>库存管理</span><i class="glyphicon glyphicon-chevron-right pull-right"></i></div>
+                <ul class="submenu">
+                    <li><a href="#">货位图</a></li>
+                    <li><a href="#">盘点计划</a></li>
+                    <li><a href="#">盘点作业</a></li>
+                    <li><a href="#">库存调整</a></li>
+                </ul>
+            </li>
+             
+        </ul>
+    </div>
+</body>
+</html>

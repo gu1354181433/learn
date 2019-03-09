@@ -1,0 +1,39 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="header">
+  <h3 class="header-left">{{title}}</h3>
+  <div class="header-right"><p>管理员</p> <p>admin</p> <p class="iconfont icon-power"></p></div>
+</div>
+<div class="content">
+  <div class="content-right">
+      <div class="folding">
+        <el-collapse [model]="[1]" [accordion]="true">
+          <div class="el-collapse-item__header" id="header" role="button"><i class="iconfont icon-house1"></i>欢迎页</div>
+          <el-collapse-item  value="1">
+              <ng-template #label>
+                  <i class="iconfont icon-wrench"></i>信息管理
+                </ng-template>
+            <a href="#">公司信息</a>
+            <a href="#">职位信息</a>
+          </el-collapse-item>
+          <el-collapse-item  value="2">
+              <ng-template #label>
+                  <i class="iconfont icon-wrench"></i>内容管理
+                </ng-template>
+            <a href="#" routerLink="/article" >Article管理</a>
+          </el-collapse-item>
+          <el-collapse-item  value="3">
+              <ng-template #label>
+                  <i class="iconfont icon-wrench"></i>后台管理
+                </ng-template>
+            <a href="#">账户管理</a>
+            <a href="#">角色管理</a>
+            <a href="#">修改密码</a>
+            <a href="#">模块管理</a>
+          </el-collapse-item>
+        </el-collapse>
+       </div>
+    </div>
+<div class="content-left">
+  
+   <router-outlet> </router-outlet></div>
+</div>
