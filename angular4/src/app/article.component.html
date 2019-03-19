@@ -1,15 +1,87 @@
-<form el-row action="">
-    <div el-col span="6">标&nbsp; 题 <input type="text"> </div>
-    <div el-col span="6">创&nbsp;造&nbsp;者<input type="text"></div>
-    <div el-col span="6">创建时间 <input type="date"></div>
-    <div el-col span="6"> - <input type="date"></div>
-    <div el-col span="6">状态 <select name="State" id="1"></select> </div>
-    <div el-col span="6">类型 <select name="type" id="2"></select> </div>
+<form  action="">
+<div el-row class="head">
+    <div el-col span="6">
+        <span class="head-word">标&nbsp; 题</span>
+        <el-input [model]="input" placeholder="请输入内容"></el-input>
+      </div>
+    <div el-col span="6">
+        <span class="head-word">创造者</span>
+        <el-input [model]="input" placeholder="请输入内容"></el-input>
+    </div>
+    <div el-col span="6">
+        <span class="head-word">创建时间</span>
+        <el-date-picker (modelChange)="handle($event)"
+            [format]="'yyyy年.MM月.dd日'">
+        </el-date-picker></div>
+    <div el-col span="6">
+        <span class="head-word">-</span>
+        <el-date-picker (modelChange)="handle($event)"
+        [format]="'yyyy年.MM月.dd日'">
+        </el-date-picker>
+    </div>
+</div>
+<div el-row>
+    <div el-col span="6">
+        <span class="head-word">状态</span>
+        <el-select [model]="'选项2'">
+            <el-option *ngFor="let item of [{value: '选项1',label: '黄金糕' },
+                { value: '选项2', label: '双皮奶' },
+                { elDisabled: true, value: '选项3', label: '蚵仔煎' },
+                { value: '选项4', label: '龙须面' },
+                { value: '选项5', label: '北京烤鸭' }]"
+                [label]="item.label"
+                [value]="item.value">
+            </el-option>
+        </el-select>
+    </div>
+    <div el-col span="6">
+        <span class="head-word">类型</span>
+        <el-select [model]="'选项2'">
+            <el-option *ngFor="let item of [{value: '选项1',label: '黄金糕' },
+                { value: '选项2', label: '双皮奶' },
+                { elDisabled: true, value: '选项3', label: '蚵仔煎' },
+                { value: '选项4', label: '龙须面' },
+                { value: '选项5', label: '北京烤鸭' }]"
+                [label]="item.label"
+                [value]="item.value">
+            </el-option>
+        </el-select>
+    </div>
+</div>
 </form>
+<div class="content-table">
+    <div class="content-head">
+        <h5>Article管理</h5>
+        <div class="head-right">
+            <div>保存排序</div>
+            <div>+新增</div>
+        </div>
+    </div>
+</div>
 
-
-
-
+<div *ngIf="list" id='list' >
+    <el-table [model]="list?.data.articleList" [scroll-x]="true" center="all">
+        <el-table-column model-key="title" label="姓名" width="140">
+        </el-table-column>
+        <el-table-column model-key="id" label="日期" width="140">
+        </el-table-column>
+        <el-table-column model-key="img" label="地址" width="140" [render-html]="true">
+        </el-table-column>
+         <el-table-column label="操作" width="120">
+          <ng-template #slot let-scope="scope">
+            <el-button type="text" size="small" (click)="handle(scope)">删除</el-button>
+          </ng-template>
+        </el-table-column>
+         <el-table-column label="操作" width="120">
+          <ng-template #slot let-scope="scope">
+            <el-button type="text" size="small" (click)="handle(scope)">删除</el-button>
+          </ng-template>
+        </el-table-column>
+      </el-table>
+ </div>
+<router-outlet></router-outlet>
+<!--
+el-table__body -->
 
 
 
