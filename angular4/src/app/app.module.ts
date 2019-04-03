@@ -9,14 +9,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ArticleComponent } from './article.component';
 import { HomeComponent } from './home.component';
 import { MainPartComponent } from './main-part.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import{ AddComponent } from './add.component';
+import { CommonModule }     from '@angular/common';
+import { FileUploadModule } from 'ng2-file-upload';
+import { ImageUploadModule } from 'angular2-image-upload';
 @NgModule({
   declarations: [
     AppComponent,
     ArticleComponent,
     HomeComponent,
     MainPartComponent,
-    LoginComponent
+    LoginComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,11 @@ import { MainPartComponent } from './main-part.component';
     ElModule.forRoot(),
     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    CommonModule,
+    ImageUploadModule.forRoot(),
+    FileUploadModule
   ],
    providers: [],
    bootstrap: [AppComponent]

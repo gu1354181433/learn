@@ -11,14 +11,18 @@ const headers = new HttpHeaders().set("Content-Type", "application/x-www-form-ur
 })
 export class LoginComponent {
 
-  public hero      : any;
-         heroes    : any;
-         dataSource: any;
-         product   : any;
+public hero      : any;
+       heroes    : any;
+       dataSource: any;
+       product   : any;
+       users     : string='';
   constructor(private router:Router,private http:HttpClient){
   }
   getData(){
     this.dataSource = this.http.request('post','/mail/a/login',{params: this.hero, headers: headers});
+  }
+  change(value:string){
+    console.log(value)
   }
   fuck(value:string,pv:string){
     if(value==''|| pv==''){
@@ -29,6 +33,7 @@ export class LoginComponent {
         name: value,
         pwd : pv
       }
+      console.log(this.hero)
       this.getData();
       this.dataSource
         .subscribe(data =>

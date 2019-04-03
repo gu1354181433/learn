@@ -1,34 +1,31 @@
-<form  action="">
+<form  action="" >
 <div el-row class="head">
     <div el-col span="6">
         <span class="head-word">标&nbsp; 题</span>
-        <el-input [model]="input" placeholder="请输入内容"></el-input>
-      </div>
+        <el-input [(model)]="input1" placeholder="请输入内容"></el-input>
+    </div>
     <div el-col span="6">
         <span class="head-word">创造者</span>
-        <el-input [model]="input" placeholder="请输入内容"></el-input>
+        <el-input [(model)]="input2" placeholder="请输入内容"></el-input>
     </div>
     <div el-col span="6">
         <span class="head-word">创建时间</span>
-        <el-date-picker (modelChange)="handle($event)"
-            [format]="'yyyy年.MM月.dd日'">
+        <el-date-picker (modelChange)="handle1($event)" [(model)]='date1'>
         </el-date-picker></div>
     <div el-col span="6">
         <span class="head-word">-</span>
-        <el-date-picker (modelChange)="handle($event)"
-        [format]="'yyyy年.MM月.dd日'">
+        <el-date-picker (modelChange)="handle2($event)" [(model)]='date2'>
         </el-date-picker>
     </div>
 </div>
 <div el-row>
     <div el-col span="6">
         <span class="head-word">状态</span>
-        <el-select [model]="'选项2'">
-            <el-option *ngFor="let item of [{value: '选项1',label: '黄金糕' },
-                { value: '选项2', label: '双皮奶' },
-                { elDisabled: true, value: '选项3', label: '蚵仔煎' },
-                { value: '选项4', label: '龙须面' },
-                { value: '选项5', label: '北京烤鸭' }]"
+        <el-select [(model)]="select1">
+            <el-option *ngFor="let item of [
+            {value:' ',label:'全部'},
+            {value: '1',label: '草稿' },
+            { value: '2', label: '上线' }]"
                 [label]="item.label"
                 [value]="item.value">
             </el-option>
@@ -36,48 +33,85 @@
     </div>
     <div el-col span="6">
         <span class="head-word">类型</span>
-        <el-select [model]="'选项2'">
-            <el-option *ngFor="let item of [{value: '选项1',label: '黄金糕' },
-                { value: '选项2', label: '双皮奶' },
-                { elDisabled: true, value: '选项3', label: '蚵仔煎' },
-                { value: '选项4', label: '龙须面' },
-                { value: '选项5', label: '北京烤鸭' }]"
+        <el-select [(model)]="select2">
+            <el-option *ngFor="let item of [
+                {value: ' ',label: '全部' },
+                {value: '0',label: '首页banner' },
+                { value: '1', label: '找职位banner' },
+                { value: '2', label: '找精英banner' },
+                { value: '3', label: '行业大图' }]"
                 [label]="item.label"
                 [value]="item.value">
             </el-option>
         </el-select>
     </div>
+   <div el-col span='12' >
+    <el-button (click)='clear()'>清空</el-button>
+    <el-button (click)='search(input1,input2,date1,date2,select1,select2)' >搜索</el-button>
+   </div>
 </div>
 </form>
 <div class="content-table">
     <div class="content-head">
         <h5>Article管理</h5>
         <div class="head-right">
-            <div>保存排序</div>
-            <div>+新增</div>
+            <div class='hold'>保存排序</div>
+            <div class='add' (click)='add()'>+新增</div>
         </div>
     </div>
 </div>
 
 <div *ngIf="list" id='list' >
     <el-table [model]="list?.data.articleList" [scroll-x]="true" center="all">
-        <el-table-column model-key="title" label="姓名" width="140">
+        <el-table-column model-key="id" label="序号" >
         </el-table-column>
-        <el-table-column model-key="id" label="日期" width="140">
+        <el-table-column  label="地址"  [render-html]="true">
+            <ng-template #slot let-scope="scope">
+                <img [src]="scope.rowData.img" height='60' alt="">
+            </ng-template>
         </el-table-column>
-        <el-table-column model-key="img" label="地址" width="140" [render-html]="true">
+        <el-table-column model-key="title" label="标题" >
         </el-table-column>
-         <el-table-column label="操作" width="120">
+
+        <el-table-column  label="类型" >
+            <ng-template #slot let-scope="scope">
+                <p>{{typeList[scope.rowData.type]}}</p>
+            </ng-template>
+        </el-table-column>
+        <el-table-column model-key="author" label="创建者" >
+        </el-table-column>
+        <el-table-column  label="创建时间" >
+            <ng-template #slot let-scope="scope">
+                <p>{{scope.rowData.createAt | date:"y/MM/dd "}}</p>
+                <p>{{scope.rowData.createAt | date:"HH:mm:ss "}}</p>
+            </ng-template>
+        </el-table-column>
+        <el-table-column  label="修改时间" >
+            <ng-template #slot let-scope="scope">
+                <p>{{scope.rowData.updateAt | date:"y/MM/dd "}}</p>
+                <p>{{scope.rowData.updateAt | date:"HH:mm:ss "}}</p>
+            </ng-template>
+        </el-table-column>
+        <el-table-column  label="状态" >
+            <ng-template #slot let-scope="scope">
+                <p>{{statusA[scope.rowData.status]}}</p>
+            </ng-template>
+        </el-table-column>
+         <el-table-column label="操作" >
           <ng-template #slot let-scope="scope">
-            <el-button type="text" size="small" (click)="handle(scope)">删除</el-button>
-          </ng-template>
-        </el-table-column>
-         <el-table-column label="操作" width="120">
-          <ng-template #slot let-scope="scope">
+            <el-button type="text" size="small" (click)="getDown(scope)">{{statusB[scope.rowData.status]}}</el-button>
+            <el-button type="text" size="small" (click)="change(scope)">编辑</el-button>
             <el-button type="text" size="small" (click)="handle(scope)">删除</el-button>
           </ng-template>
         </el-table-column>
       </el-table>
+      <el-pagination [total]="list?.data.total"
+      [layout]="['prev', 'pager', 'next', 'total']"
+      [model]='paramSearch.page'
+      (modelChange)='pChange($event)'
+      >
+
+      </el-pagination>
  </div>
 <router-outlet></router-outlet>
 <!--

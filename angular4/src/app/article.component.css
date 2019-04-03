@@ -31,13 +31,17 @@ form{
 }
 form /deep/ .el-col-6{
     display        : flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items    : center;
     margin-bottom  : 15px ;
     position       : relative;
 }
 form /deep/.el-date-picker{
     right: 0;
+}
+form /deep/ button{
+  float      : right;
+  margin-left: 20px;
 }
 .head{
     width: 100%;
@@ -68,7 +72,13 @@ form /deep/.el-date-picker{
     border       : 1px solid #e4e4e4;
     background   : #d3d3d3;
 }
-#list /deep/ .el-table{
+.hold{
+  cursor: pointer;
+}
+.add{
+  cursor: pointer;
+}
+/* #list /deep/ .el-table{
     width: 100% !important;
 }
 #list /deep/ .cell{
@@ -76,7 +86,7 @@ form /deep/.el-date-picker{
 }
 #list /deep/ .el-table__body{
     width: 100% !important;
-}
+} */
 
 
 

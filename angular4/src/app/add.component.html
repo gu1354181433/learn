@@ -1,0 +1,80 @@
+
+<div class='add-body'>
+  <div class='content'>
+    <div class='head'>
+      <h3>新增/编辑</h3>
+    </div>
+    <div class='content-main'>
+        <span class='main-type'>类型</span>
+        <el-select [(model)]="selectType" size='large'>
+          <el-option *ngFor="let item of [
+              {value: '0',label: '首页banner' },
+              { value: '1', label: '找职位banner' },
+              { value: '2', label: '找精英banner' },
+              { value: '3', label: '行业大图' }]"
+              [label]="item.label"
+              [value]="item.value">
+          </el-option>
+        </el-select>
+        <div class='main-title'>
+            <span class="title-word">标题名称</span>
+            <el-input [(model)]="inputTitle" placeholder="请输入内容"></el-input>
+        </div>
+        <div class='main-title'>
+            <span class="title-word">跳转链接</span>
+            <el-input [(model)]="inputUrl" placeholder="请输入内容"></el-input>
+        </div>
+        <div class='main-title upload'>
+          <span class="title-word"> <span style="color :red">*</span> 配图</span>
+          <!-- <el-button (click)="selectedFileSmallOnchanged($event)" >选择文件</el-button> -->
+          <el-button class="img-upload" [style]="color">选择文件</el-button>
+          <input type="file" id='box' ng2FileSelect name = "file" [uploader]="uploaderImages" (change)="selectedFileSmallOnchanged($event)" (mousedown)='colorChange()'(mouseup)='back()'>
+        </div>
+        <div>
+          <div></div>
+          <img class='img-upload'  [src]="img" alt="" height=280px  *ngIf="img"  >
+
+        </div>
+        <table *ngIf="img&&boolean"  width="50%" border="0" cellspacing="1" cellpadding="4" bgcolor="#cccccc" class="tabtop13" align="center">
+         <tr>
+           <th width='10%' >图片名</th>
+           <th width='10%' >文件大小</th>
+           <th width='25%' >进度</th>
+           <th width='10%' >操作</th>
+           <th width='25%' >操作</th>
+         </tr>
+         <tr>
+            <td width='10%' >{{name}}</td>
+            <td width='10%' >{{size/1024|number:'1.0-1'}}kb</td>
+            <td width='25%' >
+              <div class='strip'>
+                <div [class.strip-move]='count'></div>
+              </div>
+              {{timer}}
+            </td>
+            <td width='10%' >{{change}}</td>
+            <td width='25%' >
+              <span class='b-upload'(click)="uploader()" >上传</span>
+              <span class='b-remove' (click)="imgRemove()" >删除</span>
+            </td>
+          </tr>
+        </table>
+        <div class='save'>
+          <el-button (click)='statusUp()' >立即上线</el-button>
+          <el-button (click)='statusDown()'>存为草稿</el-button>
+          <el-button (click)='cancel()'>取消</el-button>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- ....... -->
+<!-- <image-upload [buttonCaption]="'选择图片'"
+[dropBoxMessage]="'拖动图片到这里'"
+(onFileUploadFinish)="imageUploaded($event)"
+(onRemove)="imageRemoved($event)"> </image-upload>
+<p *ngFor="let item of file">
+  {{item}}
+</p> -->
+<!-- ............ -->
+<!-- <input type="file" ng2FileSelect [uploader]="uploader" (change)="selectedFileOnChanged($event)" >
+<el-button (click)="save()">1</el-button> -->
