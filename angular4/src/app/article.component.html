@@ -1,25 +1,25 @@
 <form  action="" >
 <div el-row class="head">
-    <div el-col span="6">
+    <div el-col lg="6" span='12'>
         <span class="head-word">标&nbsp; 题</span>
         <el-input [(model)]="input1" placeholder="请输入内容"></el-input>
     </div>
-    <div el-col span="6">
+    <div el-col lg="6" span='12'>
         <span class="head-word">创造者</span>
         <el-input [(model)]="input2" placeholder="请输入内容"></el-input>
     </div>
-    <div el-col span="6">
+    <div el-col lg="6" span='12'>
         <span class="head-word">创建时间</span>
         <el-date-picker (modelChange)="handle1($event)" [(model)]='date1'>
         </el-date-picker></div>
-    <div el-col span="6">
+    <div el-col lg="6" span='12'>
         <span class="head-word">-</span>
         <el-date-picker (modelChange)="handle2($event)" [(model)]='date2'>
         </el-date-picker>
     </div>
 </div>
 <div el-row>
-    <div el-col span="6">
+    <div el-col lg="6" span="12">
         <span class="head-word">状态</span>
         <el-select [(model)]="select1">
             <el-option *ngFor="let item of [
@@ -31,7 +31,7 @@
             </el-option>
         </el-select>
     </div>
-    <div el-col span="6">
+    <div el-col lg="6" span="12">
         <span class="head-word">类型</span>
         <el-select [(model)]="select2">
             <el-option *ngFor="let item of [
@@ -45,7 +45,7 @@
             </el-option>
         </el-select>
     </div>
-   <div el-col span='12' >
+   <div el-col lg='12' span="24" class='search' >
     <el-button (click)='clear()'>清空</el-button>
     <el-button (click)='search(input1,input2,date1,date2,select1,select2)' >搜索</el-button>
    </div>
@@ -61,7 +61,8 @@
     </div>
 </div>
 
-<div *ngIf="list" id='list' >
+<div class='lists'>
+  <div *ngIf="list" id='list' >
     <el-table [model]="list?.data.articleList" [scroll-x]="true" center="all">
         <el-table-column model-key="id" label="序号" >
         </el-table-column>
@@ -101,7 +102,7 @@
           <ng-template #slot let-scope="scope">
             <el-button type="text" size="small" (click)="getDown(scope)">{{statusB[scope.rowData.status]}}</el-button>
             <el-button type="text" size="small" (click)="change(scope)">编辑</el-button>
-            <el-button type="text" size="small" (click)="handle(scope)">删除</el-button>
+            <el-button type="text" size="small" (click)="handle(card,scope)">删除</el-button>
           </ng-template>
         </el-table-column>
       </el-table>
@@ -113,15 +114,23 @@
 
       </el-pagination>
  </div>
+</div>
 <router-outlet></router-outlet>
 <!--
 el-table__body -->
+<div class="box-card" #card>
 
-
-
-
-
-
+  <el-dialog [(visible)]="card.toggle2">
+    <ng-template #title>
+      <span style='color: red'>注意</span>
+    </ng-template>
+    <span>是否删除</span>
+    <ng-template #footer>
+        <el-button  (click)='card.toggle2=false'>取消</el-button>
+      <el-button  (click)='removeItem(card)'>是的</el-button>
+    </ng-template>
+  </el-dialog>
+</div>
 
 
 

@@ -14,6 +14,7 @@ import{ AddComponent } from './add.component';
 import { CommonModule }     from '@angular/common';
 import { FileUploadModule } from 'ng2-file-upload';
 import { ImageUploadModule } from 'angular2-image-upload';
+import { CookieService } from 'ngx-cookie-service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,7 @@ import { ImageUploadModule } from 'angular2-image-upload';
     ImageUploadModule.forRoot(),
     FileUploadModule
   ],
-   providers: [],
+   providers: [CookieService],
    bootstrap: [AppComponent]
 })
 export class AppModule { }

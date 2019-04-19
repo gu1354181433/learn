@@ -1,5 +1,5 @@
 
-form /deep/ el-date-picker{
+/* form /deep/ el-date-picker{
     width: 52%;
 
 
@@ -7,12 +7,15 @@ form /deep/ el-date-picker{
 }
 form /deep/ el-select{
     width: 52%;
-}
+} */
 form /deep/ .el-date-editor{
     width: auto;
 }
-form /deep/ el-input{
-    width: 52%;
+form /deep/ .el-input{
+    width: 72%;
+}
+form /deep/ .el-select .el-input__inner{
+  padding-right: 15px;
 }
 /* form /deep/ .el-select .el-input__inner{
     padding-right: 0;
@@ -25,16 +28,22 @@ form /deep/ el-input{
 form{
     border    : 1px solid #e4e4e4;
     padding   : 30px;
-    margin    : 15px 20px;
     box-sizing: border-box;
-    width     : calc(100% - 40px);
+    width     : 100%;
 }
-form /deep/ .el-col-6{
+form /deep/ .el-col-lg-6{
     display        : flex;
     justify-content: flex-end;
     align-items    : center;
     margin-bottom  : 15px ;
     position       : relative;
+}
+form /deep/ .el-col-lg-12{
+  display        : flex;
+  justify-content: flex-end;
+  align-items    : center;
+  margin-bottom  : 15px ;
+  position       : relative;
 }
 form /deep/.el-date-picker{
     right: 0;
@@ -43,13 +52,16 @@ form /deep/ button{
   float      : right;
   margin-left: 20px;
 }
+.lists /deep/ .el-table{
+  min-width: 1000px;
+}
 .head{
     width: 100%;
 }
 .content-table{
-    width     : calc(100% - 40px);
+    width     : 100%;
     border    : 1px solid #e4e4e4;
-    margin    : 15px 20px;
+    margin    : 15px 0px;
     box-sizing: border-box;
 }
 .content-head{
@@ -78,6 +90,15 @@ form /deep/ button{
 .add{
   cursor: pointer;
 }
+.lists{
+  width     : 100%;
+  border    : 1px solid #e4e4e4;
+  padding   : 0 10px;
+  overflow-x: auto;
+}
+.search{
+  padding-right: 48px;
+}
 /* #list /deep/ .el-table{
     width: 100% !important;
 }
@@ -87,14 +108,5 @@ form /deep/ button{
 #list /deep/ .el-table__body{
     width: 100% !important;
 } */
-
-
-
-
-
-
-
-
-
 
 

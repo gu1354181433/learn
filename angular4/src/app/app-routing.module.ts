@@ -22,6 +22,7 @@ const routes: Routes = [
       {
       path     : 'article',
       component: ArticleComponent,
+      data     : { title: 'Home-Liu' }
     },
     {
       path     : 'home',

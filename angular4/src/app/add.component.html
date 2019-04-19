@@ -22,7 +22,7 @@
         </div>
         <div class='main-title'>
             <span class="title-word">跳转链接</span>
-            <el-input [(model)]="inputUrl" placeholder="请输入内容"></el-input>
+            <el-input [(model)]="inputUrl" placeholder="请输入内容" (blur)='Url()'></el-input>
         </div>
         <div class='main-title upload'>
           <span class="title-word"> <span style="color :red">*</span> 配图</span>
@@ -32,10 +32,10 @@
         </div>
         <div>
           <div></div>
-          <img class='img-upload'  [src]="img" alt="" height=280px  *ngIf="img"  >
+          <img class='img-upload'  [src]="img" alt=""  *ngIf="img"  >
 
         </div>
-        <table *ngIf="img&&boolean"  width="50%" border="0" cellspacing="1" cellpadding="4" bgcolor="#cccccc" class="tabtop13" align="center">
+        <table *ngIf="img&&boolean"   border="0" cellspacing="1" cellpadding="4" bgcolor="#cccccc" class="tabtop13" align="center">
          <tr>
            <th width='10%' >图片名</th>
            <th width='10%' >文件大小</th>
@@ -59,10 +59,13 @@
             </td>
           </tr>
         </table>
-        <div class='save'>
+        <div *ngIf='!status' class='save'>
           <el-button (click)='statusUp()' >立即上线</el-button>
           <el-button (click)='statusDown()'>存为草稿</el-button>
           <el-button (click)='cancel()'>取消</el-button>
+        </div>
+        <div *ngIf='status' class='save'>
+          <el-button (click)='saveOK()'>保存</el-button>
         </div>
     </div>
   </div>
@@ -78,3 +81,4 @@
 <!-- ............ -->
 <!-- <input type="file" ng2FileSelect [uploader]="uploader" (change)="selectedFileOnChanged($event)" >
 <el-button (click)="save()">1</el-button> -->
+

@@ -39,6 +39,7 @@ export class AddComponent implements OnInit {
   id            : any;
   singleData    : any;
   Data          : any;
+  cccc          : any;
   boolean       : any=false;
   params        : any={
     title : '',
@@ -47,6 +48,7 @@ export class AddComponent implements OnInit {
     img   : '',
     url   : ''
   }
+  mathUrl:any = /(http|https):\/\/([\w.]+\/?)\S*/;
   constructor(private sanitizer: DomSanitizer,private http:HttpClient,private router:Router,private route:ActivatedRoute ) {};
   ngOnInit(){
     //
@@ -63,9 +65,18 @@ export class AddComponent implements OnInit {
          this.inputUrl   = this.Data.url;
          this.perfectImg = this.Data.img;
          this.img        = this.perfectImg;
+         this.status     = this.Data.status;
         })
     }
 
+  }
+  Url(){
+    if(this.mathUrl.test(this.inputUrl)){
+      console.log('成功')
+    }
+    else{
+      alert('请输入以 HTTP 或者HTTPS开头的网址');
+    }
   }
   getData(){
     this.dataSource = this.http.request('post','/mail/a/u/article',{params: this.params, headers: headers});
@@ -209,17 +220,18 @@ export class AddComponent implements OnInit {
 
           }
           else{
-            alert('密码错误')
+            this.status = '';
+            alert('上传失败')
           }
         }
         );
     }
     else{
+      this.status = '';
       alert('请填写信息')
     }
   }
   statusDown(){
-    var that        = this;
         this.status = 1;
     if(this.inputTitle&&this.inputUrl&&this.status&&this.perfectImg&&this.selectType){
       this.params = {
@@ -248,15 +260,55 @@ export class AddComponent implements OnInit {
 
           }
           else{
-            alert('密码错误')
+            this.status = '';
+            alert('上传失败')
           }
         }
         );
     }
     else{
+      this.status = '';
       alert('请填写信息')
     }
   }
+  saveOK(){
+if(this.inputTitle&&this.inputUrl&&this.status&&this.perfectImg&&this.selectType){
+  this.params = {
+    title : this.inputTitle,
+    type  : this.selectType,
+    status: this.status,
+    img   : this.perfectImg,
+    url   : this.inputUrl
+  }
+  console.log(this.params)
+  if(this.id){
+    this.putData();
+  }
+  else{
+    this.getData();
+  }
+  this.dataSource
+    .subscribe(data =>
+    {
+      this.product = data
+      console.log(data)
+      if(this.product.message=='success'){
+        this.router.navigate(['main-part/article'])
+        console.log(this.product)
+        console.log('成功')
+
+      }
+      else{
+        this.status = '';
+        alert('上传失败')
+      }
+    }
+    );
+}
+else{
+  alert('请填写信息')
+}
+}
   cancel(){
     this.router.navigate(['main-part/article'])
   }

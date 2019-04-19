@@ -6,6 +6,8 @@
     "changeOrigin": true,
     "pathRewrite" : {
       "^/mail": ""
+    }
+
   }
 }
-}
+

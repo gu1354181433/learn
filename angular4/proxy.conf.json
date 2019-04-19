@@ -1,0 +1,12 @@
+{
+  "/mail": {
+    "target"      : "http://dev.admin.carrots.ptteng.com/",
+    "secure"      : false,
+    "logLevel"    : "debug",
+    "changeOrigin": true,
+    "pathRewrite" : {
+      "^/mail": ""
+    }
+
+  }
+}

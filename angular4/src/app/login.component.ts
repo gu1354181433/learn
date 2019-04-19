@@ -3,21 +3,29 @@ import { Router } from '@angular/router';
 import { HttpClient,HttpHeaders,HttpRequest,HttpParams } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
+import { CookieService } from 'ngx-cookie-service';
 const headers = new HttpHeaders().set("Content-Type", "application/x-www-form-urlencoded");
 @Component({
   selector   : 'app-login',
   templateUrl: './login.component.html',
   styleUrls  : ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
+
 
 public hero      : any;
        heroes    : any;
        dataSource: any;
        product   : any;
        users     : string='';
-  constructor(private router:Router,private http:HttpClient){
+  constructor(private router:Router,private http:HttpClient,private cookieService: CookieService){
   }
+  ngOnInit(): void {
+    if(this.cookieService.get("www.zonzii.com")){
+      this.router.navigate(['/main-part/home']);
+    }
+  }
+
   getData(){
     this.dataSource = this.http.request('post','/mail/a/login',{params: this.hero, headers: headers});
   }

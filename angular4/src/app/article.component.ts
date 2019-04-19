@@ -1,8 +1,10 @@
 import { Component ,OnInit} from '@angular/core';
 import { HttpClient,HttpHeaders,HttpRequest,HttpParams } from "@angular/common/http";
-import { filter, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/mergeMap';
 const headers = new HttpHeaders().set("Content-Type", "application/x-www-form-urlencoded");
 @Component({
     selector   : 'app-table',
@@ -16,6 +18,7 @@ export class ArticleComponent implements OnInit {
      statusB       : any[]=['','上线','下线'];
      articleRequest: Observable<any>;
      searchOb      : Observable<any>;
+     highLight     : any=1;
      list          : any;
      heroes        : any;
      paramSearch   : any={
@@ -39,9 +42,8 @@ export class ArticleComponent implements OnInit {
      select2 : any  = ' ';
      statusC : any;
      statusId: any;
-    constructor( private router:Router,private http:HttpClient ){
+    constructor( private router:Router,private http:HttpClient,private activatedRoute: ActivatedRoute ){
       this.articleRequest = this.http.get('/mail/a/article/search');
-      console.log(this.articleRequest)
     }
     httpSearch(){
       this.searchOb = this.http.request('get','/mail/a/article/search',{params: this.paramSearch, headers: headers});
@@ -49,8 +51,9 @@ export class ArticleComponent implements OnInit {
     httpDown(){
       this.searchOb = this.http.request('put','/mail/a/u/article/status',{params: this.paramChange, headers: headers});
     }
-    handle(ref:any):void{
-      ref.destroy();
+    handle(card:any,ref:any):void{
+     card.toggle2 = true;
+     card.ref     = ref;
     }
     handle1(ref: any): void {
       // console.log(ref.index)
@@ -68,6 +71,10 @@ export class ArticleComponent implements OnInit {
       this.date2 = ref;
       console.log(ref);
       // ref.destroy()
+    }
+    removeItem(card:any){
+      card.toggle2 = false;
+      card.ref.destroy()
     }
     search(value1?:string,value2?:string,value3?:string,value4?:string,value5?:string,value6?:string){
       if(value3==value4){
@@ -113,12 +120,26 @@ export class ArticleComponent implements OnInit {
 
     }
     clear(){
-     this.input1  = '';
-     this.input2  = '';
-     this.date1   = '';
-     this.date2   = '';
-     this.select1 = ' ';
-     this.select2 = ' ';
+     this.input1      = '';
+     this.input2      = '';
+     this.date1       = '';
+     this.date2       = '';
+     this.select1     = ' ';
+     this.select2     = ' ';
+     this.paramSearch = {
+      title   : '',
+      author  : '',
+      createAt: Date.parse(this.date1)-28800000,
+      updateAt: Date.parse(this.date2)+57599000,
+      type    : ' ',
+      status  : ' ',
+      page    : 1
+    }
+    this.httpSearch();
+    this.searchOb.subscribe(data=>{
+      this.list = data;
+      console.log(this.list)
+    })
     }
     pChange(page){
       console.log(page);

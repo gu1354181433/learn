@@ -1,6 +1,6 @@
 <div class="header">
   <h3 class="header-left">{{title}}</h3>
-  <div class="header-right"><p>管理员</p> <p>admin</p> <p class="iconfont icon-power"></p></div>
+  <div class="header-right"><p>管理员</p> <p>admin</p> <p class="iconfont icon-power" (click)='loginOut()'></p></div>
 </div>
 <div class="content">
   <div class="content-right">
@@ -18,7 +18,7 @@
               <ng-template #label>
                   <i class="iconfont icon-wrench"></i>内容管理
                 </ng-template>
-            <a href="#" routerLink="./article" >Article管理</a>
+            <a routerLink="./article" [class.high-light] = "highLight==1">Article管理</a>
           </el-collapse-item>
           <el-collapse-item  value="3">
               <ng-template #label>
@@ -34,5 +34,5 @@
     </div>
 <div class="content-left">
 
-   <router-outlet> </router-outlet></div>
+   <router-outlet> </router-outlet>
 </div>
