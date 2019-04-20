@@ -2,6 +2,7 @@
   <div class="hello">
     <h1  v-on:click="msg='hello'" v-once>{{ msg }} </h1>
      <span v-html="f" ></span>
+     <span v-if='0' >你看到我了</span>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -37,7 +38,7 @@ export default {
   props: {
     msg: String,
     f  : String
-  }
+  } 
 }
 </script>
 
