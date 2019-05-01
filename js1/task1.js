@@ -85,9 +85,9 @@ function stopBtn(){
     for(var c=1;c<10;c++) {
         var                     b                        = "grid"+c;
         document.getElementById(b).style.backgroundColor = y;
-    }
+    }  
 }
-
+  
 
 
 
