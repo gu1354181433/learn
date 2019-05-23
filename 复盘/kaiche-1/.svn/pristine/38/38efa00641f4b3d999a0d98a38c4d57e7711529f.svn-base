@@ -1,0 +1,168 @@
+header.name {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #333333;
+    padding: 10px;
+    .button-row {
+        text-align: right;
+    }
+    .margin-right {
+        margin-right: 20px;
+    }
+    .margin-end {
+        margin-right: 10px;
+    }
+    .margin-button {
+        margin-right: 40px;
+    }
+    .postion-left {
+        position: relative;
+        left: -10px;
+    }
+    @media screen and (max-width: 991.5px) {
+        .margin-right {
+            text-align: left;
+            margin-top: 10px;
+        }
+        .index {
+            z-index: 999;
+        }
+        .margin-end {
+            text-align: left;
+            margin-top: 10px;
+        }
+        .margin-picker {
+            margin-bottom: 50px;
+        }
+        .button-row {
+            position: absolute;
+            top: 305px;
+            text-align: right;
+            z-index: 999;
+        }
+        .browse {
+            position: relative;
+            top: -10px;
+        }
+        .postion-left {
+            left: 0%;
+        }
+    }
+}
+main.name {
+    margin-top: 30px;
+    .title {
+        padding: 20px;
+        height: 47px;
+        background-color: rgba(215, 215, 215, 1);
+        border: 1px solid #333333;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: none;
+        .listname {
+            font-family: 'Arial Normal', 'Arial';
+            font-weight: 400;
+            font-size: 16px;
+            color: #333333;
+        }
+        .add {
+            width: 82px;
+            height: 19px;
+            background-color: rgba(22, 155, 213, 1);
+            border-radius: 5px;
+            font-family: 'Arial Normal', 'Arial';
+            font-weight: 400;
+            color: #fff;
+            font-size: 13px;
+        }
+    }
+    img.name {
+        width: 45px;
+        height: 45px;
+    }
+    .nth:nth-child(odd)
+    {
+        background-color: rgba(215, 215, 215, 1);
+    }
+    .nth:nth-child(even)
+    {
+        background-color:#fff;
+    }
+    th.name {
+        text-align: center;
+    }
+    td.name {
+        text-align: center;
+    }
+ 
+}
+// 行下距
+:host ::ng-deep.ant-form-item {
+    margin-bottom: 0%;
+ }
+// 选项字体样式
+:host ::ng-deep.ant-form-item-label > label {
+    font-family: 'Arial Normal', 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    color: #333333;
+    font-size: 14px;
+}
+//  输入框的样式
+:host ::ng-deep.ant-input {
+    height: 30px;
+    border: 01px solid rgba(121, 121, 121, 1);
+}
+// 下拉框的样式
+:host ::ng-deep.ant-select-selection {
+    height: 30px;
+    border: 1px solid rgba(121, 121, 121, 1);
+}
+// 控制按钮的样式
+:host ::ng-deep.ant-btn-primary {
+    width: 72px;
+    height: 32px;
+    background: inherit;
+    background-color: rgba(204, 204, 204, 1);
+    font-family: 'Arial Normal', 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    color: #1e1e1e;
+    border: none;
+    margin-left:3px;
+}
+// 冒号隐藏
+:host ::ng-deep.ant-form-item-label > label::after {
+    display: none;
+}
+// 日期框的样式
+:host ::ng-deep.ant-calendar-picker {
+    width: 100%;
+    height: 26px;
+}
+// tabel外边框
+:host ::ng-deep.ant-table-wrapper {
+    border: 1px solid #333333;
+}
+// th两端的边框
+:host ::ng-deep.ant-table-thead > tr:first-child > th:last-child {
+    border: none;
+    border-bottom: 1px solid #333333;
+}
+// tabel内边框
+:host ::ng-deep.ant-table-bordered .ant-table-thead > tr > th, .ant-table-bordered .ant-table-tbody > tr > td {
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+}
+// td边框
+:host ::ng-deep.ant-table-tbody > tr > td {
+    border-bottom: 1px solid #333333;
+    border-right: 1px solid #333333;
+}
+// td选中变色
+:host ::ng-deep.ant-table-thead > tr.ant-table-row-hover:not(.ant-table-expanded-row) > td, .ant-table-tbody > tr.ant-table-row-hover:not(.ant-table-expanded-row) > td, .ant-table-thead > tr:hover:not(.ant-table-expanded-row) > td, .ant-table-tbody > tr:hover:not(.ant-table-expanded-row) > td {
+    background: none;
+}

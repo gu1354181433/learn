@@ -1,0 +1,50 @@
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+.add{
+  width     : 100%;
+  padding   : 15px 30px;
+  background: #efefef;
+  >.add-header{
+    background   : #fff;
+    width        : 100%;
+    padding      : 15px;
+    border-bottom: 1px solid #000;
+  }
+  >.add-content{
+    width     : 100%;
+    background: #fff;
+  }
+}
+.avatar {
+  width : 128px;
+  height: 128px;
+}
+.upload-icon {
+  font-size: 32px;
+  color    : #999;
+}
+.ant-upload-text {
+  margin-top: 8px;
+  color     : #666;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

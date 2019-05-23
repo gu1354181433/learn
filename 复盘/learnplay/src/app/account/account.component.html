@@ -1,0 +1,55 @@
+<div class="content-main">
+  <div class="main-top">
+    <div class="main-search">
+      <nz-form-item style="margin: 0">
+
+        <nz-form-label [nzSpan]="3" nzFor="status">E-mail</nz-form-label>
+        <nz-form-control [nzSpan]="5">
+          <nz-select name="status" style="width: 75px;" [(ngModel)]="selectDefault">
+            <nz-option *ngFor="let s of statusData" [nzValue]="s" [nzLabel]="s"></nz-option>
+          </nz-select>
+        </nz-form-control>
+
+
+      </nz-form-item>
+      <nz-form-item style="margin: 0" nzType="flex" nzJustify="between">
+        <nz-form-label [nzSpan]="3" nzFor="startData">开始时间</nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <nz-date-picker [nzFormat]="dateFormat" name="startData" style="width: 115px;"></nz-date-picker>
+        </nz-form-control>
+        <nz-form-control [nzSpan]="8" style="text-align: right;padding-top: 4px;">
+          <button nz-button [nzType]="'primary'" style="margin-right: 5px;" (click)="search()" >搜索</button>
+          <button nz-button [nzType]="'primary'" style="margin-left: 5px;">重置</button>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+  <div class="main-bottom">
+    <div class="list">
+      <nz-table #basicTable nzBordered [nzData]="listOfData">
+        <thead>
+          <tr>
+            <th>序号</th>
+            <th>用户名</th>
+            <th>角色</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of basicTable.data">
+            <td>{{ data.userId }}</td>
+            <td>{{ data.username }}</td>
+            <td>{{ statusData[(data.roleId)]  }}</td>
+            <td>
+              <a (click)="edit(data.userId)" >查看</a>
+              <nz-divider nzType="vertical"></nz-divider>
+              <a (click)="add()">编辑</a>
+              <nz-divider nzType="vertical"></nz-divider>
+              <a nz-popconfirm nzTitle="Sure to delete?" (nzOnConfirm)="deleteRow(data.key)">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </div>
+  </div>
+</div>

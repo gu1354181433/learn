@@ -1,0 +1,28 @@
+<body>
+  <header class="name">
+    <div class="logo">LOGO</div>
+    <strong>玩转学习后台系统</strong>
+  </header>
+  <main class="name">
+      <form nz-form [formGroup]="validateForm">
+      <nz-form-item>
+        <nz-form-label [nzNoColon]="true" [nzRequired] [nzSpan]="4">账户</nz-form-label>
+        <nz-form-control [nzSpan]="20">
+          <input class="name" nz-input  placeholder="请输入账户" type="text" formControlName="username" [(ngModel)]="user.username"/>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzNoColon]="true" [nzRequired] [nzSpan]="4">密码</nz-form-label>
+        <nz-form-control [nzSpan]="20">
+          <input class="name" type="password" nz-input  placeholder="请输入密码" formControlName="password" [(ngModel)]="user.password"/> 
+        </nz-form-control>
+        <nz-form-explain [innerHTML]="explain"></nz-form-explain>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzNoColon]="true" [nzRequired] [nzSpan]="19">
+          <button  class="name" nz-button nzType="primary" (click)="submit()">确定</button> 
+        </nz-form-label>
+      </nz-form-item>
+    </form>
+  </main>
+</body>

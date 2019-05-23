@@ -1,0 +1,22 @@
+<header class="name">
+  <div class="left">
+    <div class="logo">LOGO</div>
+  </div>
+  <div class="right">
+    <div class="learn">玩转学习后台系统</div>
+    <div class="admin">
+      <span>用户</span>
+      <span class="separator">|</span>
+      <span>退出</span>
+    </div>
+  </div>
+</header>
+<main >
+  <nav class="name">
+    <app-collapse></app-collapse>
+  </nav>
+  <div class="home-router">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+

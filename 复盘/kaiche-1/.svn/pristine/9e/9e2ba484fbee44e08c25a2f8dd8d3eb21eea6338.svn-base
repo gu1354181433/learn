@@ -1,0 +1,54 @@
+{
+  "_from": "tslint-angular",
+  "_id": "tslint-angular@2.0.2",
+  "_inBundle": false,
+  "_integrity": "sha512-UmEuLX4TsXALjgK8eAW5/zS6eB0lLck0y/T4tn/6W+HRHgPJC8OG0C49ZWKKEXIeqOQEfJZulTBrcQvKVy8UQw==",
+  "_location": "/tslint-angular",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "tslint-angular",
+    "name": "tslint-angular",
+    "escapedName": "tslint-angular",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/tslint-angular/-/tslint-angular-2.0.2.tgz",
+  "_shasum": "22c95a2d976627b9aa55876ca2c3f16584406662",
+  "_spec": "tslint-angular",
+  "_where": "G:\\github\\learn\\复盘\\learnplay",
+  "author": {
+    "name": "Minko Gechev",
+    "email": "mgechev@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/mgechev/tslint-angular/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "tslint preset for Angular",
+  "homepage": "https://github.com/mgechev/tslint-angular#readme",
+  "keywords": [
+    "Angular",
+    "tslint",
+    "codelyzer"
+  ],
+  "license": "MIT",
+  "main": "./tslint.json",
+  "name": "tslint-angular",
+  "peerDependencies": {
+    "codelyzer": "^5.0.0",
+    "tslint": "^5.16.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mgechev/tslint-angular.git"
+  },
+  "version": "2.0.2"
+}

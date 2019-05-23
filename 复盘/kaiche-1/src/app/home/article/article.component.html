@@ -1,0 +1,143 @@
+<header class="name">
+  <form nz-form [formGroup]="validateForm">
+    <nz-form-item>
+      <nz-form-control [nzLg]="1"></nz-form-control>
+      <nz-form-label [nzMd]="10" [nzLg]="2" class="margin-right">搜索ID:</nz-form-label>
+      <nz-form-control [nzMd]="24" [nzLg]="4" class="index">
+        <input nz-input formControlName="idinput" placeholder="请输入" />
+      </nz-form-control>
+      <nz-form-control [nzLg]="1"></nz-form-control>
+      <nz-form-label [nzMd]="24" [nzLg]="2" class="margin-right">搜索标题:</nz-form-label>
+      <nz-form-control [nzMd]="24" [nzLg]="4" class="index">
+        <input nz-input formControlName="titleinput" placeholder="请输入" />
+      </nz-form-control>
+      <nz-form-control [nzLg]="1"></nz-form-control>
+      <nz-form-label [nzMd]="24" [nzLg]="2" class="margin-right">搜索作者:</nz-form-label>
+      <nz-form-control [nzMd]="24" [nzLg]="4">
+        <input nz-input formControlName="authorinput" placeholder="请输入" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control [nzLg]="1"></nz-form-control>
+      <nz-form-label [nzMd]="24" [nzLg]="2" class="margin-right">学科
+        :</nz-form-label>
+      <nz-form-control [nzMd]="24" [nzLg]="4" class="margin-button">
+        <nz-select formControlName="gradeselect" nzPlaceHolder="全部">
+          <!-- <ng-container *ngFor="let option of listOfOptionstatus"> -->
+            <!-- <nz-option [nzLabel]=option.name [nzValue]=option.type ></nz-option> -->
+          <!-- </ng-container> -->
+        </nz-select>
+      </nz-form-control>
+      <nz-form-control class="button-row" [nzMd]="24" [nzLg]="14">
+        <button nz-button nzType="primary" (click)="search()">搜索:</button>
+        <button nz-button nzType="primary" (click)="reset()">重置:</button>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item class="postion-left">
+      <nz-form-control [nzLg]="1"></nz-form-control>
+      <nz-form-label [nzMd]="24" [nzLg]="2" class="margin-end">浏览量</nz-form-label>
+      <nz-form-control [nzMd]="9" [nzLg]="2">
+        <nz-select formControlName="floorselect" nzPlaceHolder="全部">
+          <!-- <ng-container *ngFor="let option of listOfOptionstatus"> -->
+            <!-- <nz-option [nzLabel]=option.name [nzValue]=option.type ></nz-option> -->
+          <!-- </ng-container> -->
+        </nz-select>
+      </nz-form-control>
+      <nz-form-control [nzMd]="9" [nzLg]="2" [nzOffset]="1" class="margin-end browse">
+        <nz-select formControlName="toplimitselect" nzPlaceHolder="全部">
+          <!-- <ng-container *ngFor="let option of listOfOptionstatus"> -->
+            <!-- <nz-option [nzLabel]=option.name [nzValue]=option.type ></nz-option> -->
+          <!-- </ng-container> -->
+        </nz-select>
+      </nz-form-control>
+      <nz-form-label [nzMd]="24" [nzLg]="2" class="margin-end">起始时间:</nz-form-label>
+      <nz-form-control [nzMd]="24" [nzLg]="4" class="margin-end">
+        <nz-date-picker 
+        formControlName="startdatePicker"  
+        [nzDisabledDate]="disabledStartDate"
+        nzFormat="yyyy-MM-dd HH:mm:ss"
+        [(ngModel)]="startValue"
+        (ngModelChange)="onStartChange($event)"
+        (nzOnOpenChange)="handleStartOpenChange($event)"
+      >
+        </nz-date-picker>
+      </nz-form-control>
+      <nz-form-label [nzMd]="24" [nzLg]="2" class="margin-end">结束时间:</nz-form-label>
+      <nz-form-control [nzMd]="24" [nzLg]="4" class="margin-picker">
+          <nz-date-picker 
+            formControlName="enddatePicker"
+            [nzDisabledDate]="disabledEndDate"
+            nzFormat="yyyy-MM-dd HH:mm:ss"
+            [(ngModel)]="endValue"
+            [nzShowTime]
+            [nzOpen]="endOpen"
+            (ngModelChange)="onEndChange($event)"
+            (nzOnOpenChange)="handleEndOpenChange($event)"
+          >
+          </nz-date-picker>
+        </nz-form-control>
+    </nz-form-item>
+  </form>
+</header> 
+<main class="name">
+  <div class="title">
+    <span class="listname">文章管理列表</span>
+    <button class="add" routerLink="/home/articleAdd">+新增</button>
+  </div>
+  <nz-table 
+    nzBordered
+    #rowSelectionTable
+    nzShowTotal
+    nzTotal
+    [nzSimple]
+    [nzShowQuickJumper]="true"
+    nzShowPagination
+    [nzPageSize]="1 "
+    nzShowSizeChanger
+    #basicTable [nzData]="articleList"> 
+    <thead>
+      <tr>
+        <th class="name">id</th>
+        <th class="name">标题</th>
+        <th class="name">预览</th>
+        <th class="name">学科</th>
+        <th class="name">年级</th>
+        <th class="name">作者</th>
+        <th class="name">浏览数</th>
+        <th class="name">发布时间</th>
+        <th class="name">状态</th>
+        <th class="name">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data; let idx = index">
+        <td class="name">{{ idx+1 }}</td> 
+        <td class="name">{{ data.title}}</td>
+        <td class="name"><img class="name" src="{{ data.picture}}"></td>
+        <td class="name">{{ data.subjectName }}</td>
+        <td class="name">{{ data.gradeName}}</td>
+        <td class="name">{{ data.author}}</td>
+        <td class="name">{{ data.readCount}}</td>
+        <td class="name">{{ data.createAt | date:'yyyy-MM-dd &emsp; hh:mm'}}</td>
+        <td class="name">{{ data.state|state}}</td>
+        <td>
+            <!-- <button (click)="online()" [innerHTML]="onlin"></button> -->
+            <button (click)="online(data.id,data.status==1?2:1, tplTitle, tplContent)"
+             nz-button >{{data.status==2?'下线':'上线'}}</button>
+             <ng-template #tplTitle>
+               <span style="color:#47c6e8">操作提示</span>
+             </ng-template>
+             <ng-template #tplContent >
+               <p class="th-center">下线后该图片将不展示站轮播banner中。</p>
+               <p class="th-center">是否执行<span>{{ data.status==2?'下线':'上线'}}</span>操作？</p>
+             </ng-template>
+            <button  nz-button routerLink="/navigation/add" [queryParams]="{class:th-center}">编辑</button>
+            <button nz-button  (click)="delete(data.id)">删除</button>        
+         </td>
+     </tr>
+    </tbody>
+  </nz-table>
+</main>
+
+
+

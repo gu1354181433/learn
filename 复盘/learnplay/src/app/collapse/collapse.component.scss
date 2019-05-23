@@ -1,0 +1,70 @@
+.header{
+  width     : 224px;
+  height    : 1000px;
+  background: #3c3c3c;
+}
+.header /deep/ .ant-collapse{
+  background: #3c3c3c;
+  border    : none;
+}
+.header /deep/ {
+  .ant-collapse>.ant-collapse-item>.ant-collapse-header{
+    color: #fff;
+  }
+  .ant-collapse-content>.ant-collapse-content-box{
+    padding-left  : 60px;
+    padding-bottom: 0px;
+  }
+}
+// .header /deep/ .ant-collapse-content>.ant-collapse-content-box{
+//   padding-left  : 40px;
+//   padding-bottom: 0;
+// }
+.header /deep/ .ant-collapse>.ant-collapse-item>.ant-collapse-header .ant-collapse-arrow{
+  left: 195px;
+}
+.header /deep/ .ant-collapse>.ant-collapse-item>.ant-collapse-header .ant-collapse-extra, [dir=rtl] .ant-carousel .slick-slide{
+  float       : left;
+  margin-right: 6px;
+}
+.head-logo {
+  width          : 100%;
+  height         : 80px;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+}
+.logo{
+  text-align   : center;
+  line-height  : 45px;
+  width        : 80%;
+  height       : 45px;
+  background   : #b4b4b4;
+  border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

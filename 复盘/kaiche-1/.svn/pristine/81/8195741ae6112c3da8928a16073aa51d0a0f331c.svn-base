@@ -1,0 +1,170 @@
+body {
+    background-color: #fff;
+    border:1px solid rgba(220, 220, 220, 1);
+    border-radius:4px;
+    color: #1E1E1E;
+    header.name {
+        padding:5px 0 15px 15px;
+        font-family: 'Microsoft Tai Le Bold', 'Microsoft Tai Le Regular', 'Microsoft Tai Le';
+        font-weight: 700;
+        font-style: normal;
+        font-size: 20px;
+        color: #363636;
+        border-bottom: 5px solid #363636;
+    }
+    main.name {
+        padding: 20px 10px  0 10px ;
+        .margin-left {
+            margin-left: 11px;
+        }
+        .reprint-input {
+            width: 48%;
+        }
+        .postion-cover {
+            position: relative;
+            left: -20px;
+            .font-cover {
+                font-family: 'Microsoft YaHei Regular', 'Microsoft YaHei';
+                font-weight: 400;
+                font-size: 12px;
+                color: #666666;
+            }
+            img.name {
+                width: 125px;
+                height: 125px;
+            }
+            .photo-size {
+                position: relative;
+                top: -27px;
+                left: 130px;
+                font-family: 'Arial Normal', 'Arial';
+                color: #282828;
+                font-size: 12px;
+                font-weight: 400;
+                .required {
+                    position: relative;
+                    color: #f5222d;
+                    font-size: 14px;
+                    top: 5px;
+                    left:5px;
+                }
+            }
+        }
+        .item {
+           position: relative;
+           top: 5px;
+            .radio {
+                position: relative;
+                top: -3px;
+            }
+        }
+        .postion-tabel {
+            position: relative;
+            top: -50px;
+            left: -20px;
+            .font-upload {
+                color: #009DDA;
+            }
+        }
+        @media screen and (max-width: 992px) {
+            .margin-right {
+                text-align: left;
+            }
+            .index {
+                z-index: 999;
+            }
+            .margin-end {
+                text-align: left;
+            }
+            .margin-picker {
+                margin-bottom: 50px;
+            }
+            .button-row {
+                position: absolute;
+                top: 290px;
+                text-align: right;
+                z-index: 999;
+            }
+            .postion-cover {
+                left: 0%;
+            }
+            .postion-tabel {
+                left: 0%;
+            }
+        }
+    }
+}
+
+.disableSelect{
+    pointer-events: none;
+  }
+// 单选框点击动画
+:host ::ng-deep.ant-radio-checked::after {
+    display: none;
+}  
+    :host ::ng-deep.ant-form-item-font-cover-required::before {
+    display: none;
+}
+// input边框颜色
+:host ::ng-deep.ant-input {
+    border:1px solid #333333;
+}
+// select颜色
+:host ::ng-deep.ant-select-selection {
+    border:1px solid #333333;
+}
+// 表头居中
+:host ::ng-deep.ant-table-thead > tr > th, .ant-table-tbody > tr > td {
+    text-align: center;
+}
+// tabel单元格样式
+:host ::ng-deep.ant-table-thead > tr > th, .ant-table-tbody > tr > td {
+    padding: 0%;
+    width: 75px;
+    height: 19px;
+    font-family: 'Arial Normal', 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    font-size:8px;
+    color: #333333;
+    background-color: #fff;
+}
+// 冒号
+:host ::ng-deep.ant-form-item-label > label::after {
+    display: none;
+}
+// nz-tabel 边框
+:host ::ng-deep nz-table {
+    border:1px solid #333333;
+}
+:host ::ng-deep.ant-table-thead > tr > th {
+    // border: none;
+    border-bottom:1px solid #333333;  
+    border-right:1px solid #333333;
+}
+:host ::ng-deep.ant-table-tbody > tr > td {
+    // border: none;
+    border-right:1px solid #333333;
+}
+:host ::ng-deep.ant-table-thead > tr:first-child > th:last-child {
+    border-right: none;
+}
+:host ::ng-deep.ant-table-tbody > tr:first-child > td:last-child {
+    border-top-right-radius: 4px;
+    border-right: none;
+}
+// 上传自带样式
+:host ::ng-deep.ant-upload-list-item-error, .ant-upload-list-item-error .anticon-paper-clip, .ant-upload-list-item-error .ant-upload-list-item-name {
+    display: none;
+}
+:host ::ng-deep.ant-upload-list-item-info {
+    display: none;
+}
+// 自带进度条
+:host ::ng-deep.ant-progress-inner {
+    display: none;
+}
+:host ::ng-deep.ant-upload-list-item {
+    height: 0px;
+    margin-top: 0%;
+}
