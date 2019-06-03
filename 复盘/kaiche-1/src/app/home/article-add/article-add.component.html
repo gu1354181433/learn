@@ -49,7 +49,7 @@
             <nz-radio-group formControlName="sourceradio" [(ngModel)]="radioValue">
               <label nz-radio class="radio" nzValue="original" formControlName="originalradio">原创：</label>
               <label nz-radio class="radio" nzValue="reprint" formControlName="reprintradio"> 转载至：</label>
-              <input nz-input class="reprint-input" formControlName="reprintinput" placeholder="填写http://开头的网址" [readonly]="radioValue=='original'||disabled=='true'?true:false"/>
+              <input nz-input class="reprint-input" formControlName="reprintinput" placeholder="填写http://开头的网址" />
             </nz-radio-group>
           </nz-form-control>
       </nz-form-item>
@@ -59,7 +59,7 @@
           <span class="font-cover">封面：</span>
         </nz-form-label>
         <nz-form-control [nzMd]="24" [nzLg]="4" class="index">
-          <nz-upload nzAction="https://jsonplaceholder.typicode.com/posts/" [nzFileList]="fileList">
+          <nz-upload nzAction="https://jsonplaceholder.typicode.com/posts/" >
             <img class="name" src=""/>
           </nz-upload>
           <p class="photo-size">(上传文件在5M以内)<span class="required">*</span></p>
@@ -93,4 +93,3 @@
     </form>
   </main>
 </body>
- 

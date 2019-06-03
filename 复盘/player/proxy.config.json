@@ -1,0 +1,13 @@
+{
+  "/mail": {
+    "target"      : "http://academy.home.kaiche.xiuzhenyuan.cn",
+    "secure"      : false,
+    "logLevel"    : "debug",
+    "changeOrigin": true,
+    "pathRewrite" : {
+      "^/mail": ""
+    }
+
+  }
+}
+

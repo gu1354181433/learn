@@ -1,0 +1,56 @@
+<div class="video">
+  <div class="search">
+    <div class="am-demo-page">
+      <div class="am-demo-bd">
+        <div style="border-bottom: 1px solid #ddd;">
+          <SearchBar [placeholder]="'Search'" [maxLength]="8" [(ngModel)]="searchValue"></SearchBar>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <Tabs [useOnPan]="true" [swipeable]="true" [activeTab]="index" [page]="4" [tabBarActiveTextColor]="'#1890ff'"
+      (onChange)="onChange($event)" (onTabClick)="onTabClick($event)">
+      <TabPane [title]="'推荐页'">
+        <ng-template #titleTemplate>
+          <Badge>
+            <div>推荐页</div>
+          </Badge>
+        </ng-template>
+        <div style="background-color: #fff">
+          <app-best></app-best>
+        </div>
+      </TabPane>
+      <TabPane [title]="'语文'">
+        <ng-template #titleTemplate1>
+          <Badge>
+            <div>语文</div>
+          </Badge>
+        </ng-template>
+        <div style="background-color: #fff">
+          <app-language></app-language>
+        </div>
+      </TabPane>
+      <TabPane [title]="'数学'">
+        <ng-template #titleTemplate2>
+          <Badge>
+            <div>数学</div>
+          </Badge>
+        </ng-template>
+        <div style="background-color: #fff">
+          <app-math></app-math>
+        </div>
+      </TabPane>
+      <TabPane [title]="'英语'">
+        <ng-template #titleTemplate2>
+          <Badge>
+            <div>erwr</div>
+          </Badge>
+        </ng-template>
+        <div style="background-color: #fff">
+          <app-english></app-english>
+        </div>
+      </TabPane>
+    </Tabs>
+  </div>
+</div>

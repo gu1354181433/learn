@@ -1,0 +1,32 @@
+<div class="content">
+  <List className="my-list">
+    <h2 class="title">热门推荐</h2>
+    <div class="select">
+      <ListItem Picker [extra]="name1" [arrow]="'horizontal'" [data]="sortData" [(ngModel)]="value1"
+        (ngModelChange)="onOk1($event)">
+      </ListItem>
+      <ListItem Picker [extra]="name2" [arrow]="'horizontal'" [data]="gradeData" [(ngModel)]="value2"
+        (ngModelChange)="onOk2($event)" class="grade">
+      </ListItem>
+    </div>
+  </List>
+  <div class="video-list">
+    <Flex [wrap]="'wrap'">
+      <div *ngFor="let item of data" style="width: 50%;padding-bottom: 10px; ">
+        <div class="video-grid">
+          <img [src]="item.picture" alt="" height="100px" (click)="detail(item.videoId)">
+          <p class="hit">
+            <i class="iconfont icon-heart icon-gray" (click)="hit($event,item.author)">&nbsp;{{item.collection}}</i>
+            <i class="iconfont icon-like icon-gray" (click)="like($event,item.author)">&nbsp;{{item.likes}}</i>
+          </p>
+          <p>{{item.subjectName}}-{{item.title}}</p>
+          <div class="head">
+            <img [src]="img" alt="" class="head-pic">
+            <p>{{item.author}}</p>
+          </div>
+        </div>
+      </div>
+    </Flex>
+  </div>
+</div>
+

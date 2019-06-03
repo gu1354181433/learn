@@ -1,0 +1,21 @@
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+.add{
+  width     : 100%;
+  padding   : 15px 30px;
+  background: #efefef;
+  >.add-header{
+    background   : #fff;
+    width        : 100%;
+    padding      : 15px;
+    border-bottom: 1px solid #000;
+  }
+  >.add-content{
+    width     : 100%;
+    background: #fff;
+  }
+}
+.save{
+  margin-right: 30px;
+}

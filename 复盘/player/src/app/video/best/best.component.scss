@@ -1,0 +1,46 @@
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+Carousel /deep/ .slider-frame > ul{
+  height: 225px !important;
+}
+.title{
+  padding   : 10px 20px;
+  background: #e0e0e0;
+  // border    : 1px solid #000;
+}
+.video-list{
+  width     : 100%;
+  background: #fff;
+  padding   : 10px;
+  .video-grid{
+    padding: 0 10px;
+    >.hit{
+      display        : flex;
+      justify-content: space-between;
+      .icon-gray{
+        color: #b8b8b8;
+      }
+      .icon-red{
+        color: red !important;
+      }
+
+    }
+    >.head{
+      display    : flex;
+      align-items: center;
+      img{
+        display      : block;
+        border       : 1px solid #000;
+        border-radius: 50%;
+        width        : 40px;
+        height       : 40px;
+      }
+      p{
+        padding-left: 20px;
+      }
+    }
+
+  }
+
+}

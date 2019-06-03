@@ -1,0 +1,169 @@
+*,*::before,*::after {
+  box-sizing: border-box;
+}
+
+.detail {
+  max-width: 425px;
+  height   : 773px;
+  // min-height: 780px;
+  margin    : 0 auto;
+  position  : relative;
+  background: #e0e0e0;
+
+  >.title {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    padding        : 10px;
+
+    >.time {
+      font-size: 12px;
+    }
+  }
+
+  >.like {
+    display        : flex;
+    justify-content: space-around;
+    align-items    : center;
+    padding        : 10px;
+    background     : #fff;
+    .icon-gray {
+      color    : #8a8a8a;
+      font-size: 20px;
+
+      span {
+        font-size: 14px;
+      }
+    }
+    .icon-red {
+      color: #ff0000;
+    }
+    .icon-weixin{
+      color    : #50b674;
+      font-size: 35px;
+      display  : inline-block;
+      padding  : 0 15px;
+    }
+    .icon-pengyouquan{
+      color    : #50b674;
+      font-size: 35px;
+      display  : inline-block;
+      padding  : 0 15px;
+    }
+    .icon-QQ{
+      color    : #68a5e1;
+      font-size: 35px;
+      display  : inline-block;
+      padding  : 0 15px;
+    }
+    .icon-weibo{
+      color    : #ea5d5c;
+      font-size: 35px;
+      display  : inline-block;
+      padding  : 0 15px;
+    }
+
+    /deep/.am-wingblank.am-wingblank-lg{
+      height: 22px;
+    }
+    /deep/.am-modal-transparent{
+      width: 300px;
+    }
+    /deep/.am-modal-content{
+      right  : -60px;
+      padding: 0;
+    }
+    /deep/.am-modal-transparent .am-modal-content .am-modal-body{
+      padding: 0 10px 0 ;
+    }
+  }
+
+
+}
+.footer {
+  >h2 {
+    background: #fff;
+  }
+
+  .video-list {
+    width     : 100%;
+    background: #fff;
+    padding   : 10px;
+
+    .video-grid {
+      padding: 0 10px;
+
+      >.hit {
+        display        : flex;
+        justify-content: space-between;
+
+        .icon-gray {
+          color: #b8b8b8;
+        }
+
+        .icon-red {
+          color: red !important;
+        }
+
+      }
+
+      >.head {
+        display    : flex;
+        align-items: center;
+
+        img {
+          display      : block;
+          border       : 1px solid #000;
+          border-radius: 50%;
+          width        : 40px;
+          height       : 40px;
+        }
+
+        p {
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+}
+.comment{
+  height    : 364px;
+  background: #fff;
+  border    : 1px solid #000;
+  >.comment-list{
+    padding      : 10px 20px;
+    border-bottom: 1px solid #b2b2b2;
+    >.comment-title{
+      display        : flex;
+      justify-content: space-between;
+      padding-bottom : 10px;
+    }
+  }
+}
+/deep/.am-drawer{
+  top: auto!important;
+}
+/deep/.am-drawer-open.am-drawer.am-drawer-bottom .am-drawer-sidebar{
+  height: 435px;
+}
+
+/deep/html:not([data-scale]) .am-button-primary{
+  height: 40px;
+}
+/deep/.am-list-item .am-input-control input{
+  border-top   : 1px solid #7d7d7d!important;
+  border-left  : 1px solid #7d7d7d!important;
+  background   : rgb(233, 233, 233);
+  border-radius: 5px;
+  line-height  : 2;
+}
+/deep/ .am-button{
+  margin-left: 5px;
+  line-height: 40px;
+}
+/deep/.am-list-item.am-list-item-middle .am-list-line{
+  flex-direction: row-reverse;
+}
+/deep/.am-list-item.am-input-item{
+  height: 70px;
+}
