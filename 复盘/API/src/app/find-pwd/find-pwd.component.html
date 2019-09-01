@@ -1,0 +1,108 @@
+
+<nz-content  class='container'   >
+<nz-layout    class="inline-block"  style="text-align: center ;max-width: 1200px; width: 100%  ; padding: 150px 0; border-radius: 5px"    >
+  <div style="width: 700px;margin-left: auto;margin-right: auto;"*ngIf="this.findStep === 1;">
+    <div style="display: flex;justify-content: center;align-items: center;width: 700px;height: 80px;background-color: #2666f8;"><span style="font-size: 24px;color:#fff;">找回密码</span></div>
+    <div style="height: 400px;background-color: #ffffff;">
+      <form nz-form [formGroup]="RevalidateForm" nzAlign="middle"  nzJustify="space-around"  nztype="flex" class="login-form  left login-form-row  "
+            (ngSubmit)="submitForm()" style="display: inline-block;">
+        <nz-form-item style="padding: 80px 0 0 0;">
+          <nz-form-control>
+            <nz-input-group>
+              <input class="loginInput" style="border:none;border-bottom: 1px solid #e1e1e1; border-radius: 0;text-align: left "
+                     (keyup)="mobileValidate('registerMobile',RevalidateForm)"   maxlength="11"  minlength="11" type="text" nz-input formControlName="registerMobile" placeholder="请输入手机号">
+            </nz-input-group>
+            <nz-form-explain style="text-align: left" *ngIf="RevalidateForm.get('registerMobile').dirty && RevalidateForm.hasError('required','registerMobile')">
+              请输入手机号！</nz-form-explain>
+            <!--<nz-form-explain *ngIf="RevalidateForm.get('registerMobile').dirty && RevalidateForm.hasError('minlength','registerMobile')">手机号为11位！</nz-form-explain>-->
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item style="padding: 0 0 100px 0;">
+          <nz-form-control>
+            <nz-input-group style="position: relative;" >
+              <input class="loginInput" style="border:none;border-bottom: 1px solid #e1e1e1; border-radius: 0;text-align: left"  maxlength="6" minlength="6" type="text"
+                     nz-input formControlName="vote" placeholder="请输入验证码">
+              <div  style="display: inline-block; position: absolute;  right: 0 ;  top: 5px; z-index: 2">
+                <button class="voteBtn" [disabled]="isVote"  style="  cursor: pointer; outline: none; border: none;background: none;color: #2666f8"  (click)="votemsg()" >{{voteInfo}}</button>
+              </div>
+            </nz-input-group>
+            <nz-form-explain style="text-align: left" *ngIf="RevalidateForm.get('vote').dirty && RevalidateForm.hasError('required','vote')">
+              请输入验证码！</nz-form-explain>
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-control>
+            <div style="width: 380px;height: 48px;margin-left: auto;margin-right: auto;">
+              <button    nz-button [nzLoading]="isLoadingOne" class="login-form-button" [nzType]="'primary'"
+                         (click)="register()" [disabled]="!RevalidateForm.valid">下一步</button>
+            </div>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </div>
+  </div>
+
+  <div style="width: 700px;margin-left: auto;margin-right: auto;" *ngIf="this.findStep === 2;">
+    <div style="display: flex;justify-content: center;align-items: center;width: 700px;height: 80px;background-color: #2666f8;"><span style="font-size: 24px;color:#fff;">找回密码</span></div>
+    <div style="height: 400px;background-color: #ffffff;">
+      <form nz-form [formGroup]="validateForm" nzAlign="middle"  nzJustify="space-around"  nztype="flex" class="login-form  left login-form-row  "
+            (ngSubmit)="submitForm()" style="display: inline-block">
+        <nz-form-item style="padding: 80px 0 0 0;">
+            <nz-form-control>
+              <nz-input-group >
+                <input class="loginInput" style="text-align: left; border:none;border-bottom: 1px solid #e1e1e1; border-radius: 0px " type="password" nz-input formControlName="registerPwd" placeholder="请输入由数字、字母、下划线组成的6-16位密码">
+              </nz-input-group>
+              <nz-form-explain style="text-align: left" *ngIf="validateForm.get('registerPwd').dirty && validateForm.hasError('required','registerPwd')">
+                请输入符合规则的密码！</nz-form-explain>
+              <nz-form-explain style="text-align: left"
+                *ngIf="validateForm.get('registerPwd').dirty && validateForm.hasError('minlength','registerPwd')">密码最少为6位！
+              </nz-form-explain>
+            </nz-form-control>
+        </nz-form-item>
+
+
+        <nz-form-item>
+            <nz-form-control>
+              <nz-input-group >
+                <input class="loginInput" style=" text-align: left;  border:none;border-bottom: 1px solid #e1e1e1; border-radius: 0px " type="password" nz-input formControlName="againPwd" placeholder="请再次输入密码">
+              </nz-input-group>
+              <nz-form-explain style="text-align: left" *ngIf="validateForm.get('againPwd').dirty && validateForm.hasError('required','againPwd')">
+                请输入符合规则的密码！</nz-form-explain>
+              <nz-form-explain style="text-align: left"
+                *ngIf="validateForm.get('againPwd').dirty && validateForm.hasError('minlength','againPwd')">密码最少为6位！
+              </nz-form-explain>
+            </nz-form-control>
+        </nz-form-item>
+
+
+        <nz-form-item>
+          <nz-form-control style="text-align: left">
+            <div style="width: 380px;height: 48px;margin-left: auto;margin-right: auto;">
+              <button  (click)="loginIn()" nz-button [nzLoading]="isLoadingOne" class="login-form-button" [nzType]="'primary'"
+                       [disabled]="!validateForm.valid">提交</button>
+              <a href=""></a>
+            </div>
+          </nz-form-control>
+        </nz-form-item>
+
+      </form>
+    </div>
+  </div>
+
+
+  <div style="width: 700px;margin-left: auto;margin-right: auto;" *ngIf="this.findStep === 3;">
+    <div style="display: flex;justify-content: center;align-items: center;width: 700px;height: 80px;background-color: #2666f8;"><span style="font-size: 24px;color:#fff;">找回密码</span></div>
+    <div style="height: 400px;background-color: #ffffff;">
+      <div style="padding: 100px 0 20px 0"><img   (click)="mainReload()"   style="outline: none"   src="assets/images/002.png" alt=""></div>
+      <div style="padding-bottom: 120px"><span>恭喜你，找回密码成功！</span></div>
+      <div style="width: 380px;height: 48px;margin-left: auto;margin-right: auto;">
+        <button routerLink="/login/1"   nz-button [nzLoading]="isLoadingOne" class="login-form-button" [nzType]="'primary'">立即登陆</button>
+      </div>
+    </div>
+  </div>
+
+</nz-layout>
+
+</nz-content>

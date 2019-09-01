@@ -1,0 +1,80 @@
+<div class="binding-box">
+  <div class="title">绑定基因盒</div>
+  <form nz-form [formGroup]="validateForm" class="content">
+    <nz-form-item style="margin-bottom: 0;">
+      <div class="table">基因盒序列号</div>
+      <nz-form-control class="serial">
+        <input nz-input type="number" placeholder="请输入基因盒序列号" onkeyup="if(value.length>10) value=value.slice(0,10)"
+          formControlName="serial" [(ngModel)]="paramsDtate.serial" >
+        <nz-form-explain class="error-color">
+          {{paramsDtate.errorMes}}
+        </nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item  style="width:240px;margin:0 auto;">
+        <nz-form-control style="text-align: left ">
+          <label nz-checkbox formControlName="agree">
+            <span>我已阅读并同意</span>
+          </label>
+          <a  (click)="createTplModal(tplTitle, tplContent, tplFooter)">《用户协议》</a>
+          <!-- <a class="login-form-forgot" class="login-form-forgot">Forgot password</a> -->
+        </nz-form-control>
+      </nz-form-item>
+    <div style="width:240px;margin:0 auto;">
+      <button nz-button nzType="primary" type="button" [disabled]="!validateForm.valid || validateForm.value.agree==false"
+        class="ant-btn ant-btn-primary binding" (click)="postBinding()"><span>提交</span></button>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+
+<ng-template #tplTitle>
+    <h2 class="tplContent-p">
+      隐私协议
+    </h2>
+  </ng-template>
+  <ng-template #tplContent>
+    <div style="font-size: 14px">
+      <div class="tplContent-wrap">
+        <p>顺唐生物非常重视您的隐私，因此，我们制定了一系列在对您的个人数据的获取、使用、存储及处理流程的保护方案，以及不断完善和更新保护您个人隐私的政策，并帮助您更好的了解这些政策，确保您的隐私得到安全保障。</p>
+      </div>
+      <div class="tplContent-wrap">
+        <p>1.个人数据的收集和处理 </p>
+        <p>我们相信您提交您的基因数据，是为了更好的得到个人健康信息、疾病特征以及其他相关的信息内容的呈现，所以在没有得到您的允许之前，我们将会对您的基因数据和个人资料信息按照行业内严格的方式保存和保密，除服务协议另有约定外，不对任何人开放。</p>
+      </div>
+    </div>
+  
+    <div class="tplContent-wrap"  >
+      <p>2.个人数据的使用和披露</p>
+      <p>为提供您所要求的产品和服务，顺唐生物可将您的个人数据用于基因相关的数据挖掘，用于您的基因报告的更新和推送。</p>
+      <p>根据您的意愿或者法律法规，顺唐生物会在以下情形全部或部分披露您的信息：经您事先同意，向第三方披露；根据法律的有关规定，或者行政或司法机构的要求，向第三方或者行政、司法机构披露；为提供您所要求的产品和服务，而必须和第三方分享您的个人信息；其它根据法律、法规或者网站政策认为合适的披露。</p>
+    </div>
+    <div class="tplContent-wrap"  >
+      <p>3.安全性 </p>
+      <p>顺唐生物采用合理的技术和组织安全措施来全力保护我们所控制的数据不被意外或故意地操纵、丢失、损毁或被擅自存取。</p>
+      <p>当您在顺唐生物提供的计算机网络程序或移动终端软件上完成账户建立后，您应在能力范围内采取措施保护自身账户安全，并知晓以下情形，包括但不限于：</p>
+      <div>a) 本应用账号均有安全保护功能，请妥善保管您的用户名及密码信息。本应用将通过对用户密码进行加密等安全措施确保您的信息不丢失，不被滥用和变造。尽管有前述安全措施，但同时也请您注意在信息网络上不存在“完善的安全措施”。</div>
+      <div>b) 在使用本应用网络服务进行网上交易时，您不可避免的要向交易对方或潜在的交易对方披露自己的个人信息，如联络方式或者邮政地址。请您妥善保护自己的个人信息，仅在必要的情形下向他人提供。如您发现自己的个人信息泄密，尤其是本应用用户名及密码发生泄露，请您立即联络本应用客服，以便本应用采取相应措施。</div>
+    </div>
+    <div class="tplContent-wrap"  >
+      <p>我们承诺保护您的隐私，因为我们尊重我们每个用户。我们尽最大努力去做好，并希望为此能赢得您的信任！</p>
+    </div>
+  
+  
+  </ng-template>
+  <ng-template #tplFooter>
+    <div class="tplFooter">
+      <button nz-button nzType="default"  (click)="destroyTplModal()" [nzLoading]="tplModalButtonLoading">
+        不同意
+      </button>
+      <button nz-button nzType="primary" (click)="EnterTplModal()" [nzLoading]="tplModalButtonLoading">
+        同意
+      </button>
+    </div>
+  
+  
+  </ng-template>

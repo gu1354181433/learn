@@ -1,0 +1,47 @@
+
+<nz-content >
+  <nz-carousel   [nzEnableSwipe]="false"    [nzAutoPlaySpeed]="3000"  [nzAutoPlay]="true"   style="height: 500px !important;"  >
+    <div nz-carousel-content *ngFor="let item of array" style="text-align: center;height: 500px !important;z-index: 999">
+    <h3>
+      <a class="inline-block" [href]="item.link" target="_blank">
+        <img  style="  position: relative;z-index: -1;  width: 100vw;  height: 500px;object-fit: cover ;   display: inline-block !important" src="{{ item.url }}" alt="">
+      </a>
+    </h3>
+    </div>
+  </nz-carousel>
+
+
+</nz-content>
+<div class="shopList">
+  <div class="container">
+
+    <div *ngIf="!listData || listData.length==0 ">
+      <nz-empty></nz-empty>
+    </div>
+
+
+
+
+
+
+    <ul>
+       <li  *ngFor="let item of listData "   [routerLink]="['/shop/detail/'+item.id]">
+         <div class="li-item">
+           <img style="object-fit: contain; height: 140px" [src]="item.img" alt="">
+            <h2>{{item.name}}</h2>
+         </div>
+         <div class="li-item-content">
+           <h2>{{item.name}}</h2>
+            <p> {{item.info}}</p>
+           <div class="item-price"><span>¥</span>{{item.price}}</div>
+           <div>
+             <img style="cursor: pointer" src="assets/img/buy.png" alt=""  (click)="goWhere($event)">
+           </div>
+         </div>
+       </li>
+
+
+     </ul>
+
+  </div>
+</div>

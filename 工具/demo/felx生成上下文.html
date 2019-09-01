@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="favicon.ico" type="x-icon">
+    <title>flex生成上下文</title>
+    <style>
+    .box { 
+        background: #fff;
+        display: flex;
+    }
+    .box > div { background-color: blue; z-index: 1; }   
+    .box > div > img { 
+    position: relative; z-index: -1; right: -150px;   
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>
+            <img src="nvhai.jpg" width="400px">
+        </div>
+    </div>
+</body>
+</html>

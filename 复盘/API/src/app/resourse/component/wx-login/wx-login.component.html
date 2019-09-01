@@ -1,0 +1,138 @@
+<div class="container" style="text-align: center">
+  <div class="inline-block wxLogin">
+    <h2 class="wxLogin-h2">绑定手机号</h2>
+    <div class="wxLogin-wrap">
+      <form nz-form [formGroup]="RevalidateForm" nzAlign="middle"  nzJustify="space-around"  nztype="flex" class="login-form  left login-form-row  "
+            style="display: inline-block;">
+        <nz-form-item style="">
+          <nz-form-control>
+            <nz-input-group>
+              <input class="loginInput" style="border:none;border-bottom: 1px solid #e1e1e1; border-radius: 0;text-align: left "
+                     (keyup)="mobileValidate('registerMobile',RevalidateForm)"   maxlength="11"  minlength="11" type="text" nz-input formControlName="registerMobile" placeholder="请输入手机号">
+            </nz-input-group>
+            <nz-form-explain style="text-align: left" *ngIf="RevalidateForm.get('registerMobile').dirty && RevalidateForm.hasError('required',['registerMobile'])">
+              请输入手机号！</nz-form-explain>
+            <!--<nz-form-explain *ngIf="RevalidateForm.get('registerMobile').dirty && RevalidateForm.hasError('minlength','registerMobile')">手机号为11位！</nz-form-explain>-->
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item style="">
+          <nz-form-control>
+            <nz-input-group style="position: relative;" >
+              <input class="loginInput" style="border:none;border-bottom: 1px solid #e1e1e1; border-radius: 0;text-align: left"  maxlength="6" minlength="6" type="text"
+                     nz-input formControlName="vote" placeholder="请输入验证码">
+              <div  style="display: inline-block; position: absolute;  right: 0 ;  top: 5px; z-index: 2">
+                <button class="voteBtn" [disabled]="isVote"  style="  cursor: pointer; outline: none; border: none;background: none;color: #2666f8"  (click)="votemsg()" >{{voteInfo}}</button>
+              </div>
+            </nz-input-group>
+            <nz-form-explain style="text-align: left" *ngIf="RevalidateForm.get('vote').dirty && RevalidateForm.hasError('required',['vote'])">
+              请输入验证码！</nz-form-explain>
+          </nz-form-control>
+        </nz-form-item>
+
+
+        <nz-form-item style="">
+          <nz-form-control>
+            <nz-input-group >
+              <input class="loginInput" style="text-align: left; border:none;border-bottom: 1px solid #e1e1e1; border-radius: 0px " type="password" nz-input formControlName="registerPwd" placeholder="请输入由数字、字母、下划线组成的6-16位密码">
+            </nz-input-group>
+            <nz-form-explain style="text-align: left" *ngIf="RevalidateForm.get('registerPwd').dirty && RevalidateForm.hasError('required',['registerPwd'])">
+              请输入符合规则的密码！</nz-form-explain>
+            <nz-form-explain style="text-align: left"
+                             *ngIf="RevalidateForm.get('registerPwd').dirty && RevalidateForm.hasError('minlength',['registerPwd'])">密码最少为6位！
+            </nz-form-explain>
+          </nz-form-control>
+        </nz-form-item>
+
+
+        <nz-form-item>
+          <nz-form-control>
+            <nz-input-group >
+              <input class="loginInput" style=" text-align: left;  border:none;border-bottom: 1px solid #e1e1e1; border-radius: 0px " type="password" nz-input formControlName="againPwd" placeholder="请再次输入密码">
+            </nz-input-group>
+            <nz-form-explain style="text-align: left" *ngIf="RevalidateForm.get('againPwd').dirty && RevalidateForm.hasError('required',['againPwd'])">
+              请输入符合规则的密码！</nz-form-explain>
+            <nz-form-explain style="text-align: left"
+                             *ngIf="RevalidateForm.get('againPwd').dirty && RevalidateForm.hasError('minlength',['againPwd'])">密码最少为6位！
+            </nz-form-explain>
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item  style="margin-bottom: 0px">
+          <nz-form-control style="text-align: left ">
+            <label nz-checkbox formControlName="agree">
+              <span>我已阅读并同意</span>
+            </label>
+
+
+            <a  (click)="createTplModal(tplTitle, tplContent, tplFooter)">《用户协议》</a>
+            <!-- <a class="login-form-forgot" class="login-form-forgot">Forgot password</a> -->
+
+          </nz-form-control>
+        </nz-form-item>
+
+
+        <nz-form-item>
+          <nz-form-control>
+            <div style="width: 380px;height: 48px;margin-left: auto;margin-right: auto;">
+              <button    nz-button   class="login-form-button" [nzType]="'primary'"
+                         (click)="register()" [disabled]="!RevalidateForm.valid">完成</button>
+            </div>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<ng-template #tplTitle >
+  <h2 style="background: #f1f1f1;font-size: 16px; line-height: 35px;text-align: center;margin: 0;font-weight: bold">
+    用户协议
+  </h2>
+</ng-template>
+<ng-template #tplContent>
+  <div style="font-size: 14px">
+    <div class="tplContent-wrap">
+      <p>当您申请用户时，表示您已经同意遵守本规章。 <br>欢迎您加入本站点，为维护网上公共秩序和社会稳定，请您自觉遵守以下条款：      </p>
+    </div>
+    <div class="tplContent-wrap" style="padding-left: 20px">
+      <p>一、不得利用本站危害国家安全、泄露国家秘密，不得侵犯国家社会集体的和公民的合法权益，不得利用本站制作、复制和传播下列信息： </p>
+      <p>（一）煽动抗拒、破坏宪法和法律、行政法规实施的；  </p>
+      <p>（二）煽动颠覆国家政权，推翻社会主义制度的；  </p>
+      <p>（三）煽动分裂国家、破坏国家统一的；；  </p>
+      <p>（四）煽动民族仇恨、民族歧视，破坏民族团结的；  </p>
+      <p>（五）捏造或者歪曲事实，散布谣言，扰乱社会秩序的； </p>
+      <p>（六）宣扬封建迷信、淫秽、色情、赌博、暴力、凶杀、恐怖、教唆犯罪的；  </p>
+      <p>（七）公然侮辱他人或者捏造事实诽谤他人的，或者进行其他恶意攻击的；  </p>
+      <p>（八）损害国家机关信誉的；  </p>
+    </div>
+  </div>
+
+  <div class="tplContent-wrap"  >
+    <p>二、互相尊重，对自己的言论和行为负责。 </p>
+  </div>
+  <div class="tplContent-wrap"  >
+    <p>三、禁止在申请用户时使用相关本站的词汇，或是带有侮辱、毁谤、造谣类的或是有其含义的各种语言进行注册用户，否则我们会将其删除。 </p>
+  </div>
+  <div class="tplContent-wrap"  >
+    <p>四、禁止以任何方式对本站进行各种破坏行为。 </p>
+  </div>
+  <div class="tplContent-wrap"  >
+    <p>五、如果您有违反国家相关法律法规的行为，本站概不负责。如您的登录信息被确认违反相关规定的，必要时，我们会向相关的国家管理部门提供此类信息。 </p>
+  </div>
+
+
+</ng-template>
+<ng-template #tplFooter>
+  <div class="tplFooter">
+    <button nz-button nzType="default"  (click)="destroyTplModal()" [nzLoading]="tplModalButtonLoading">
+      取消
+    </button>
+    <button nz-button nzType="primary" (click)="EnterTplModal()" [nzLoading]="tplModalButtonLoading">
+      确定
+    </button>
+  </div>
+
+
+</ng-template>

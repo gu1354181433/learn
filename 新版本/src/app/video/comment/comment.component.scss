@@ -1,0 +1,36 @@
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+.content-main{
+  width     : 100%;
+  background: #efefef;
+  height    : 969px;
+  >.main-top{
+    // height       : 250px;
+    width  : 100%;
+    padding: 15px;
+    >.main-search{
+      background: #fff;
+      border    : 1px solid #000;
+      overflow  : hidden;
+    }
+  }
+  >.main-bottom{
+    width: 100%;
+    // height : 530px;
+    padding: 15px;
+    /deep/ .ant-table-tbody>tr>td{
+      background: #fff;
+      text-align: center;
+    }
+    /deep/.ant-table-thead>tr>th{
+      text-align: center;
+    }
+    >.list{
+      border: 1px solid #000;
+      >.title{
+        padding: 10px;
+      }
+    }
+  }
+}

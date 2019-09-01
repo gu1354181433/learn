@@ -14,7 +14,9 @@
     <Flex [wrap]="'wrap'">
       <div *ngFor="let item of data" style="width: 50%;padding-bottom: 10px; ">
         <div class="video-grid">
-          <img [src]="item.picture" alt="" height="100px" (click)="detail(item.videoId)">
+          <div style="width: 182px;height:100px">
+            <img [src]="item.picture" alt="" height="100px"width="182px" (click)="detail(item.videoId)">
+          </div>
           <p class="hit">
             <i class="iconfont icon-heart icon-gray" (click)="hit($event,item.author)">&nbsp;{{item.collection}}</i>
             <i class="iconfont icon-like icon-gray" (click)="like($event,item.author)">&nbsp;{{item.likes}}</i>

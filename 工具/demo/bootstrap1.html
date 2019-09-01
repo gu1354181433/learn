@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <h1>这是标题</h1>
+        <p>这是固定宽度容器</p>
+    
+          <div class="row">
+            <div class="col" style="background-color:lavender;">.col</div>
+            <div class="col" style="background-color:orange;">.col</div>
+            <div class="col" style="background-color:lavender;">.col</div>
+          </div>
+          <div class="row">
+                <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
+                <div class="col-sm-3" style="background-color:lavenderblush;">.col-sm-3</div>
+                <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
+                <div class="col-sm-3" style="background-color:lavenderblush;">.col-sm-3</div>
+              </div>
+
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-3 col-md-6 bg-success">
+            RUNOOB
+          </div>
+          <div class="col-sm-9 col-md-6 bg-warning">
+            菜鸟教程
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-3 col-md-6 col-lg-4 col-xl-2 bg-success">
+            RUNOOB
+          </div>
+          <div class="col-sm-9 col-md-6 col-lg-8 col-xl-10 bg-warning">
+            菜鸟教程
+          </div>
+        </div>
+      </div>
+  
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-4 offset-sm-4 bg-success">.col-md-4 .offset-md-4</div>
+            <div class="col-md-4 bg-warning">.col-md-4</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 offset-md-3 bg-success">.col-md-3 .offset-md-3</div>
+            <div class="col-md-3 offset-md-3 bg-warning">.col-md-3 .offset-md-3</div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 offset-md-3 bg-success">.col-md-6 .offset-md-3</div>
+          </div>
+        </div>
+        <div class="container">
+                <h2>按钮组大小</h2>
+                <p>我们可以使用 .btn-group-lg|sm|xs 类来设置按钮组的大小。</p>
+                <h3>大按钮:</h3>
+                <div class="btn-group btn-group-lg">
+                  <button type="button" class="btn btn-primary">Apple</button>
+                  <button type="button" class="btn btn-primary">Samsung</button>
+                  <button type="button" class="btn btn-primary">Sony</button>
+                </div>
+                <h3>默认按钮:</h3>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-primary">Apple</button>
+                  <button type="button" class="btn btn-primary">Samsung</button>
+                  <button type="button" class="btn btn-primary">Sony</button>
+                </div>
+                <h3>小按钮:</h3>
+                <div class="btn-group btn-group-sm">
+                  <button type="button" class="btn btn-primary">Apple</button>
+                  <button type="button" class="btn btn-primary">Samsung</button>
+                  <button type="button" class="btn btn-primary">Sony</button>
+                </div>
+              </div>
+              <div class="container">
+                <h2>下拉菜单</h2>
+                <p>如果我们想让下拉菜单右对齐，可以在元素上的 .dropdown-menu 类后添加 .dropdown-menu-right 类。</p>
+                <div class="dropdown">
+                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Dropdown button
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                  </div>
+                </div>
+              </div>
+              <div class="container">
+                <h2>导航</h2>
+                <p>简单的水平导航:</p>
+                <ul class="nav nav-pills">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Link</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="navbar navbar-expand-sm bg-light">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link 1</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link 2</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link 3</a>
+                  </li>
+                </ul>
+              </nav>
+              <nav class="navbar bg-light">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link 1</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link 2</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link 3</a>
+                  </li>
+                </ul>
+              </nav>
+              <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a>
+                    </li>    
+                  </ul>
+                </div>  
+              </nav>
+              <div style="background-color:#999999 "><div style="background-color:#fff;width:20px;height:2px;border-top: 2px solid #fff;border-bottom: 2px solid #fff;padding:4px 0;background-clip: content-box;"></div></div>
+              <div class="container">
+                <h2>按钮元素</h2>
+                <a href="#" class="btn btn-info" role="button">链接按钮</a>
+                <button type="button" class="btn btn-info">按钮</button>
+                <input type="button" class="btn btn-info" value="输入框按钮">
+                <input type="submit" class="btn btn-info" value="提交按钮"> 
+              </div>
+            </body>
+</html>

@@ -44,7 +44,7 @@ function fuck(){
                 }
                 else{
                     if(response.message=="success"){
-                        window.location.href = "http://dev.admin.carrots.ptteng.com/#/dashboard";
+                        // window.location.href = "http://dev.admin.carrots.ptteng.com/#/dashboard";
                     }
                 }
                 

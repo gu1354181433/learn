@@ -1,0 +1,31 @@
+<div class="example">
+  <div class="container">
+    <div class="example-l" style="border-radius: 5px">
+      <div class="example-l-detail">
+        <img style="object-fit: contain; height: 140px" [src]="data.img" alt="">
+        <h2>{{data.name}}</h2>
+        <div style="padding: 30px 0">
+          <button nz-button  [nzType]="'primary'"  style="width: 100%;height: 40px;">
+            立即购买
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="example-r" >
+      <div class="example-r-content" style="border-radius: 5px">
+        <div *ngFor="let item of detail">
+          <div *ngIf="item.type==1">
+            {{item.value}}
+          </div>
+          <div *ngIf="item.type==2" style="text-align: center">
+            <img style="object-fit: contain; height: 140px;max-height: 100%;" [src]="item['imgList'][0].url" alt="">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

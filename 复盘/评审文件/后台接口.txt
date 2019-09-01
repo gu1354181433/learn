@@ -1,0 +1,252 @@
+
+   //后台页面登录(问题)
+    @RequestMapping(value = " /a/login", method = RequestMethod.POST)
+    public String login(@RequestParam String username, @RequestParam String password, Model model) {
+  
+    }
+
+
+    // 后台页面登出
+    @RequestMapping(value = "/a/u/exit", method = RequestMethod.GET)
+    public String exit(Model model) {
+               return "exit";
+    }
+
+    //后台首页
+    @RequestMapping(value = "/a/u/index", method = RequestMethod.GET)
+    public String index(@RequestParam Long id, @RequestParam String username, Model model) {
+               return "index";
+    }
+
+    //侧边栏
+    @RequestMapping(value = "/a/u/module", method = RequestMethod.GET)
+    public String moduleMenu(@RequestParam Integer roleId, Model model) {
+     
+    }
+
+
+    //查询学生
+    @RequestMapping(value = "/a/u/student/list", method = RequestMethod.GET)
+    public String findStu(String name, Integer sex, Integer gradeId, Long phone, String province, String city, Integer kind, Long createAtStart, Long createAtEnd, Model model) {
+        return "findStudent";
+    }
+
+    //学生详情
+    @RequestMapping(value = "/a/u/student/{studentId}", method = RequestMethod.GET)
+    public String studentDetail(@PathVariable(value = "studentId") Long studentId, Model model) {
+ 
+        return "studentDetail";
+    }
+
+    //编辑学生
+    @RequestMapping(value = "/a/u/student/{studentId}", method = RequestMethod.PUT)
+    public String updateStu(@PathVariable(value = "studentId") Long studentId, @RequestParam Integer studentState, Model model) {
+               return "updateStu";
+    }
+
+    //文章搜索
+    @RequestMapping(value = "/a/u/article/list", method = RequestMethod.GET)
+    public String findArticle(Long articleId, String title, String author, Long subjectId, Long readCountMin, Long readCountMax, Long createAtStart, Long createAtEnd, Model model) {
+        return "findArt";
+    }
+
+    //文章详情
+    @RequestMapping(value = "/a/u/article/{articleId}", method = RequestMethod.GET)
+    public String articleDetail(@PathVariable(value = "articleId") Long articleId, Model model) {
+        return "articleDetail";
+    }
+
+    //文章编辑
+    @RequestMapping(value = "/a/u/article/{articleId}", method = RequestMethod.PUT)
+    public String updateArticle(@PathVariable(value = "articleId") Long articleId, String title, String picture, Long subjectId, Long gradeId, String author, String source, String essay, Integer state, Model model) {
+               return "updateArt";
+    }
+
+    //文章增加
+    @RequestMapping(value = "/a/u/article", method = RequestMethod.POST)
+    public String insertArt(Model model, @RequestParam String title, @RequestParam String picture, @RequestParam Long subjectId, @RequestParam Long gradeId, @RequestParam String author, @RequestParam String source, @RequestParam String essay, @RequestParam Integer state) {
+        
+    }
+    //文章删除
+    @RequestMapping(value = "/a/u/article", method = RequestMethod.DELETE)
+    public String insertArt(Model model, @RequestParam String Ids, @RequestParam Integer state) {
+        
+    }
+
+    //评论搜索
+    @RequestMapping(value = "/a/u/comment/list", method = RequestMethod.GET)
+    public String findComm(String author, Integer classify, Integer commentState, Long createAt, Long worksId, Model model) {
+   
+    }
+
+    //评论详情
+    @RequestMapping(value = "/a/u/comment/{commentId}", method = RequestMethod.GET)
+    public String commDetail(@PathVariable(value = "commentId") Long commentId, Model model) {
+     
+    }
+
+    //评论编辑
+    @RequestMapping(value = "/a/u/comment/{commentId}", method = RequestMethod.PUT)
+    public String updateComm(@PathVariable(value = "commentId") Long commentId, String content ,Integer commentState, Model model) {
+        
+
+    }
+
+    //视频搜索
+    @RequestMapping(value = "/a/u/video/list", method = RequestMethod.GET)
+    public String findVideo(Model model, String title, Integer state, String author, Long subjectId, Long watchCount1, Long watchCount2, Long createAtStart, Long createAtEnd) {
+    
+    }
+
+    //视频详情
+    @RequestMapping(value = "/a/u/video/{videoId}", method = RequestMethod.GET)
+    public String VideoDetail(@PathVariable(value = "videoId") Long videoId, Model model) {
+     
+    }
+
+    //视频编辑
+    @RequestMapping(value = "/a/u/video/{videoId}", method = RequestMethod.PUT)
+    public String updateVideo(@PathVariable(value = "videoId") Long videoId, String title, String picture, Long subjectId, Long gradeId, String author, String source, String content, Model model) {
+ 
+    }
+
+    //视频增加
+    @RequestMapping(value = "/a/u/video", method = RequestMethod.POST)
+    public String insertVideo(Model model, @RequestParam String title, @RequestParam String picture, @RequestParam Long subjectId, @RequestParam Long gradeId, @RequestParam String author, @RequestParam String source, @RequestParam String content) {
+        
+    }
+
+    //视频删除
+    @RequestMapping(value = "/a/u/video", method = RequestMethod.DELETE)
+    public String delteVideo(Model model, @RequestParam String Ids, @RequestParam Integer state) {
+        
+    }
+
+    //订单管理
+    @RequestMapping(value = "/a/u/order/list", method = RequestMethod.GET)
+    public String orderList(Model model, Long orderNumber, String productName, Long createAtStart, Long createAtEnd, String studentName, Integer orderState) {
+    }
+
+    //订单详情
+    @RequestMapping(value = "/a/u/order/{orderId}", method = RequestMethod.GET)
+    public String order(@PathVariable(value = "orderId") Long orderId, Model model) {
+    }
+
+    //订单修改
+    @RequestMapping(value = "/a/u/order/{Ids}", method = RequestMethod.PUT)
+    public String updateOrd(Model model, @PathVariable(value = "Ids") String Ids, @RequestParam Integer orderState) {
+    }
+
+    //分类搜索
+    @RequestMapping(value = "/a/u/classify/list", method = RequestMethod.GET)
+    public String manageClassify(Long id, Integer category, Long subjectId, Long gradeId, Long createAtStart, Long createAtEnd, Integer state, Model model) {
+    }
+
+    //分类详情
+    @RequestMapping(value = "/a/u/classify/{classifyId}", method = RequestMethod.GET)
+    public String classifyDetail(@PathVariable(value = "classifyId") Long classifyId, Model model) {
+    }
+
+    //分类新增
+    @RequestMapping(value = "/a/u/classify", method = RequestMethod.POST)
+    public String insertClassify(Model model, @RequestParam Integer category, @RequestParam Long subjectId, @RequestParam Long gradeId, @RequestParam Long createAt, @RequestParam Long updateAt, @RequestParam Integer state) {
+    }
+
+    //删除
+    @RequestMapping(value = "/a/u/classify", method = RequestMethod.DELETE)
+    public String deleteClassify(Model model, @RequestParam String Ids, @RequestParam Integer state) {
+
+    }
+    //编辑
+    @RequestMapping(value = "/a/u/classify/{classifyId}", method = RequestMethod.POST)
+    public String updateClassify(Model model, @PathVariable(value = "classifyId") Integer classifyId, @RequestParam Long subjectId, @RequestParam Long gradeId, @RequestParam Long createAt, @RequestParam Long updateAt, @RequestParam Integer state,@RequestParam Integer classify) {
+
+    }
+
+    //banner搜索
+    @RequestMapping(value = "/a/u/banner/list", method = RequestMethod.GET)
+    public String bannerSearch(Model model, Integer category, String headline, String createBy, Long createAtStart, Long createAtEnd, Integer state) {
+    }
+
+    //banner详情
+    @RequestMapping(value = "/a/u/banner/{bannerId}", method = RequestMethod.GET)
+    public String bannerDetail(@PathVariable(value = "bannerId") Long bannerId, Model model) {
+    }
+
+    //banner增加
+    @RequestMapping(value = "/a/u/banner", method = RequestMethod.POST)
+    public String insertBanner(Model model, @RequestParam String headline, @RequestParam String remark, @RequestParam String image, @RequestParam Integer category, @RequestParam String url, @RequestParam String content, @RequestParam Integer state) {
+
+    }
+
+    //banner编辑(问题)
+    @RequestMapping(value = "/a/u/banner/{bannerId}", method = RequestMethod.PUT)
+    public String updateBanner(Model model, @PathVariable(value = "bannerId") Long bannerId, String image, Integer category, String headline, String url, Long createAt, Long updateAt, Integer state) {
+    }
+
+    //banner删除
+    @RequestMapping(value = "/a/u/banner", method = RequestMethod.DELETE)
+    public String deleteBanner(@RequestParam String Ids, @RequestParam Integer state, Model model) {
+    }
+
+    //上下架
+    @RequestMapping(value = "/a/u/works/{Ids}", method = RequestMethod.PUT)
+    public String state(@PathVariable(value = "Ids") String Ids, @RequestParam Integer classify, @RequestParam Integer state, Model model) {
+
+    }
+
+    //账户搜索
+    @RequestMapping(value = "/a/u/user/list", method = RequestMethod.GET)
+    public String userSearch(Long roleId, Model model) {
+    }
+
+    //账户详情
+    @RequestMapping(value = "/a/u/user/{userId}", method = RequestMethod.GET)
+    public String userDetail(@PathVariable(value = "userId") Long userId, Model model) {
+ 
+    }
+
+    //账户新增
+    @RequestMapping(value = "/a/u/user", method = RequestMethod.POST)
+    public String inserUser(@RequestParam String username, @RequestParam String password, @RequestParam String password2, @RequestParam Long roleId, Model model) {
+ 
+    }
+
+    //账户编辑
+    @RequestMapping(value = "/a/u/user/{userId}", method = RequestMethod.PUT)
+    public String updateUser(@PathVariable (value = "userId")Long userId , @RequestParam Long roleId, Model model) {
+ 
+    }
+
+    //账户删除
+    @RequestMapping(value = "/a/u/user", method = RequestMethod.DELETE)
+    public String deleteUser(@RequestParam String Ids, Model model) {
+    }
+
+    //角色搜索
+    @RequestMapping(value = "/a/u/role/list", method = RequestMethod.GET)
+    public String role(Model model) {
+    }
+
+    //角色详情
+    @RequestMapping(value = "/a/u/role/{roleId}", method = RequestMethod.GET)
+    public String roleDetail(@PathVariable(value = "roleId") Long roleId, Model model)
+	
+    //角色新增
+    @RequestMapping(value = "/a/u/role", method = RequestMethod.POST)
+    public String insertRole(@RequestParam String roleName, @RequestParam String describe, @RequestParam String module, Model model) {
+
+    }
+
+    //角色编辑
+    @RequestMapping(value = "/a/u/role/{roleId}", method = RequestMethod.PUT)
+    public String updateRole(@PathVariable(value = "roleId") Long roleId, String roleName, String describe, String module, Model model) {
+
+    }
+
+    //角色删除
+    @RequestMapping(value = "/a/u/role", method = RequestMethod.DELETE)
+    public String updateRole(@RequestParam String Ids, Model model) {
+    }
+
+}

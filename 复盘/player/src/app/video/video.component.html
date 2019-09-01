@@ -10,7 +10,7 @@
   </div>
   <div class="content">
     <Tabs [useOnPan]="true" [swipeable]="true" [activeTab]="index" [page]="4" [tabBarActiveTextColor]="'#1890ff'"
-      (onChange)="onChange($event)" (onTabClick)="onTabClick($event)">
+      (onTabClick)="onTabClick($event)">
       <TabPane [title]="'推荐页'">
         <ng-template #titleTemplate>
           <Badge>

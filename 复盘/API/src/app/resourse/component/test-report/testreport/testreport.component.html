@@ -1,0 +1,39 @@
+<div class="example">
+    <div class="container">
+      <div class="example-r">
+        <div class="example-r-content">
+           <h2 class="example-r-tit">{{test.name}}</h2>
+          <div>
+            <img src="assets/img/example-content.png" alt="">
+          </div>
+        </div>
+  
+        <div  class="example-r-content  example-ul" style="border-radius: 5px">
+          <ul style="padding: 0">
+            <li *ngFor="let item of reportLi" (click)="getReportLi(item.id)">
+              <div class="example-li-l">
+                <img  src="{{item.img}}" alt="">
+              </div>
+              <div class="example-li-r">
+                <div class="example-li-r-txt">
+                  <p class="example-li-r-tit">{{item.name}}</p>
+                  <p class="example-li-r-content">{{item.info}}</p>
+                </div>
+                <div class="example-li-len">
+                  <p style="line-height: 1;display: inline-block;  font-size: 24px;text-align: center">
+                    {{item.itemLength}} <br>
+                    <span style="font-size: 14px;display: inline-block;margin-left: -5px">
+                     项目
+                   </span>
+                  </p>
+  
+                </div>
+  
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,101 @@
+<div class="add">
+  <div class="add-header">
+    <h3>视频新增/编辑</h3>
+  </div>
+  <div class="add-content">
+    <nz-form-item nzType="flex" nzJustify="center">
+      <nz-form-label [nzSpan]="2" nzFor="title"> <span style="color:red;">*</span> 标题</nz-form-label>
+      <nz-form-control [nzSpan]="7">
+        <input nz-input [(ngModel)]="title" name="title" type="text" id="title" [disabled]="hide">
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nzType="flex" nzJustify="center">
+      <nz-form-label [nzSpan]="2" nzFor="subject"><span style="color:red;">*</span> 学科</nz-form-label>
+      <nz-form-control [nzSpan]="7">
+        <nz-select name="subject" style="width: 100%;" [(ngModel)]="subjectName" [disabled]="hide">
+          <nz-option *ngFor="let s of subjectData" [nzValue]="s" [nzLabel]="s"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nzType="flex" nzJustify="center">
+      <nz-form-label [nzSpan]="2" nzFor="class"><span style="color:red;">*</span> 年级</nz-form-label>
+      <nz-form-control [nzSpan]="7">
+        <nz-select name="class" style="width: 100%;" [(ngModel)]="gradeId" [disabled]="hide">
+          <nz-option *ngFor="let s of classData" [nzValue]="s" [nzLabel]="s"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nzType="flex" nzJustify="center">
+      <nz-form-label [nzSpan]="2" nzFor="title"> 作者</nz-form-label>
+      <nz-form-control [nzSpan]="7">
+        <input nz-input name="title" type="text" id="title" [(ngModel)]="author" [disabled]="hide">
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nzType="flex" nzJustify="center">
+      <nz-form-label [nzSpan]="2"><span style="color:red;">*</span> 出处</nz-form-label>
+      <nz-form-control [nzSpan]="7">
+        <nz-radio-group [(ngModel)]="radioValue" [disabled]="hide">
+          <label nz-radio nzValue="A">原创</label>
+          <label nz-radio nzValue="M">
+            转载:
+            <input type="text" nz-input style="width: 150px; margin-left: 10px;" [(ngModel)]="source" placeholder="http" />
+          </label>
+        </nz-radio-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nzType="flex" nzJustify="center">
+      <nz-form-label [nzSpan]="2" nzFor=""><span style="color:red;">*</span> 封面</nz-form-label>
+      <nz-form-control [nzSpan]="7">
+        <nz-upload class="avatar-uploader" nzAction="mail/a/u/file/videoImage" nzName="file"
+          nzListType="picture-card" nzAccept="file"
+          [nzShowUploadList]="false" [nzBeforeUpload]="beforeUpload"
+          (nzChange)="handleChange($event)">
+          <ng-container *ngIf="!picture">
+            <i class="upload-icon" nz-icon [nzType]="loading ? 'loading' : 'plus'"></i>
+            <div class="ant-upload-text">Upload</div>
+          </ng-container>
+          <img *ngIf="picture" [src]="picture" class="avatar" />
+        </nz-upload>
+        <nz-table nzBordered [nzData]="userList" [nzFrontPagination]="false" [nzShowPagination]="false">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Address</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngIf="imgName">
+              <td>{{ imgName }}</td>
+              <td>{{ imgSize|number:'1.0-3' }} <span>m</span> </td>
+              <td>{{ imgStatus }}</td>
+            </tr>
+          </tbody>
+        </nz-table>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nzType="flex" nzJustify="center" style="height:350px;">
+      <nz-form-label [nzSpan]="2"><span style="color:red;">*</span> 视频</nz-form-label>
+      <nz-form-control [nzSpan]="7">
+        <nz-upload nzAction="mail/a/u/file/video" nzListType=""
+          [nzBeforeUpload]="beforeFileUpload" (nzChange)="fileChange($event)" nzName="file">
+          <button *ngIf="fileUrl==false" nz-button><i nz-icon nzType="upload"></i><span>Click to Upload</span></button>
+        </nz-upload>
+        <video *ngIf="fileUrl!==false&&fileUrl!==true" width="320" height="240" controls>
+          <source [src]="fileUrl" type="video/mp4">
+        </video>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nzType="flex" nzJustify="end">
+      <nz-form-control [nzSpan]="3">
+        <button nz-button nzType="primary" nzSize="large" (click)="cancel()">取消</button>
+      </nz-form-control>
+      <nz-form-control [nzSpan]="3">
+        <button nz-button nzType="primary" nzSize="large" (click)="save()">点击保存</button>
+      </nz-form-control>
+      <nz-form-control [nzSpan]="3">
+        <button nz-button nzType="primary" nzSize="large" (click)="outline()">存为草稿</button>
+      </nz-form-control>
+    </nz-form-item>
+  </div>
+</div>

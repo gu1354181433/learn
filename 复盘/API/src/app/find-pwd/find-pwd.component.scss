@@ -1,0 +1,23 @@
+.loginInput{
+  width: 380px;
+  padding-left: 0;
+  font-size: 14px;
+}
+
+.loginInput:focus {
+  border-color: #40a9ff;
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0) !important;
+  border-right-width: 1px !important;
+}
+.login-form-button{
+  width: 100%;
+  line-height: 50px;
+  height: 50px;
+  //color: #2666f8;
+  border-radius: 5px;
+}
+.voteBtn:disabled{
+  color: rgba(0, 0, 0, 0.65) !important;
+  cursor: not-allowed  !important;
+}

@@ -1,0 +1,109 @@
+.scientific-bar{
+    max-width: 1160px;
+    margin: 50px auto 0 auto;
+    padding: 30px 0;
+    border-radius:4px;
+    box-shadow: 0px 2.598px 13px 2.598px 
+}
+.scientific-bar .bar1{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 65px;
+    font-size: 18px;
+    color: #949698;
+    cursor: pointer;
+}
+.scientific-bar .bar2{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 65px;
+    font-size: 18px;
+    color: #949698;
+    border-left:1px solid #949698;
+    cursor: pointer;
+}
+.scientific-content {
+    text-align: center;
+    margin-bottom: 200px;
+}
+.scientific-content .circular{
+    display: inline-block;
+    vertical-align: middle;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+}
+.blue{
+    color: #2666f8 !important;
+}
+.scientific-content .head{
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    border-bottom: 1px solid #949698;
+}
+.scientific-content .cont{
+    width: 240px;
+    text-align: left;
+    padding: 10px 20px 0 20px;
+}
+.scientific-content .r{
+    background: #dd8585;
+}
+.scientific-content .b{
+    background: #88c2d5;
+}
+.scientific-content .o{
+    background: #ddc88a;
+}
+.scientific-content .p{
+    background: #9191dd;
+}
+.scientific-content .text{
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 10px;
+    font-size: 14px;
+}
+.scientific-content .he1{
+    display: inline-block;
+    vertical-align: middle;
+    width: 275px;
+    height: 380px;
+    background: #fffbfb;
+    border: 1px solid #949698;
+    margin: 20px 20px 0 0;
+}
+.scientific-content .he2{
+    display: inline-block;
+    vertical-align: middle;
+    width: 275px;
+    height: 380px;
+    background: #fbfeff;
+    border: 1px solid #949698;
+    margin: 20px 20px 0 0;
+}
+.scientific-content .he3    {
+    display: inline-block;
+    vertical-align: middle;
+    width: 275px;
+    height: 380px;
+    background: #fffefb;
+    border: 1px solid #949698;
+    margin: 20px 20px 0 0;
+}
+@media screen and (max-width: 1160px) {
+    .scientific-content .he4 {
+        margin: 20px 20px 0 0;
+    }
+}
+.scientific-content .he4    {
+    display: inline-block;
+    vertical-align: middle;
+    width: 275px;
+    height: 380px;
+    background: #fbfbff;
+    border: 1px solid #949698;
+    margin-top: 20px;
+}

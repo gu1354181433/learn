@@ -1,0 +1,126 @@
+<div class="example-detail-header">
+  <div class="container">
+    <h2>{{reportDet.name}}</h2>
+    <p>
+      {{reportDet.intro}}
+    </p>
+  </div>
+</div>
+<div class="container">
+
+  <div class="detail-result">
+    <h2 class="result-h">检测结果</h2>
+    <!--1,营养需求，低中高三个都渲染，根据数据渲染对应等级的颜色-->
+    <div style="padding:20px 0;margin: 0 10%;font-size: 16px;text-align: center;" *ngIf="reportDet.showType==30">
+      <div style="display: inline-block;background-color: #ff8338;padding: 4px 8px;color: #fff;margin-right: 1px" *ngIf="reportDet.resultNum < 1">{{reportDet.resultText}}
+      </div>
+      <!-- <div style="display: inline-block;background-color: #e4e4e4;padding: 4px 8px;margin-right: 1px">中</div>
+      <div style="display: inline-block;background-color: #e4e4e4;padding: 4px 8px;">高</div> -->
+      <!-- <div style="display: inline-block;background-color: #e4e4e4;padding: 4px 8px;margin-right: 1px">低</div> -->
+      <div style="display: inline-block;background-color: #ff8338;padding: 4px 8px;color: #fff;margin-right: 1px" *ngIf="reportDet.resultNum == 1">{{reportDet.resultText}}
+        </div>
+        <!-- <div style="display: inline-block;background-color: #e4e4e4;padding: 4px 8px;">高</div> -->
+        <!-- <div style="display: inline-block;background-color: #e4e4e4;padding: 4px 8px;margin-right: 1px">低</div>
+      <div style="display: inline-block;background-color: #e4e4e4;padding: 4px 8px;margin-right: 1px">中</div> -->
+      <div style="display: inline-block;background-color: #ff8338;padding: 4px 8px;color: #fff;" *ngIf="reportDet.resultNum > 1">{{reportDet.resultText}}
+        </div>
+    </div>
+    <!--2,罕见遗传病，携带未携带-->
+    <div class="result-content" *ngIf="reportDet.showType==10">
+      <h2>
+        {{reportDet.resultText}}
+      </h2>
+    </div>
+    <!--3,个人特质示例；高中低三个，根据数据只渲染一个-->
+    <div style="text-align: right;font-size: 16px; text-align: center;" *ngIf="reportDet.showType==40">
+      <div style="display: inline-block;background-color: #ff3636;padding: 4px 8px;color: #fff;" *ngIf="reportDet.resultNum < 1">{{reportDet.resultText}}
+      </div>
+      <div style="display: inline-block;background-color: #ff8338;padding: 4px 8px;color: #fff;" *ngIf="reportDet.resultNum == 1">{{reportDet.resultText}}
+      </div>
+      <div style="display: inline-block;background-color: #6ad54d;padding: 4px 8px;color: #fff;" *ngIf="reportDet.resultNum > 1">{{reportDet.resultText}}
+      </div>
+    </div>
+    <!--4,药物代谢，文字展示-->
+    <div class="result-content" *ngIf="reportDet.showType==50">
+      <h2>
+        您的药物代谢能力较低
+      </h2>
+    </div>
+    <!--5,健康风险条形图-->
+    <div style="width: 400px;margin: 20px auto;" *ngIf="reportDet.showType==20">
+        <div style="width:90%;margin:10px 0;display: inline-block;vertical-align: middle" [style.paddingLeft]="paddingleft">
+            <img src="../../../../assets/images/report-people-icon.png">
+        </div>
+        <div style="width:10%;display: inline-block;vertical-align: bottom">{{reportDet.resultNum}}</div>
+        <div style="width: 90%;background:linear-gradient(to right,#88d45a,#f08f41,#e95a5a);height: 20px;border-radius: 10px;"></div>
+        <div style="width: 30%;display: inline-block;vertical-align: middle;padding: 10px;color: #e95a5a;">{{reportDet.min}}</div>
+        <div style="width: 30%;text-align: center;display: inline-block;vertical-align: middle;padding: 10px;color: #f08f41;">{{(reportDet.max+reportDet.min)/2}}</div>
+        <div style="width: 30%;text-align: right;display: inline-block;vertical-align: middle;padding: 10px;color: #e95a5a;">{{reportDet.max}}</div> 
+        <div>您的终生患病风险:{{reportDet.resultNum*reportDet.probability}}%</div>
+        <div>您的患病风险为中国人平均值的:{{reportDet.resultNum}}</div>
+        <div>中国人终生患病风险:{{reportDet.probability}}%</div>
+      </div>
+  </div>
+
+  <div class="detail-result result-fix">
+    <h2 class="result-h">位点信息</h2>
+    <div class="site-head">
+      <div>基因位点</div>
+      <div>所属基因</div>
+      <div>基因型</div>
+      <div>基因解读</div>
+    </div>
+    <div class="site-content" *ngFor="let item of testli">
+      <div>{{item.name}}</div>
+      <div>{{item.gene}}</div>
+      <div>{{item.type}}</div>
+      <div>{{item.expound}}</div>
+    </div>
+  </div>
+
+  <div class="detail-result result-fix">
+    <div *ngFor="let item of custom">
+      <h2 class="result-h">{{item.name}}</h2>
+      <div *ngFor="let li of item.content">
+        <div *ngIf="li.type == 1">{{li.value}}</div>
+        <div *ngIf="li.type == 2" style="text-align: center" >
+          <div *ngFor="let img of li.imgList">
+              <img src="{{img.url}}" alt="" style="width:100%;max-width: 400px;">
+          </div>
+        </div>
+       
+
+      </div>
+    </div>
+  </div>
+  <!--介绍页-->
+  <!-- <div class="detail-result" style="color: #020816;">
+    <div style="padding: 10px;">
+      <div class="tit">顺唐生物</div>
+      <div class="images">
+        <img  src="../../../../assets/images/introduce.png">
+      </div>
+    </div>
+    <div style="background-color: #f4f4f4;padding: 10px;">
+      <div style="padding:130px 50px;display: inline-block;vertical-align: middle;">
+        <div style="font-size: 36px;font-weight: 600;">为什么</div>
+        <div style="font-size: 36px;font-weight: 600;">要做基因检测</div>
+        <div style="font-size: 16px;font-weight: 600;">Why&nbsp;do&nbsp;genetic&nbsp;testing?</div>
+      </div>
+      <img style="max-width: 240px;" src="../../../../assets/images/tit-ba-img.png">
+      <div style="padding: 30px;display: inline-block;vertical-align: middle;max-width: 370px;">
+        <div style="margin-bottom: 10px;">当您的体检报告显示极低密度脂蛋白偏高，您知道意味着什么吗？或许因为近年来全素饮食风靡全球，很多 人知道极低密度脂蛋白（LDL）升高，意味着患心脏病的风险增加了。于是，通常建议这一指标升高的人，食用 更多的蔬菜水果，减少油脂、胆固醇的摄入。但是有一类人群却携带基因突变导致果糖不耐受，患有此症的人身 体无法完全分解食物中的果糖，使得有毒代谢物聚集，尤其在肝脏中（易引发肝癌）</div>
+        <div>当您的体检报告显示极低密度脂蛋白偏高，您知道意味着什么吗？或许因为近年来全素饮食风靡全球，很多 人知道极低密度脂蛋白（LDL）升高，意味着患心脏病的风险增加了。于是，通常建议这一指标升高的人，食用 更多的蔬菜水果，减少油脂、胆固醇的摄入。但是有一类人群却携带基因突变导致果糖不耐受，患有此症的人身 体无法完全分解食物中的果糖，使得有毒代谢物聚集，尤其在肝脏中（易引发肝癌）</div>
+      </div>
+    </div>
+    <div style="padding: 10px;">
+      <div class="tit">
+        <img  src="../../../../assets/images/introduce.png">
+      </div>
+      <div class="images">www.stsw.com</div>
+    </div>
+  </div> -->
+  <!--封面-->
+  <!-- <div class="detail-result">
+    <div style="width: 800px;height: 500px;text-align: center;padding:20px;font-size:36px;color:#fff;margin:0 auto;background-image: url(assets/images/tit-ba-img.png)">123</div>
+  </div> -->

@@ -9,3 +9,20 @@ $(function(){
         );
 
 })
+function point(){
+    function kkk(x){
+        this.a = 37+x;
+      }
+      
+      var o = new kkk(2);
+      var k = new kkk(3)
+      console.log(o.a); // logs 37
+      
+      function C2(c){
+        this.b = c+37;
+        return c;
+      }
+      
+      var b = new C2(1);
+      console.log(b); // logs 38
+}

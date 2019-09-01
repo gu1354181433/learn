@@ -1,0 +1,126 @@
+<nz-layout class="layout">
+
+
+
+    <nz-header style="position:fixed; z-index: 19; width:100% ; height: 60px;top: 0px;background: #fff; font-size: 0;box-shadow:0 5px 10px -5px rgba(0,0,0,.1);">
+
+        <ul nz-menu [nzMode]="'horizontal'" class='container  header-ul' style="   border: none;line-height: 60px; background: #fff;outline: none;  text-align: right; padding: 0;position: relative;">
+            <li nz-menu-item style="position: absolute; left: 0;">
+                <img (click)="mainReload()" style="outline: none" src="../../logo.png" alt="">
+                <img (click)="mainReload()" style="outline: none" src="../../assets/images/logo.png" alt="">
+            </li>
+
+
+            <li nz-menu-item [routerLinkActive]='["ant-menu-item-selected"]' style="color: black;font-size: 16px ;outline: none" [routerLink]="['/home']">首页</li>
+            <li nz-menu-item [routerLinkActive]='["ant-menu-item-selected"]' style="color: black;font-size: 16px ;outline: none" [routerLink]="['/how']">如何检测 </li>
+            <li nz-menu-item [routerLinkActive]='["ant-menu-item-selected"]' [routerLink]="['/items']" style="color: black; font-size: 16px ;outline: none">检测项目</li>
+            <li nz-menu-item [routerLinkActive]='["ant-menu-item-selected"]' [routerLink]="['/example']" style="color: black; font-size: 16px;outline: none">报告示例</li>
+            <li nz-menu-item [routerLinkActive]='["ant-menu-item-selected"]' [routerLink]="['/shop']" style="color: black; font-size: 16px;outline: none">商品展示</li>
+            <li nz-menu-item (click)="sesstion()" [routerLinkActive]='["ant-menu-item-selected"]' style="color: black; font-size: 16px;outline: none" routerLink="/introduction">联系我们</li>
+            <li style="color: black; font-size: 16px;outline: none;text-align: left;display: inline-block;vertical-align: bottom;position: relative; top: 1px;">
+                <nz-input-group [nzSuffix]="suffixTemplate" style="width: 160px">
+                    <input id="searchInput" [(ngModel)]="searchVal" (keyup.enter)="keyUpSearch()" (focus)="inputIsClick=true" (blur)="inputIsClick=false" style="border-radius: 15px" nz-input placeholder="请输入内容">
+
+                </nz-input-group>
+
+              <span class="inline-block" style="margin-left: 40px" *ngIf="!hasLogin">
+                     <a routerLink="/login/1"  >登录</a>
+                <span style="padding:0 10px">|</span>
+                <a routerLink="/login/2"  >注册</a>
+              </span>
+                <span   *ngIf="hasLogin">
+                  <span class="inline-block  user-Btn" style=" position: relative; margin-left:40px" >
+
+
+                    <i  *ngIf="!userData['img']" nz-icon type="user"        style="font-size: 18px;background: #dcdcdc;color: #fff;border-radius: 50%;padding: 5px;" ></i>
+                    <img   *ngIf="userData['img']"  style="width: 28px;height: 28px;border-radius: 30px; object-fit: cover"    [src]="'http://jns.img.bucket.ks3-cn-beijing.ksyun.com/img/img/c7247a8f-adda-4edf-8c2c-8dfc2a415b8b.png'" alt="">
+                    <ul class="user-info">
+                      <li>{{userData['nick'] || '用户'}}</li>
+                      <li style="cursor: pointer" routerLink="/personal" >个人中心</li>
+                      <li style="cursor: pointer" (click)="loginOut()">退出</li>
+                    </ul>
+                  </span>
+                </span>
+            </li>
+        </ul>
+
+      <ng-template #suffixTemplate><i (click)="keyUpSearch()" style="font-size: 18px ; cursor: pointer" nz-icon nz-tooltip type="search"></i></ng-template>
+
+
+
+    </nz-header>
+
+    <div class="right-bar">
+        <div class="t" [routerLink]="['/scientific']">
+            <div class="images"></div>
+            <div class="title">科研入口</div>
+        </div>
+        <div class="c">
+            <div class="images"></div>
+            <div class="postion">
+                <img _ngcontent-c1="" alt="" src="../assets/images/001.png" style="width: 100%">
+                <div class="triangle"></div>
+                <div style="margin-top: 4px;">扫一扫</div>
+                <div>关注公众号</div>
+            </div>
+            <div class="title">联系我们</div>
+        </div>
+        <div class="b">
+            <div class="images"></div>
+            <div class="postion">shuntangkeji@sina.com</div>
+            <div class="triangle"></div>
+            <div class="title">邮箱</div>
+        </div>
+    </div>
+    <div style="padding-top: 60px">
+        <router-outlet></router-outlet>
+    </div>
+
+
+    <nz-footer style="text-align: center;">
+        <div class="footer-center">
+            <div nz-row nzType="flex" nzJustify="space-between">
+                <div class="footer-left" nz-col nzSpan="6">
+                    <div><span style="padding-right: 20px;padding-bottom: 30px">联系我们</span><span></span></div>
+                    <div><span style="padding-right: 20px;">联系电话</span><span>(010)5947863</span></div>
+                    <div><span style="padding-right: 20px;">邮箱支持</span><span>fuhua@ptteng.com</span></div>
+                    <div><span style="padding-right: 28px;">地</span><span style="padding-right: 20px;">址</span><span>北京市亦庄经济技术开发区科创</span></div>
+                    <div><span style="padding-right: 20px;width: 76px"></span><span>十二街鸿坤云时代B2座B303室</span></div>
+                </div>
+                <div class="footer-centre" nz-col nzSpan="12">
+                    <ul>
+                        <li style="padding-bottom: 30px"><span>关于产品</span></li>
+                        <li><a>商品展示</a></li>
+                        <li><a>服务流程</a></li>
+                        <li><a>报告示例</a></li>
+                        <li><a>报告示例</a></li>
+                    </ul>
+                    <ul>
+                        <li style="padding-bottom: 30px"><span>关于我们</span></li>
+                        <li><a>新闻动态</a></li>
+                        <li><a>关于我们</a></li>
+                        <li><a>加入我们</a></li>
+                        <li><a>联系我们</a></li>
+                    </ul>
+                    <ul>
+                        <li style="padding-bottom: 30px"><span>联系我们</span></li>
+                        <li><a>登陆</a></li>
+                        <li><a>注册</a></li>
+                        <li><a>个人中心</a></li>
+                        <li><a>用户故事</a></li>
+                    </ul>
+                </div>
+
+
+
+                <div class="footer-right" nz-col nzSpan="6">
+                    <img style="width: 100%" src="../assets/images/001.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="footer-footer"><span>京ICP备05028362号码</span> | <span>京ICP备05028362号码</span></div>
+
+
+
+    </nz-footer>
+</nz-layout>

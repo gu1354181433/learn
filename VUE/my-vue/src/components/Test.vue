@@ -1,7 +1,7 @@
 <template>
     <div class="test">
     <!--  获取数据  -->
-        <h1>Test{{title}}</h1>
+        <h1>{{title}}</h1>
         <p>{{user.firstName}}</p>
         <p v-text="user.lestName" ></p>
         <!-- v-If -->

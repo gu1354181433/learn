@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>进度条</title>
+    <style>
+    #wrapper{
+    position: relative;
+    width:200px;
+    height:100px;
+    border:1px solid darkgray;
+    }
+    #progressbar{
+        position: absolute;
+        top:50%;
+        left:50%;
+        margin-left:-90px;
+        margin-top:-10px;
+        width:180px;
+        height:20px;
+        border:1px solid darkgray;
+
+    }
+    /*在进度条元素上调用动画*/
+    #fill{
+        animation: move 3s;
+        text-align: center;
+        background-color: #6caf00;
+        height: 20px;
+    }
+    /*实现元素宽度的过渡动画效果*/
+    @keyframes move {
+        0%{
+            width:0;
+
+        }
+        100%{
+            width:100%;
+        }
+    }
+    </style>
+    <script>
+    var progressbar={
+    init:function(){
+        var fill=document.getElementById('fill');
+        var count=0;
+    //通过间隔定时器实现百分比文字效果,通过计算CSS动画持续时间进行间隔设置
+        var timer=setInterval(function(e){
+            count++;
+            fill.innerHTML=count+'%';
+            if(count===100) clearInterval(timer);
+            },30);
+        }
+    };
+
+    </script>
+</head>
+<body onload="progressbar.init()">
+   <!--外层容器-->
+<div id="wrapper">
+    <!--进度条容器-->
+    <div id="progressbar">
+        <!--用来模仿进度条推进效果的进度条元素-->
+        <div id="fill"></div>
+    </div>
+</div> 
+
+</body>
+</html>

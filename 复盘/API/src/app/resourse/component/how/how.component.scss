@@ -1,0 +1,92 @@
+.how-bg{
+  position: relative;
+ max-width: 1920px;
+  overflow: hidden;
+  height: 1020px;
+  .how-title{
+    position: absolute;
+    z-index: 10;
+    top: 710px;
+    font-size: 32px;
+    line-height: 1;
+    color: #fff;
+    .how-p{
+      font-size: 14px;
+    }
+  }
+}
+.how-img{
+  width: 1920px;
+  height: 1020px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -960px;
+}
+
+
+.item-title{
+  text-align: center;
+  font-size: 32px;
+  line-height: 90px;
+  font-weight: bold;
+  color: black;
+}
+
+
+.how-container{
+  max-width: 1920px;
+  width: 100%;
+  background: #fff;
+
+  ul{
+    padding: 0;
+    margin-top: -20px;
+    li{
+      list-style: none;
+      font-size: 0;
+      margin: 20px 0;
+      line-height: 1000px;
+
+      .how-list-l{
+        background: #fff;
+        width: 37.5%;
+        display: inline-block;
+        text-align: center;
+      }
+      .how-list-r{
+        text-align: left;
+        background: #eae8e2;
+        padding:0 5%;
+        width: 62.5%;
+        vertical-align: top;
+        display: inline-block;
+
+        .how-list-r-p{
+          font-size:20px ;
+          line-height: 1;
+          color: #666;
+        }
+      }
+
+    }
+  }
+}
+.how-report{
+  background: #fff;
+  text-align: center;
+  padding: 40px 0;
+  p{
+    text-align: center;
+    color: #666;
+    font-size: 20px;
+    margin: 0;
+
+  };
+  button{
+    margin: 50px 0;
+    font-size: 20px;
+    padding: 0 30px;
+    line-height: 1 !important;
+  }
+}

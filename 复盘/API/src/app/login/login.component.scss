@@ -1,0 +1,82 @@
+
+
+    [nz-carousel-content] {
+      text-align: center;
+      height: 1560px;
+      line-height: 160px;
+      background: #364d79;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    h3 {
+      color: #fff;
+    }
+
+    .loginInput{
+      width: 380px;
+      padding-left: 0;
+      font-size: 14px;
+    }
+
+    .loginInput:focus {
+      border-color: #40a9ff;
+      outline: 0;
+      box-shadow: 0 0 0 2px rgba(24, 144, 255, 0) !important;
+      border-right-width: 1px !important;
+    }
+
+
+    .login-tabBtn {
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 0px;
+      color: black;
+    }
+    .login-btn >  .ant-radio-button-wrapper-checked{
+      color: black;
+      border-bottom:  2px solid #2666f8 !important;
+
+    }
+
+    .ant-radio-button-wrapper:not(:first-child)::before{
+      display: none;
+    }
+
+
+    .login-form-button{
+      width: 100%;
+      line-height: 50px;
+      height: 50px;
+      //color: #2666f8;
+      border-radius: 5px;
+    }
+
+    .voteBtn:disabled{
+      color: rgba(0, 0, 0, 0.65) !important;
+      cursor: not-allowed  !important;
+    }
+
+
+
+    .tplContent-wrap{
+      font-size: 14px;
+      color: #30353f;
+      margin-bottom: 10px;
+
+    }
+
+    .tplContent-wrap p{
+      margin-bottom: 10px;
+      font-weight: bold;
+
+    }
+    .tplFooter{
+      line-height: 50px;
+      text-align: center;
+
+    }
+    .tplFooter button{
+      width: 160px;
+
+    }

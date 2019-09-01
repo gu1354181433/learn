@@ -1,0 +1,11 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .welcome {
+        font-family: 'Microsoft Tai Le Bold', 'Microsoft Tai Le Regular', 'Microsoft Tai Le';
+        font-weight: 700;
+        font-size: 26px;
+        color: #666666;
+    }
+}

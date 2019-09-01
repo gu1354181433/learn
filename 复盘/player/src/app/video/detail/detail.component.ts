@@ -1,4 +1,4 @@
-import { Component, OnInit,DoCheck } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { HttpService } from "../../http/http.service";
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ModalService } from 'ng-zorro-antd-mobile';
@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders, HttpRequest, HttpParams } from "@angular/commo
   templateUrl: './detail.component.html',
   styleUrls  : ['./detail.component.scss']
 })
-export class DetailComponent implements OnInit, DoCheck{
+export class DetailComponent implements OnInit, DoCheck {
 
   id          : any;
   time        : any;
@@ -26,15 +26,15 @@ export class DetailComponent implements OnInit, DoCheck{
   dataList   : any;
   img        : any = "../../../assets/1441938430568.jpg";
   commentList: any = [];
-  reload     : any= false;
+  reload     : any = false;
   commentWord: any;
   addParams  : any;
   parentId   : any;
   constructor(private router: Router, private http: HttpService, private route: ActivatedRoute, private _modal: ModalService) { }
 
   ngOnInit() {
-                                                                                        this.id = +this.route.snapshot.params.id;
-                                                                                  const headers = new HttpHeaders().set("id", this.id);
+          this.id = +this.route.snapshot.params.id;
+    const headers = new HttpHeaders().set("id", this.id);
     this.http.videoDetail(this.id, headers).subscribe(
       (data: any) => {
         this.data  = data.data;
@@ -193,31 +193,31 @@ export class DetailComponent implements OnInit, DoCheck{
       )
     }
   }
-//   ngDoCheck():void{
-//     if(this.id! = +this.route.snapshot.params.id){
-//       window.location.reload();
-//     }
+  //   ngDoCheck():void{
+  //     if(this.id! = +this.route.snapshot.params.id){
+  //       window.location.reload();
+  //     }
 
-// }
-ngDoCheck(): void {
-  if(this.reload){
-    window.location.reload();
+  // }
+  ngDoCheck(): void {
+    if (this.reload) {
+      window.location.reload();
+    }
   }
-}
 
   detail(id: any) {
     this.router.navigate(['/detail', id])
     //同路由切换时id改变不会刷新，数据也没有变化，所以可以先改变id，再利用数据监测刷新页面
     this.reload = true;
   }
-  push(){
-    if(this.commentList.length==0){
+  push() {
+    if (this.commentList.length == 0) {
       this.parentId = 0
     }
-    else{
+    else {
       this.parentId = this.commentList[this.commentList.length - 1]
     }
-    this.addParams={
+    this.addParams = {
       content : this.commentWord,
       classify: 2,
       parentId: this.parentId,

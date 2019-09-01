@@ -89,7 +89,9 @@ function stopBtn(){
 }
   
 
-
+function demo(){
+    console.log(this)
+}
 
 
 

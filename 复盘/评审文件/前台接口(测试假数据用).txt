@@ -1,0 +1,181 @@
+
+
+   //用户搜索
+    @RequestMapping(value = "/a/u/student", method = RequestMethod.GET)
+    public String stuSearch(@RequestParam String studentName, Model model) {
+      
+    }
+
+    //banner展示
+    @RequestMapping(value = "/a/u/banner/list", method = RequestMethod.GET)
+    public String bannerList(@RequestParam Integer classify, Model model) {
+    
+    }
+
+    //学科展示
+    @RequestMapping(value = "/a/u/subject/list", method = RequestMethod.GET)
+    public String subjectList(Model model) {
+  
+
+    }
+
+    //文章列表展示
+    @RequestMapping(value = "/a/u/article/list", method = RequestMethod.GET)
+    public String articleList(Long subjectId, Integer filtrate, Long gradeId, String articleName, Model model) {
+   
+    }
+
+    //文章详情
+    @RequestMapping(value = "/a/u/article/{articleId}", method = RequestMethod.GET)
+    public String articleContent(@PathVariable(value = "articleId") Long articleId, Model model) {
+     
+
+    }
+
+    //视频列表展示
+    @RequestMapping(value = "/a/u/video/list", method = RequestMethod.GET)
+    public String videoList(Long subjectId, Integer filtrate, Long gradeId, String videoName, Model model) {
+     
+    }
+
+    //视频内容
+    @RequestMapping(value = "/a/u/video/{videoId}", method = RequestMethod.GET)
+    public String videoContent(@PathVariable(value = "videoId") Long videoId, Model model) {
+   
+    }
+
+    //我的
+    @RequestMapping(value = "/a/u", method = RequestMethod.GET)
+    public String my(Model model) {
+ 
+    }
+
+    @RequestMapping(value = "/a/u/vip", method = RequestMethod.GET)
+    public String vip(Model model) {
+  
+    }
+
+    @RequestMapping(value = "/a/u/information", method = RequestMethod.GET)
+    public String info(Model model) {
+    
+    }
+
+    //修改个人信息
+    @RequestMapping(value = "/a/u/information/{id}", method = RequestMethod.PUT)
+    public String updateInfo(@PathVariable(value = "id")Long id, String picture, String studentName, Integer sex, Integer gradeId, Long birthday, Model model) {
+        
+    }
+
+    //签到记录
+    @RequestMapping(value = "/a/u/sign", method = RequestMethod.GET)
+    public String signRecord(Model model) {
+  
+    }
+
+    //用户签到
+    @RequestMapping(value = "/a/u/sign", method = RequestMethod.POST)
+    public String goSign(Model model, @RequestParam Long currentSign) {
+    }
+
+    //编辑收藏(收藏和取消收藏)
+    @RequestMapping(value = "/a/u/collection/{worksId}", method = RequestMethod.PUT)
+    public String editCollec(@PathVariable(value = "worksId") Long worksId, @RequestParam Integer classify, @RequestParam Integer collectionState, Model model) {
+        
+    }
+
+    //查看收藏(只有我的收藏)
+    @RequestMapping(value = "/a/u/collection", method = RequestMethod.GET)
+    public String getColl(Model model, @RequestParam Integer classify) {
+     
+    }
+
+    //增加评论
+    @RequestMapping(value = "/a/u/comment", method = RequestMethod.POST)
+    public String postComment(@RequestParam String content, @RequestParam Long parentId, @RequestParam Integer classify, @RequestParam Long worksId, Model model) {
+
+    }
+
+    //删除评论
+    @RequestMapping(value = "/a/u/comment/{commentId}", method = RequestMethod.DELETE)
+    public String deleteComm(Model model, @PathVariable(value = "commentId") String Ids) {
+    }
+
+    //获取评论
+    @RequestMapping(value = "/a/u/comment", method = RequestMethod.GET)
+    public String getComm(@RequestParam Integer classify, @RequestParam Integer filtrateComment, @RequestParam Long worksId, Model model) {
+     
+    }
+
+    //评论详情
+    @RequestMapping(value = "/a/u/comment/{commentId}", method = RequestMethod.GET)
+    public String CommentDetail(@PathVariable(value = "commentId") Long commentId, Model model) {
+   
+    }
+
+    //修改评论(问题)
+    @RequestMapping(value = "/a/u/comment/{commentId}", method = RequestMethod.PUT)
+    public String updateComm(@PathVariable(value = "commentId") Long commentId, @RequestParam String content,Model model) {
+
+    }
+
+    //点赞
+    @RequestMapping(value = " /a/u/like/{worksId}", method = RequestMethod.PUT)
+    public String like(@RequestParam Integer classify, @RequestParam Integer likeState, @PathVariable(value = "worksId") Long worksId, Model model) {
+    }
+
+    //查看浏览记录(问题)
+    @RequestMapping(value = " /a/u/history/list", method = RequestMethod.GET)
+    public String history(@RequestParam Long date, Model model) {
+   
+    }
+
+    //清除浏览记录
+    @RequestMapping(value = " /a/u/history", method = RequestMethod.DELETE)
+    public String deleteHistory(@RequestParam String Ids, Model model) {
+        
+    }
+
+    //我的订单
+    @RequestMapping(value = " /a/u/order/list", method = RequestMethod.GET)
+    public String myOrder(Model model, @RequestParam Long id, Integer orderState) {
+     
+    }
+
+    //删除订单
+    @RequestMapping(value = " /a/u/order", method = RequestMethod.DELETE)
+    public String delteOrd(@RequestParam String Ids, Model model) {
+        
+        return "deleOrd";
+    }
+
+    //取消订单
+    @RequestMapping(value = " /a/u/order/{Ids}", method = RequestMethod.PUT)
+    public String cancelOrd(@PathVariable(value = "Ids") String Ids, Model model) {
+        
+        return "cancelOrd";
+    }
+
+    //订单详情
+    @RequestMapping(value = " /a/u/order/{orderId}", method = RequestMethod.GET)
+    public String orderDetail(@PathVariable(value = "orderId") Long orderId, Model model) {
+      
+    }
+
+    //系统通知展示
+    @RequestMapping(value = " /a/u/notification/list", method = RequestMethod.GET)
+    public String notification(@RequestParam Integer notificationState, Model model) {
+     
+    }
+
+    //系统通知详情
+    @RequestMapping(value = " /a/u/notification/{notificationId}", method = RequestMethod.GET)
+    public String notificationDetail(@PathVariable(value = "notificationId") Long notificationId, Model model) {
+      
+    }
+
+    //删除系统通知
+    @RequestMapping(value = " /a/u/notification/{notificationId}", method = RequestMethod.DELETE)
+    public String deletNotification(@PathVariable(value = "notificationId") Long notificationId, Model model) {
+        
+    }
+}

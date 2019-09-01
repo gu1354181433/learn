@@ -25,7 +25,9 @@ export class LanguageComponent implements OnInit {
   value1: any  = [];
   vaule2: any  = [];
   params: any  = {
-    subjectId: 1
+    subjectId: 1,
+    gradeId  : 0,
+    filtrate : 1
   };
   num     : any = 666;
   hitColor: any = false;
@@ -42,7 +44,7 @@ export class LanguageComponent implements OnInit {
   ngOnInit() {
     this.http.videoList(this.params).subscribe(
       (data: any) => {
-        this.data = data.data.data;
+        this.data = data.data;
         console.log(this.data);
 
       }
@@ -84,8 +86,8 @@ export class LanguageComponent implements OnInit {
     console.log(this.name2)
   }
   getResult(result) {
-                this.value = [];
-            let temp: any  = '';
+                        this.value = [];
+                    let temp: any  = '';
     result.forEach(item => {
       this.value.push(item.label || item);
       temp += item.label || item;

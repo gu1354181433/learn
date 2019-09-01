@@ -1,0 +1,114 @@
+<nz-header style="background: #fff;border-top: 1px solid #e1e1e1">
+
+    <ul nz-menu [nzMode]="'horizontal'" class='container  sheader-ul' style="   border: none;line-height: 60px; background: #fff;outline: none;  text-align: left; padding: 0;position: relative;">
+        <li *ngFor=" let item of itemList  index as i" (click)="changeTab(item,i)" nz-menu-item [routerLinkActive]='["ant-menu-item-selected"]' style="color: black;font-size: 16px ;outline: none;position: relative;">
+            {{item.name}}({{item.itemLength}})
+
+            <span class="sheader-li-select" *ngIf="item.isSelect"></span>
+        </li>
+    </ul>
+</nz-header>
+
+
+<div class="shopList" *ngIf="itemList[0]['isSelect'] ">
+    <div class="container">
+        <div *ngIf="!listData || listData.length==0 " style="padding:  50px 0 ">
+            <nz-empty></nz-empty>
+        </div>
+        <ul>
+            <li *ngFor="let item of listData " [routerLink]="['/shop/detail/'+item.id]">
+                <div class="li-item">
+                    <img style="object-fit: contain; height: 140px" [src]="item.img" alt="">
+                    <h2>{{item.name}}</h2>
+                </div>
+                <div class="li-item-content">
+                    <h2>{{item.name}}</h2>
+                    <p> {{item.info}}</p>
+                    <div class="item-price"><span>¥</span>{{item.price}}</div>
+                    <div>
+                        <img style="cursor: pointer" src="assets/img/buy.png" alt="" (click)="goWhere($event)">
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+
+        <div style="text-align: right;margin-right: 20px;margin-top: 20px" *ngIf="itemList[0]['itemLength']!=0">
+            <nz-pagination (nzPageIndexChange)="changePage($event,1)" [nzPageIndex]="searhParams.page" [nzTotal]="total" [nzPageSize]="size"></nz-pagination>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="news" *ngIf="itemList[1]['isSelect'] ">
+    <div class="container">
+        <div *ngIf="itemList[1]['itemLength']==0" style="padding:  50px 0 ">
+            <nz-empty></nz-empty>
+        </div>
+
+        <ul>
+            <li class="news-li" *ngFor=" let item of newsList;" (click)="jump(item.id)" style="cursor: pointer">
+                <div class="news-li-l">
+                    <img src="assets/img/About_us_two.png" alt="">
+                </div>
+
+                <div class="news-li-r">
+                    <p class="news-li-r-tit">
+                        {{item.title}}
+                    </p>
+                    <p class="news-li-r-main">
+                        {{item.summary}}
+                    </p>
+
+                    <p class="news-li-r-time">
+                        {{item.updateAt | date:'yyyy-MM-dd HH:mm:ss'}}
+                    </p>
+                </div>
+            </li>
+        </ul>
+
+
+        <div style="text-align: right;margin-right: 20px;margin-top: 20px" *ngIf="itemList[1]['itemLength']!=0">
+            <nz-pagination (nzPageIndexChange)="changePage($event,2)" [nzPageIndex]="searhParams.page" [nzTotal]="total" [nzPageSize]="size"></nz-pagination>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+<div class="news" *ngIf="itemList[2]['isSelect'] ">
+    <div class="container">
+        <div *ngIf="itemList[2]['itemLength']==0" style="padding:  50px 0 ">
+            <nz-empty></nz-empty>
+        </div>
+
+        <ul>
+            <li class="news-li" *ngFor=" let item of actityList;">
+                <div class="news-li-l">
+                    <img src="assets/img/About_us_two.png" alt="">
+                </div>
+
+                <div class="news-li-r">
+                    <p class="news-li-r-tit">
+                        {{item.title}}
+                    </p>
+                    <p class="news-li-r-main">
+                        {{item.summary}}
+                    </p>
+
+                    <p class="news-li-r-time">
+                        {{item.updateAt | date:'yyyy-MM-dd HH:mm:ss'}}
+                    </p>
+                </div>
+            </li>
+
+        </ul>
+        <div style="text-align: right;margin-right: 20px;margin-top: 20px" *ngIf="itemList[2]['itemLength']!=0">
+            <nz-pagination (nzPageIndexChange)="changePage($event,3)" [nzPageIndex]="searhParams.page" [nzTotal]="total" [nzPageSize]="size"></nz-pagination>
+        </div>
+    </div>
+</div>

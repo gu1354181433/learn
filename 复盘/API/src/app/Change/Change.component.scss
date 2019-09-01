@@ -1,0 +1,88 @@
+.home {
+    width: 700px;
+    margin: 95px auto 100px auto;
+    text-align: center;
+    background: #fff;
+    margin-bottom: 105px;
+}
+
+.code {
+    color: #2666f8;
+    font-size: 14px;
+}
+
+.phone {
+    padding-top: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    width: 50%;
+    margin: 0 auto;
+    text-align: left
+}
+
+.subm {
+    background: #2666f8;
+    padding: 5px 0;
+    width: 50%;
+    margin: 0 auto;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+
+input::placeholder {
+    color: #ccc;
+}
+
+.ipt1 {
+    width: 80%;
+    border: none;
+    outline: none;
+    margin-left: 2px
+}
+
+.test {
+    cursor: pointer;
+    width: 20%;
+    color: #2666f8
+}
+
+.no {
+    cursor: not-allowed;
+}
+
+.error {
+    width: 50%;
+    margin: 0 auto;
+    color: red;
+    text-align: left;
+}
+
+.three {
+    width: 50%;
+    margin: 0 auto;
+    color: red;
+    text-align: left;
+}
+
+@media screen and (max-width:800px) {
+    .home {
+        width: 80%;
+    }
+    .ipt1 {
+        width: 70%
+    }
+    .test {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .ipt1 {
+        width: 50%
+    }
+    .test {
+        width: 50%;
+    }
+}

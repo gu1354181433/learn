@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+
+.container{
+  max-width: 1200px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row{
+   margin-right: -15px;
+   margin-left: -15px;
+}
+.inline-block{
+    display: inline-block
+}
+
+.pull-right{
+    float: right;
+}
+
+li{
+  list-style: none;
+}
+ul{
+  padding: 0;
+}
+.ant-carousel .slick-dots li button {
+  height: 5px !important;
+}
+
+
+//注册
+.agreeModel  .ant-modal-header {
+      padding: 0;
+  border: none;
+}
+
+
+.agreeModel .ant-modal-body {
+  padding:35px 40px  ;
+  height: 455px;
+  overflow: auto;
+}
+
+
+.agreeModel  .ant-modal-footer{
+  border-radius: 0;
+}

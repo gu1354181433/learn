@@ -1,0 +1,241 @@
+//
+.main-header-text{
+    line-height: 60px;
+    display: inline-block
+}
+nz-footer {
+  width: 100%;
+  padding: 0;
+  background-color: #273239;
+  .footer-center {
+    width: 1200px;
+    padding: 40px 0 0 0;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 14px;
+    color: #fff;
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      div {
+        display: flex;
+        flex-direction: row;
+        span {
+          padding-bottom: 20px;
+        }
+      }
+    }
+    .footer-centre {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      li {
+        display: flex;
+        justify-content: start;
+        padding-bottom: 20px;
+        list-style-type:none;
+        a {
+          color: #fff;
+        }
+      }
+    }
+    .footer-right {
+      display: flex;
+      justify-content: flex-end;
+      img {
+        width: 90px!important;
+        height: 90px;
+      }
+    }
+  }
+  .footer-footer {
+    color: #fff;
+  }
+}
+
+
+
+.header-ul li {
+  border-bottom: 0px solid transparent !important;
+
+}
+
+.header-ul [nz-menu-item]:hover{
+  color: rgba(38, 102, 248,0.8) !important; ;
+}
+
+
+
+.header-ul  .ant-menu-item-selected{
+  color: rgb(38, 102, 248) !important;
+}
+//右侧悬浮窗
+.right-bar {
+  position: fixed;
+  top: 40%;
+  margin-top: -80px;
+  right: -10px;
+  z-index: 9999;
+  background:#fff;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: 0px 4px 8px 0px rgba(43, 43, 44, 0.09);
+}
+.right-bar .t {
+  padding: 10px 20px 5px 10px;
+  height: 60px;
+  border-top-left-radius: 10px;
+  cursor: pointer;
+  .title{
+    font-size: 12px;
+    text-align: center;
+  }
+  .images{
+    height:21px;
+    width: 21px;
+    margin: 0 auto 5px auto;
+    background-image: url(../../assets/images/scientific.png)
+  }
+}
+.right-bar .t:hover{
+  color: #fff;
+  background-color: #3978fa;
+  .images {
+    background-image: url(../../assets/images/scientific-fff.png)
+  }
+}
+.right-bar .c {
+  padding: 10px 20px 5px 10px;
+  height: 60px;
+  cursor: pointer;
+  outline: none;
+  .title{
+    font-size: 12px;
+    text-align: center;
+  }
+  .postion {
+    position: fixed;
+    right: 83px;
+    top: 37%;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    background-color: #3978fa;
+    border-radius: 4px;
+    display: none;
+  }
+  .triangle{
+    position: fixed;
+    right: 63px;
+    top: 37%;
+    border-width: 8px 10px 8px;
+    border-style: solid;
+    border-color: transparent  transparent transparent #3978fa;
+    margin: 10px 0;
+    display: none;
+  }
+  .images{
+    height:21px;
+    width: 21px;
+    margin: 0 auto 5px auto;
+    background-image: url(../../assets/images/introduction-icon.png)
+  }
+}
+.right-bar .c:hover{
+  color: #fff;
+  background-color: #3978fa;
+  .images{
+    background-image: url(../../assets/images/introduction-icon-fff.png)
+  }
+  .postion{
+    display: block;
+  }
+  .triangle{
+    display: block;
+  }
+}
+.right-bar .b {
+  padding: 10px 20px 10px 10px;
+  height: 60px;
+  border-bottom-left-radius: 10px;
+  cursor: pointer;
+  .title{
+    text-align: center;
+  }
+  .postion{
+    position: fixed;
+    right: 83px;
+    height: 59px;
+    top: 45.7%;
+    padding: 18px 20px;
+    text-align: center;
+    color: #fff;
+    background-color: #3978fa;
+    border-radius: 4px;
+    display: none;
+  }
+  .triangle{
+    position: fixed;
+    right: 63px;
+    top: 47.5%;
+    border-width: 8px 10px 8px;
+    border-style: solid;
+    border-color: transparent  transparent transparent #3978fa;
+    margin: 10px 0;
+    display: none;
+  }
+  .images{
+    height:15px;
+    width: 22px;
+    margin: 0 auto 5px auto;
+    background-image: url(../../assets/images/mailbox-icon.png)
+  }
+}
+.right-bar .b:hover{
+  color: #fff;
+  background-color: #3978fa;
+  .images {
+    background-image: url(../../assets/images/mailbox-icon-fff.png)
+  }
+  .postion{
+    display: block;
+  }
+  .triangle{
+    display: block;
+  }
+}
+
+
+.user-Btn{
+  transition: all .5s;
+}
+
+.user-Btn:hover .user-info{
+   display: block;
+}
+
+.user-info{
+  position: absolute;
+  display: none;
+  background: #fff;
+  width: 160px;
+  left: -60px;
+  margin-top: -1px;
+  text-align: center;
+  transition: all .5s;
+  box-shadow: 0px  5px 10px  rgba(0,0,0,.1);
+
+
+  li{
+    transition: all .5s;
+
+  }
+  li:hover{
+    background: #5074ed;
+    color: #fff;
+  }
+}
+
+//右侧悬浮窗
+

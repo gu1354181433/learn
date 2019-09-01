@@ -1,0 +1,19 @@
+<div *ngIf="data" class="head">
+    <span class="title">{{data.title}}</span>
+    <div class="time"> <span>{{data.author}}</span>
+        <span style="margin-left: 20px"> {{data.createAt | date: "yyyy-MM-dd"}}</span></div>
+    <div style="color: #000;font-size:7px;" *ngFor="let item of data.content as index">
+        <div *ngIf="item.value" style="margin: 10px 0 ;">
+            {{item.value}}
+        </div>
+        <div *ngIf="item.imgUrl.length !== 0 ">
+            <img class="detailImg" src="{{item.imgUrl[0].url}}" alt="">
+        </div>
+    </div>
+    <!-- <div style="margin: 20px 0 ;">
+        <img src="../../../assets/img/About_us_one.png" alt="">
+    </div>
+    <div style="color: #000;font-size:7px;">
+        第二段文字第二段文字第二段文字第二段文字第二段文字第二段文字 第二段文字第二段文字第二段文字第二段文字第二段文字第二段文字第二段文字 第二段文字第二段文字第二段文字第二段文字第二段文字第二段文字第二段文字 第二段文字第二段文字第二段文字第二段文字第二段文字第二段文字第二段文字 第二段文字第二段文字第二段文字第二段文字第二段文字第二段文字第二段文字
+    </div> -->
+</div>

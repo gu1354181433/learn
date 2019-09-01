@@ -1,0 +1,134 @@
+淘宝镜像    -g代表全局
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+全局安装 vue-cli			3.0 cli
+cnpm install -g vue-cli		cnpm  install -g @vue/cli
+
+创建一个基于"webpack"模板的新项目	// vue create vue3-demo
+vue init webpack my-project    //my-project自定义
+
+下载依赖				vue-cli-service build 打包vue3代码
+cnpm install
+
+运行 进行一个启动
+       npm run serve
+
+`命令行终端直接vue ui 图形化管理项目`
+--------------------------------------------------
+.env   环境变量	VUE_APP_URL=https://dev.api.com
+.env.development 	开发环境	VUE_APP_URL=https://dev.api1.com
+.env.production	生产环境	VUE_APP_URL=https://dev.api2.com
+
+<p>{{url}}</p>
+export default {
+  name: 'Index',
+  data () {
+    return {
+      url:process.env.VUE_APP_URL
+    }
+  },
+  components: {}
+
+}
+
+
+---------------------------------------------
+
+#install vue-cli
+$ npm install -g vue-cli
+＃使用“webpack”样板创建一个新项目
+$ vue init webpack my-project
+#install依赖并继续！
+$ cd my-project
+$ npm安装
+$ npm run dev
+
+------------------------------------------------------
+arr.sort(function(){ return 0.5 - Math.random() })
+//sort 是对数组进行排序
+//他的是这样工作的。每次从数组里面挑选两个数 进行运算。
+//如果传入的参数是0 两个数位置不变。
+//如果参数小于0 就交换位置
+//如果参数大于0就不交换位置
+//接下来用刚才的较大数字跟下一个进行比较。这样循环进行排序。
+
+/*恰好。我们利用了这一点使用了0.5 - Math.random 这个运算的结果要么是大于0,要么是小于0.这样要么交换位置，要么不交换位置。当然大于或者小于0是随即出现的。所以数组就被随即排序了。*/
+----------------------
+data 数据
+methods 方法
+watch 监听 （对数据进行改变之后的一个操作（函数））
+computed 计算（对数据进行计算之后的一个结果 （函数））
+Vue.component（'’） 全局组件
+component 就是局部组件
+
+每一个Vue的组件就是一个Vue的实例;
+比如父组件new Vue没有模板会去找挂载点所有的dom；
+
+父子通信（订阅模式）
+{父组件通过属性传递给子组件数据；子组件通过发布订阅模式，发布一个事件，父组件在之前订阅了一个事件，来进行监听传递数据
+}
+1、父组件可以使用 props 把数据传给子组件。
+2、子组件可以使用 $emit 触发父组件的自定义事件。
+
+vm.$emit( event, arg ) //触发当前实例上的事件
+
+vm.$on( event, fn );//监听event事件后运行 fn； 
+	{
+	1、父组件可以使用 props 把数据传给子组件
+父组件向子组件传值
+vue传值和传引用
+	传值：string number boolean  （内容不会改变）
+	引用：array object    （内容都会改变）
+子组件向父组件传值
+	2、子组件可以使用 $emit 触发父组件的自定义事件。
+	内容都会改变
+
+	}
+在Vue-cli中，我们的data是一个函数（以往是一个对象）:
+export default{
+	data : function() {		//es6简写data( )
+		return {
+		}
+	}
+}
+
+vue的is特性；
+tab切换；
+
+vue生命周期
+     beforeCreate：function（）{
+	alert（“组件实例化之前执行的函数”）；
+}，
+     created：function（）{
+	alert  ( “组件实例化完毕，但页面还未显示”）；	
+}，
+     beforeMount：function（）{
+	alert  ( “组件挂载前，页面仍未展示，但虚拟Dom已经配置”）；	
+}，
+     mouted：function（）{
+	alert  ( “组件挂载后，此方法执行后，页面显示”）；	
+}，
+     beforeUpdate：function（）{
+	alert  ( “组件更新前，页面仍未更新，但虚拟Dom已经配置”）；	
+}，
+     update：function（）{
+	alert  ( “组件更新，此方法执行后，页面显示”）；	
+}，
+     beforeDestory：function（）{
+	alert  ( “组件销毁前”）；	
+}，
+     destoryed：function（）{
+	alert  ( “组件销毁示”）；	
+}，
+、、vue   //http
+ created() {
+      this.$http.get("http://jsonplaceholder.typicode.com/users")
+        .then((data) => {
+            // console.log(data);
+            this.users = data.body;
+        })
+  },
+
+vue实现跨域请求（fetch/axios/proxytable）
+
+vue add vuetify 新的添加插件方式

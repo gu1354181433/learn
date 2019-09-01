@@ -1,0 +1,31 @@
+<nz-form-item nzType="flex" nzJustify="center">
+  <nz-form-label [nzSpan]="2" nzFor="title"> <span style="color:red;">*</span> 用户名</nz-form-label>
+  <nz-form-control [nzSpan]="7">
+    <input nz-input [(ngModel)]="userName" name="title" type="text" id="title" [disabled]="true">
+  </nz-form-control>
+</nz-form-item>
+<nz-form-item nzType="flex" nzJustify="center">
+  <nz-form-label [nzSpan]="2" nzFor="write" style="line-height: 1.5;"> <span style="color:red;">*</span> 描述
+  </nz-form-label>
+  <nz-form-control [nzSpan]="7">
+    <textarea rows="4" nz-input [(ngModel)]="inputValue" name="write" style="line-height: 1.5;"
+      [disabled]="hide"></textarea>
+  </nz-form-control>
+</nz-form-item>
+<nz-form-item nzType="flex" nzJustify="center">
+  <nz-form-label [nzSpan]="2" nzFor="write"> <span style="color:red;">*</span> 描述</nz-form-label>
+  <nz-form-control [nzSpan]="7">
+    <nz-radio-group [(ngModel)]="radioValue" [disabled]="hide">
+      <label nz-radio nzValue="可以干啥">可以干啥</label>
+      <label nz-radio nzValue="啥也干不了">啥也干不了</label>
+    </nz-radio-group>
+  </nz-form-control>
+</nz-form-item>
+<nz-form-item nzType="flex" nzJustify="center">
+  <nz-form-control [nzSpan]="2" style="text-align: right;">
+  </nz-form-control>
+  <nz-form-control [nzSpan]="7" style="text-align: right;">
+    <button nz-button nzType="primary" (click)="save()" *ngIf="!hide" class="save">保存</button>
+    <button nz-button nzType="primary" (click)="cancel()">返回</button>
+  </nz-form-control>
+</nz-form-item>

@@ -1,0 +1,47 @@
+<div class="items-title">
+  <img src="../assets/images/item-title-bg.jpg" alt="">
+</div>
+<div class="items-content">
+  <div class="container">
+    <h2 class="items-title" style="height: auto;padding-top: 60px">
+      检测项目
+    </h2>
+    <p class="items-txt">
+      恭喜您，在我们所覆盖的检测项目中未发现高风险项目，中等风险项目中冠心病的略偏高，风险值为平均值的2.05倍，吸烟、 饮酒、肥胖、睡眠不足、高血压等都是冠心病的诱发因素，建议您在生活中加以避免,其余项目为中等偏低及低风险项目。
+    </p>
+
+    <div *ngIf="!itemsArray || itemsArray.length==0 ">
+      <nz-empty></nz-empty>
+    </div>
+
+
+
+    <ul style="  padding: 40px 0;  margin: 0; margin-left: -10px;transition: 1s;;"  >
+      <li class="items-li"     *ngFor="let item of itemsArray  index as i">
+          <div (click)="changeItem(item)" style="cursor: pointer"  >
+            <div class="li-l">
+              <img style="width: 80px;height: 80px; object-fit: contain" [src]="item.img" alt="">
+            </div>
+            <div class="li-r">
+              <p class="li-r-tit">{{item.name}}</p>
+              <p class="li-r-span">{{item.child.length}}项</p>
+            </div>
+            <div class="li-icon">
+              <img *ngIf="!item.isSelect" src="assets/images/icon-down.png" alt="">
+              <img *ngIf="item.isSelect" src="assets/images/icon-up.png" alt="">
+            </div>
+          </div>
+
+          <ul style="padding: 0; margin : 20px 0"  *ngIf="item.isSelect"     >
+            <li  class="li-child-li" *ngFor="let cItem of item.child " >
+              <p class="child-li-p">{{cItem}}</p>
+            </li>
+          </ul>
+      </li>
+
+
+
+    </ul>
+  </div>
+</div>
+

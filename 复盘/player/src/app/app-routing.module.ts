@@ -6,26 +6,17 @@ import { LanguageComponent } from './video/language/language.component';
 import { DetailComponent } from './video/detail/detail.component';
 const routes: Routes = [
   {
-    path     : 'video',
-    component: VideoComponent,
-    children : [
-      {
-        path     : "best",
-        component: BestComponent,
-      },
-      {
-        path     : "language",
-        component: LanguageComponent,
-      }
-    ]
+    path        : '',
+    loadChildren: './video/video.module#VideoModule'
+
   },
   {
-    path     : "detail/:id",
-    component: DetailComponent,
+    path        : '',
+    loadChildren: './video/detail/detail.module#DetailModule'
   },
   {
-    path      : '**',
-    redirectTo: 'video',
+    path      : '',
+    redirectTo: '/video',
     pathMatch : 'full'
   }
 ];

@@ -1,0 +1,190 @@
+<div class="inline-block" style="display: block;;max-width: 1200px; width: 100%;margin: 0 auto;  border-radius: 5px;">
+    <div class="container" style="margin-bottom: 110px">
+        <div class="ulDad" class="inline-block">
+            <ul>
+                <li class="person" style="height: 80px;
+                background: #fff;
+                line-height: 80px;
+                font-size: 18px;
+                text-align: center;
+                font-weight: 600;
+                margin-bottom: 3px;">
+                    个人中心
+                </li>
+                <li *ngFor="let item of navbarList index as i" (click)='changeItem(i,item)' [ngClass]="{ 'click': i == number }" class="tabbar">
+                    <span title>
+                        <span>{{item.name}} </span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="inline-block" style="width:calc(83% - 40px);vertical-align: top;">
+            <div *ngIf="activeItem==0" style="background: #fff;">
+                <!-- <div class="main"> -->
+                <div class="tips" style="padding-left: 20px;">
+                    个人信息
+                </div>
+                <div style="text-align: center;display: flex;justify-content: center;flex-flow: column;height:150px;">
+                    <div style="text-align: center;">
+                        <img class="head" *ngIf="!show" src="{{headImg}}" alt="">
+                    </div>
+                    <div class="flex50">
+                        <nz-upload class="avatar-uploader" nzAction="/a/u/img/img" *ngIf="show" nzName="file" nzListType="picture-card" [nzShowUploadList]="false" [nzBeforeUpload]="beforeUpload" [nzPreview]="handlePreview" [nzShowUploadList]="showUploadList" (nzChange)="handleChange($event)">
+                            <ng-container *ngIf="!showImg">
+                                <i nz-icon type="plus"></i>
+                                <div class="ant-upload-text">Upload</div>
+                            </ng-container>
+                            <div class="imgFather">
+                                <img *ngIf="showImg" [src]="headImg" class="avatar">
+                                <div class="mask">
+                                    <span>修改头像</span>
+                                </div>
+                            </div>
+                            <nz-modal [nzVisible]="previewVisible" [nzContent]="modalContent" [nzFooter]="null" (nzOnCancel)="previewVisible = false">
+                                <ng-template #modalContent>
+                                    <img [src]="previewImage" [ngStyle]="{ width: '100%' }" />
+                                </ng-template>
+                            </nz-modal>
+                        </nz-upload>
+                        <!-- <nz-upload *ngIf="show" nzAction="/a/u/img/img" 
+                        nzListType="picture-card" 
+                        [nzShowButton]="fileList.length < 1"
+                         [nzShowUploadList]="showUploadList" 
+                         [nzBeforeUpload]="beforeUpload" 
+                         [nzPreview]="handlePreview">
+
+                            <div *ngIf="!showImg">
+                                <i nz-icon nzType="plus"></i>
+                                <div class="ant-upload-text">Upload</div>
+                            </div>
+                            <img *ngIf="showImg" src="{{headImg}}" alt="">
+
+                            <nz-modal *ngIf="!showImg" [nzVisible]="previewVisible" [nzContent]="modalContent" [nzFooter]="null" (nzOnCancel)="previewVisible = false">
+                                <ng-template #modalContent>
+                                    <img [src]="img" [ngStyle]="{ width: '100%' }" />
+                                </ng-template>
+                            </nz-modal>
+                        </nz-upload> -->
+                    </div> <br>
+                </div>
+                <div style="text-align:center;">
+                    <span *ngIf="show" style="color: red;font-size:12px;">
+                            </span><span *ngIf="show" style="font-size: 12px;color:#a4a5a7;">
+                               <span style="color: red">*</span> 请上传大小不超过2, <br>格式为JGP/BMP/PNG的图片</span>
+                    <span *ngIf="false" style="text-align:center;margin-bottom: 45px;color:red">请按照提示提交</span>
+                </div>
+
+                <div>
+                    <div class="tips ftMg">
+                        <span class="margin">基本信息</span>
+                        <span class="ipt" style="visibility: hidden;width: 213px;">{{params.nick}}</span>
+
+                    </div>
+                    <div class="ftMg color" style="text-align: center;">
+                        <span class="margin">姓名</span>
+                        <span *ngIf="!show" class="ipt border">{{params.nick}}
+             </span> <input *ngIf="show" [(ngModel)]="params.nick" class="ipt background" type="text"><br>
+                        <span *ngIf="name" style="color: red;font-size:12px;">请输入正确格式的昵称</span>
+                    </div>
+                    <div class="ftMg color" style="text-align: center;">
+                        <span class="margin">性别</span> <span *ngIf="!show" class="ipt border">{{params.sex== 1 ? '男' :' 女'}}</span>
+                        <nz-radio-group class="ipt border" *ngIf="show" [(ngModel)]="params.sex">
+                            <label nz-radio nzValue='1'>男</label>
+                            <label nz-radio nzValue='2'>女</label>
+                        </nz-radio-group>
+
+                    </div>
+                    <div class="ftMg color" style="text-align: center;">
+                        <span class="margin">手机</span> <span *ngIf="!show" class="ipt border">{{params.mobile}}</span> <span *ngIf="show" class="ipt background" style="cursor: not-allowed;color:#b4b4b4">{{params.mobile}}</span>
+                        <span (click)="huanbang()"></span>
+                    </div>
+                    <div class="ftMg color" style="text-align: center;">
+                        <span class="margin">生日</span> <span *ngIf="!show" class="ipt border">{{birthday}}</span>
+                        <nz-date-picker *ngIf="show" [(ngModel)]="birthday" [nzStyle]="style" nzFormat="yyyy-MM-dd">
+                        </nz-date-picker>
+                    </div>
+                    <div class="btn-father">
+                        <button *ngIf="!show" class="edit" (click)="edit()">编辑</button>
+                        <button *ngIf="show" class="top" style="float: left" (click)="top()">取消</button>
+                        <button *ngIf="show" class="edit" style="float: right" (click)="upDate()">保存</button>
+                    </div>
+                </div>
+                <!-- </div> -->
+            </div>
+            <div *ngIf="activeItem==1">
+                <div class="container">
+                    <div class="main">
+                        <div class="tips">
+                            修改密码
+                        </div>
+                        <div *ngIf="showPwd">
+                            <div class="ftMg color" style="margin-bottom: 10px">
+                                <span class="margin">当前密码</span>
+                                <input class="pwd" [(ngModel)]="paramsPwd.oldPwd" type="password" (blur)='before()'> <br>
+                                <div style="color:red;width: 315px" *ngIf="pwd">当前密码输入错误</div>
+                            </div>
+                            <div class="ftMg color" style="margin-bottom: 10px">
+                                <span class="margin">新的密码</span>
+                                <input class="pwd" [(ngModel)]="paramsPwd.newPwd" type="password" (blur)='newPassWord()'>
+                                <div style="color:red;width: 315px" *ngIf="newPwd">请输入正确格式的密码</div>
+                            </div>
+                            <div class="ftMg color" style="margin-bottom: 40px">
+                                <span class="margin">确认密码</span>
+                                <input class="pwd" [(ngModel)]="paramsPwd.confirmPwd" type="password" (blur)="confirmPassWord()">
+                                <div style="color:red;width: 315px" *ngIf="confirmPwd">两次密码输入不一致</div>
+                            </div>
+                            <div class="btn">
+                                <button [disabled]="!isValid" class="submit" [ngClass]="{'submitBtn': isValid == false}" (click)="submit()">提交</button>
+                            </div>
+                        </div>
+                        <div *ngIf="!showPwd" class="color" style="margin-bottom: 115px">恭喜您,修改密码成功！稍后为您跳转至登录页面</div>
+                        <div *ngIf="!showPwd" class="btn">
+                            <button class="submit">立即登录</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="activeItem==2">
+                <div class="gene-box-content">
+                    <form nz-form class="gene-box-head">
+                        <div class="binding" [routerLink]="['/bindingGene']">
+                            <div style="margin-right: 10px;"><img src="../../../assets/images/binding.png"></div>
+                            <div>绑定基因盒</div>
+                        </div>
+                        <div style="margin-top: 10px">如果未进行绑定，我们将不会处理您的样本</div>
+                    </form>
+                    <div class="r" *ngIf="!binding">
+                        <div>您还没有自己的专属基因盒，请先<span class="pay" [routerLink]="['/shop']">购买产品</span></div>
+                        <!-- <div>联系方式：</div>
+                            <div>客服：</div>
+                            <div>电话：</div>
+                            <div>邮箱</div>
+                            <div>微信</div>
+                            <div>QQ:</div> -->
+                    </div>
+                    <div class="r" *ngIf="binding">
+                        <div class="report-li" *ngFor="let item of itemsParams">
+                            <img src="{{item.img}}">
+                            <div>{{item.name}}</div>
+                            <div>{{item.price}}元</div>
+                            <div>序列号：{{item.serial}}</div>
+                            <div *ngIf="item.status == 40">
+                                <button nz-button nzType="primary" type="button" class="ant-btn ant-btn-primary" [routerLink]="['/testreport/'+item.boxId]"><span>查看报告</span></button>
+                            </div>
+                            <div *ngIf="item.status != 40">
+                                <button nz-button nzType="primary" type="button" class="ant-btn ant-btn-primary" disabled><span>报告生成中</span></button>
+                            </div>
+                        </div>
+                        <div class="pay">
+                            <button nz-button nzType="primary" type="button" [routerLink]="['/shop']" class="ant-btn ant-btn-primary">
+                                    <img class="pay-icon" style="width: 25px;" src="../../../assets/images/pay.png">
+                                    <div class="pay-text">继续购买</div>
+                                </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

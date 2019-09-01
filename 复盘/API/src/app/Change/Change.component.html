@@ -1,0 +1,34 @@
+<div class="home">
+    <div *ngIf="show">
+        <span style="font-size: 24px;color:#000;display: inline-block;padding-bottom: 130px;padding-top: 20px;">原手机号验证</span>
+        <div class="phone">
+            <input [(ngModel)]="params.mobile" class="ipt1" placeholder="请输入手机号" type="text"> <span *ngIf="!class" (click)='code()' class="test">{{test}}</span> <span *ngIf="class" [ngClass]="{ 'no' : class }" class="test">{{test}}</span>
+        </div>
+        <div style="width: 50%;margin: 0 auto;background: #ffdecd;color: #ff7227;text-align: left;margin-top:10px">{{text}}</div>
+        <div style="margin-bottom: 80px;">
+            <div class="phone" style="margin-bottom: 10px">
+                <input [(ngModel)]="twoCode.verify" style="width: 80%;border: none;outline:none;" placeholder="请输入验证码" type="text">
+            </div>
+            <div *ngIf="show" style="color: red;text-align: left;margin-top:10px;width: 50%;margin: 0 auto;">{{twoError}}</div>
+        </div>
+        <button class="subm" (click)="subm()">下一步</button>
+    </div>
+
+    <!-- 更换手机号 -->
+    <div *ngIf="!show">
+        <span style="font-size: 24px;color:#000;display: inline-block;padding-bottom: 130px;padding-top: 20px;">新手机号绑定</span>
+        <div class="phone">
+            <input [(ngModel)]="newMobile.mobile" style="width: 80%;border: none;outline:none" placeholder="请输入新的手机号" type="text">
+        </div>
+        <div class="error" *ngIf='error'>请输入正确的手机号</div>
+        <div style="margin-bottom:80px">
+            <div class="phone">
+                <input [(ngModel)]="newTwoCode.verifyNew" class="ipt1" placeholder="请输入验证码" type="text"> <span [ngClass]="{ 'no' : class}" (click)='newCode()' class="test ">{{testTwo}}</span>
+            </div>
+            <div class="three">
+                {{three}}
+            </div>
+        </div>
+        <button class="subm " (click)="twoSubm() ">下一步</button>
+    </div>
+</div>

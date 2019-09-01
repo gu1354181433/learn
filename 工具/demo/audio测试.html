@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       .pause {
+            height: 30px;
+            width: 30px;
+            background: url(play.png) no-repeat;
+            display: block;
+            background-size: 30px;
+            border: none;
+            outline: none;
+        }
+ 
+        .play {
+            height: 30px;
+            width: 30px;
+            background: url(play.png) no-repeat;
+            background-size: 30px;
+            border: none;
+            outline: none;
+        }
+        .pai{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+    <script type="text/javascript">
+   function autoPlay() {
+            var myAuto = document.getElementById('bgMusic');
+            var btn = document.getElementById('audioBtn');
+            if (myAuto.paused) {
+                myAuto.play();
+                btn.classList.remove("pause");
+                btn.classList.add("play");
+            } else {
+                myAuto.pause();
+ 
+                btn.classList.remove("play");
+                btn.classList.add("pause");
+            }
+ 
+        }
+    </script>
+</head>
+<body>
+     <div class="pai">
+       <div> <button class="play" id="audioBtn" style="cursor:pointer;" onclick="autoPlay()"></button>
+        <audio id="bgMusic" src="财富自由.mp3" autoplay preload loop="loop"></audio></div>
+<span>123456465</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<nz-content >
+  <nz-carousel  [nzEnableSwipe]="false"    [nzAutoPlaySpeed]="3000"  [nzAutoPlay]="true"   style="height: 500px !important;"  >
+    <div nz-carousel-content *ngFor="let item of array" style="text-align: center;height: 500px !important;z-index: 999">
+      <h3  >
+        <a class="inline-block" [href]="item.link" target="_blank">
+          <img  style="  position: relative;z-index: -1;  width: 100vw;  height: 500px;object-fit: cover ;   display: inline-block !important" src="{{ item.url }}" alt="">
+        </a>
+      </h3>
+    </div>
+  </nz-carousel>
+
+
+</nz-content>
+
+
+
+
+<div style="background: #fff">
+  <nz-content  class='container'    >
+    <div  class="home-item">
+      <h2 class="item-title">人气爆品</h2>
+      <div style="font-size: 0">
+        <div class="item-img">
+          <img src="assets/images/home-item.png" alt="">
+        </div>
+        <div class="item-info">
+           <h3 class="item-info-h">个人基因组检测</h3>
+           <div>
+             <div class="item-info-icon">
+               <img src="assets/images/item-info1.png" alt="">
+             </div>
+             <div class="item-info-p">
+               <p class="info-p-h">产品特点1</p>
+               <p>含 9 大板块、数百项基因检测项目，解答健康、祖源、特质等遗传相关疑问</p>
+             </div>
+
+           </div>
+          <div>
+            <div class="item-info-icon">
+              <img src="assets/images/item-info2.png" alt="">
+            </div>
+            <div class="item-info-p">
+              <p class="info-p-h">产品特点2</p>
+              <p>检测项目经严格筛选论证，保证准确性，并每月持续上新</p>
+            </div>
+          </div>
+          
+          <div class="item-price">
+            <img src="assets/images/item-price.png" alt="">
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </nz-content>
+</div>
+
+
+<div class="home-classify">
+  <nz-content class="container">
+      <h2 class="item-title">产品分类</h2>
+      <div>
+        <ul>
+          <li>
+            <img src="assets/images/home-project-child.png" alt="">
+            <div class="home-classify-content">
+              <h3 class="classify-content-h">宝宝</h3>
+              <p class="classify-content-p">学习能力·兴趣潜力·安全用药 </p>
+              <p class="classify-content-p">营养代谢·基因身份证</p>
+            </div>
+
+          </li>
+          <li>
+            <img src="assets/images/home-project-couple.png" alt="">
+            <div class="home-classify-content">
+              <h3 class="classify-content-h">青年</h3>
+              <p class="classify-content-p">学习能力·兴趣潜力·安全用药 </p>
+              <p class="classify-content-p">营养代谢·基因身份证</p>
+            </div>
+
+          </li>
+          <li>
+            <img src="assets/images/home-project-oldman.png" alt="">
+            <div class="home-classify-content">
+              <h3 class="classify-content-h">老年</h3>
+              <p class="classify-content-p">学习能力·兴趣潜力·安全用药 </p>
+              <p class="classify-content-p">营养代谢·基因身份证</p>
+            </div>
+
+          </li>
+        </ul>
+      </div>
+
+  </nz-content >
+</div>
+
+
+<div class="home-how">
+  <nz-content class="container">
+    <h2 class="item-title">如何采样</h2>
+    <ul>
+      <li >
+        <img src="assets/images/home-how-shop.png" alt="">
+        <p class="how-h">在线购买</p>
+        <p class="how-content">购买之后，我们会在3个工作日将唾液采集盒顺丰快递给你</p>
+      </li>
+      <li >
+        <img src="assets/images/home-how-center.png" alt="">
+        <p class="how-h">唾液采集</p>
+        <p class="how-content">根据说明书，在家采集 2mL 唾液，然后将原包装回寄到23魔方检测中心，到付即可。</p>
+      </li>
+      <li >
+        <img src="assets/images/home-how-right.png" alt="">
+        <p class="how-h">报告生成</p>
+        <p class="how-content">检测结果会在约 2 周后生成，我们将短信通知你登录官网查看。</p>
+      </li>
+    </ul>
+
+  </nz-content >
+
+</div>
+
+<div class="home-why">
+
+
+    <img class="why-img" src="assets/images/home-why.jpg" alt="">
+    <nz-content  class="container" style="position: relative; z-index: 1">
+
+      <ul >
+        <li style="  width: 455px;
+          display: inline-block; vertical-align: top">
+          <div class="home-why-info">
+          <h2 class="item-title" style="text-align: left;color: #fff;line-height: 1;margin-bottom:25px ">
+            唐顺基因
+          </h2>
+          <p class="item-why-p">帮助客户更加了解自己，放置一句slogan</p>
+        </div>
+        </li>
+        <li class="item-why-li">
+         <div class="why-li-wrap">
+           <div class="why-li-icon">
+             <img src="assets/images/home-why-icon.png" alt="">
+           </div>
+           <div class="why-li-title">
+             优势1
+           </div>
+         </div>
+          <div class="why-li-content">
+            <p>
+              已获得国家认证，符合医学检验所标准，具备向医疗机构提供检验报告和医学检验结果咨询的资质。
+            </p>
+          </div>
+
+        </li>
+        <li class="item-why-li">
+          <div class="why-li-wrap">
+            <div class="why-li-icon">
+              <img src="assets/images/home-why-icon.png" alt="">
+            </div>
+            <div class="why-li-title">
+              优势1
+            </div>
+          </div>
+          <div class="why-li-content">
+            <p>
+              已获得国家认证，符合医学检验所标准，具备向医疗机构提供检验报告和医学检验结果咨询的资质。
+            </p>
+          </div>
+
+        </li>
+        <li class="item-why-li">
+          <div class="why-li-wrap">
+            <div class="why-li-icon">
+              <img src="assets/images/home-why-icon.png" alt="">
+            </div>
+            <div class="why-li-title">
+              优势1
+            </div>
+          </div>
+          <div class="why-li-content">
+            <p>
+              已获得国家认证，符合医学检验所标准，具备向医疗机构提供检验报告和医学检验结果咨询的资质。
+            </p>
+          </div>
+
+        </li>
+        <li class="item-why-li">
+          <div class="why-li-wrap">
+            <div class="why-li-icon">
+              <img src="assets/images/home-why-icon.png" alt="">
+            </div>
+            <div class="why-li-title">
+              优势1
+            </div>
+          </div>
+          <div class="why-li-content">
+            <p>
+              已获得国家认证，符合医学检验所标准，具备向医疗机构提供检验报告和医学检验结果咨询的资质。
+            </p>
+          </div>
+
+        </li>
+        <li class="item-why-li">
+          <div class="why-li-wrap">
+            <div class="why-li-icon">
+              <img src="assets/images/home-why-icon.png" alt="">
+            </div>
+            <div class="why-li-title">
+              优势1
+            </div>
+          </div>
+          <div class="why-li-content">
+            <p>
+              已获得国家认证，符合医学检验所标准，具备向医疗机构提供检验报告和医学检验结果咨询的资质。
+            </p>
+          </div>
+
+        </li>
+
+      </ul>
+
+
+    </nz-content >
+
+</div>
+
+
+<div class="home-whyList">
+  <div class="container">
+    <h2 class="item-title">为什么要基因检测</h2>
+    <p class="whyList-p">如果您在此处未看到您的问题，请联系我们</p>
+    <ul>
+      <li class="whyList-li">
+        <h2 class=" whyList-li-p">
+          基因检测的原理是什么？
+        </h2>
+        <p class="whyList-li-content">
+          基因检测的原理是基因检测的原理是基因检测的原 理是基因检测的原理是基因检测的原理是基因检测 的原理是基因检测的原理是基因检测的
+        </p>
+        <img src="assets/images/home-unofo.png" alt="">
+      </li>
+      <li class="whyList-li">
+        <h2 class=" whyList-li-p">
+          基因检测的原理是什么？
+        </h2>
+        <p class="whyList-li-content">
+          基因检测的原理是基因检测的原理是基因检测的原 理是基因检测的原理是基因检测的原理是基因检测 的原理是基因检测的原理是基因检测的
+        </p>
+        <img src="assets/images/home-unofo.png" alt="">
+      </li>
+      <li class="whyList-li">
+        <h2 class=" whyList-li-p">
+          基因检测的原理是什么？
+        </h2>
+        <p class="whyList-li-content">
+          基因检测的原理是基因检测的原理是基因检测的原 理是基因检测的原理是基因检测的原理是基因检测 的原理是基因检测的原理是基因检测的
+        </p>
+        <img src="assets/images/home-unofo.png" alt="">
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+
+<div class="home-story">
+  <div class="container">
+    <h2 class="item-title">关于遗传基因的用户故事</h2>
+    <p class="whyList-p">每一段用户故事，都是一次基因探索，聆听基因告诉用户的答案。</p>
+    <p class="whyList-main">
+      {{storyMain}}
+    </p>
+    <ul class="whyList-ava-ul"  >
+      <li class="whyList-ava"  (click)="changeStory(item)" [ngClass]="{'ishover':item.isSelect}"  *ngFor="let item of storyArr ; ">
+        <img   style="height: 80px;width: 80px;object-fit: cover" [src]="item.img" alt="">
+        <p class="whyList-story-name">
+          {{item.title}}
+        </p>
+      </li>
+
+    </ul>
+  </div>
+
+</div>
+
+
+<div class="home-a">
+    <div class="container">
+      <ul>
+        <li>
+          <img src="assets/images/a-demo.png" alt="">
+        </li>
+        <li>
+          <img src="assets/images/a-demo.png" alt="">
+        </li>
+        <li>
+          <img src="assets/images/a-demo.png" alt="">
+        </li>
+        <li>
+          <img src="assets/images/a-demo.png" alt="">
+        </li>
+        <li>
+          <img src="assets/images/a-demo.png" alt="">
+        </li>
+        <li>
+          <img src="assets/images/a-demo.png" alt="">
+        </li>
+        <li>
+          <img src="assets/images/a-demo.png" alt="">
+        </li>
+        <li>
+          <img src="assets/images/a-demo.png" alt="">
+        </li>
+        <li>
+          <img src="assets/images/a-demo.png" alt="">
+        </li>
+        <li>
+          <img src="assets/images/a-demo.png" alt="">
+        </li>
+      </ul>
+    </div>
+
+</div>
+
+
+
+

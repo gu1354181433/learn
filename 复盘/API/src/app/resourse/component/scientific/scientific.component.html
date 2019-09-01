@@ -1,0 +1,201 @@
+<div class="scientific-bar">
+  <div class="bar1" [ngClass]="{'blue':isBar1}" (click)="switchBar(0)">实验试剂</div>
+  <div class="bar2" [ngClass]="{'blue':isBar2}" (click)="switchBar(1)">实验耗材</div>
+  <div class="bar2" [ngClass]="{'blue':isBar3}" (click)="switchBar(2)">仪器设备</div>
+</div>
+<div class="scientific-content" *ngIf="isBar1">
+  <div class="he1">
+    <div class="head">分子生物学</div>
+    <div class="cont">
+      <div class="circular r"></div>
+      <div class="text">核算提取与纯化</div>
+    </div>
+    <div class="cont">
+      <div class="circular r"></div>
+      <div class="text">核算电泳与染色</div>
+    </div>
+    <div class="cont">
+      <div class="circular r"></div>
+      <div class="text">分子克隆相关产品</div>
+    </div>
+    <div class="cont">
+      <div class="circular r"></div>
+      <div class="text">PCR/RT-PCR/qPCR相关产品</div>
+    </div>
+    <div class="cont">
+      <div class="circular r"></div>
+      <div class="text">DNA分子量标准</div>
+    </div>
+    <div class="cont">
+      <div class="circular r"></div>
+      <div class="text">感受态细胞</div>
+    </div>
+    <div class="cont">
+      <div class="circular r"></div>
+      <div class="text">快速内切酶/修饰酶</div>
+    </div>
+    <div class="cont">
+      <div class="circular r"></div>
+      <div class="text">点突变</div>
+    </div>
+    <div class="cont">
+      <div class="circular r"></div>
+      <div class="text">其他</div>
+    </div>
+  </div>
+  <div class="he2">
+    <div class="head">蛋白质</div>
+    <div class="cont">
+        <div class="circular b"></div>
+        <div class="text">裂解/抽提</div>
+      </div>
+      <div class="cont">
+        <div class="circular b"></div>
+        <div class="text">检测/定量</div>
+      </div>
+      <div class="cont">
+        <div class="circular b"></div>
+        <div class="text">纯化/层析</div>
+      </div>
+      <div class="cont">
+        <div class="circular r"></div>
+        <div class="text">重组蛋白</div>
+      </div>
+      <div class="cont">
+        <div class="circular b"></div>
+        <div class="text">多肽</div>
+      </div>
+      <div class="cont">
+        <div class="circular b"></div>
+        <div class="text">分子量标准</div>
+      </div>
+      <div class="cont">
+        <div class="circular b"></div>
+        <div class="text">其他</div>
+      </div>
+    </div>
+  <div class="he3">
+    <div class="head">抗体</div>
+    <div class="cont">
+        <div class="circular o"></div>
+        <div class="text">一抗</div>
+      </div>
+      <div class="cont">
+        <div class="circular o"></div>
+        <div class="text">二扛</div>
+      </div>
+      <div class="cont">
+        <div class="circular o"></div>
+        <div class="text">纯化/层析</div>
+      </div>
+      <div class="cont">
+        <div class="circular o"></div>
+        <div class="text">重组蛋白</div>
+      </div>
+      <div class="cont">
+        <div class="circular o"></div>
+        <div class="text">多肽</div>
+      </div>
+      <div class="cont">
+        <div class="circular o"></div>
+        <div class="text">分子量标准</div>
+      </div>
+      <div class="cont">
+        <div class="circular o"></div>
+        <div class="text">其他</div>
+      </div>
+  </div>
+  <div class="he4">
+    <div class="head">抗体</div>
+    <div class="cont">
+        <div class="circular p"></div>
+        <div class="text">一抗</div>
+      </div>
+      <div class="cont">
+        <div class="circular p"></div>
+        <div class="text">二扛</div>
+      </div>
+      <div class="cont">
+        <div class="circular p"></div>
+        <div class="text">纯化/层析</div>
+      </div>
+      <div class="cont">
+        <div class="circular p"></div>
+        <div class="text">重组蛋白</div>
+      </div>
+      <div class="cont">
+        <div class="circular p"></div>
+        <div class="text">多肽</div>
+      </div>
+      <div class="cont">
+        <div class="circular p"></div>
+        <div class="text">分子量标准</div>
+      </div>
+      <div class="cont">
+        <div class="circular p"></div>
+        <div class="text">其他</div>
+      </div>
+  </div>
+</div>
+<div class="scientific-content" *ngIf="isBar2">
+    <div class="he1">
+      <div class="head">分子生物学</div>
+      <div class="cont">
+        <div class="circular r"></div>
+        <div class="text">移液器</div>
+      </div>
+      <div class="cont">
+        <div class="circular r"></div>
+        <div class="text">封膜类</div>
+      </div>
+      <div class="cont">
+        <div class="circular r"></div>
+        <div class="text">细胞培养耗材</div>
+      </div>
+      <div class="cont">
+        <div class="circular r"></div>
+        <div class="text">安全防护</div>
+      </div>
+      <div class="cont">
+        <div class="circular r"></div>
+        <div class="text">透析装置</div>
+      </div>
+      <div class="cont">
+        <div class="circular r"></div>
+        <div class="text">其他耗材</div>
+      </div>
+    </div>
+  </div>
+  <div class="scientific-content" *ngIf="isBar3">
+      <div class="he1">
+        <div class="head">分子生物学</div>
+        <div class="cont">
+          <div class="circular r"></div>
+          <div class="text">天枰</div>
+        </div>
+        <div class="cont">
+          <div class="circular r"></div>
+          <div class="text">离心机</div>
+        </div>
+        <div class="cont">
+          <div class="circular r"></div>
+          <div class="text">电泳槽</div>
+        </div>
+        <div class="cont">
+          <div class="circular r"></div>
+          <div class="text">震荡器</div>
+        </div>
+        <div class="cont">
+          <div class="circular r"></div>
+          <div class="text">搅拌器</div>
+        </div>
+        <div class="cont">
+          <div class="circular r"></div>
+          <div class="text">研磨器</div>
+        </div>
+        <div class="cont">
+          <div class="circular r"></div>
+          <div class="text">其他</div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,31 @@
+<div class="main-bottom">
+  <div class="list">
+    <div class="list-head">
+      <h3>账户列表</h3>
+    </div>
+    <nz-table #basicTable nzBordered [nzData]="listOfData">
+      <thead>
+        <tr>
+          <th>序号</th>
+          <th>用户名</th>
+          <th>创建时间</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of basicTable.data">
+          <td>{{ data.roleId }}</td>
+          <td>{{ data.roleName }}</td>
+          <td>{{ data.createAt | date:'yyyy-MM-dd  HH:mm:ss' }}</td>
+          <td>
+            <a  nz-popconfirm nzTitle="Sure to delete?" (nzOnConfirm)="edit(data.roleId)">查看</a>
+            <nz-divider nzType="vertical"></nz-divider>
+            <a (click)="add(data.roleId)">编辑</a>
+            <nz-divider nzType="vertical"></nz-divider>
+            <a nz-popconfirm nzTitle="Sure to delete?" (nzOnConfirm)="deleteRow(data.roleId)">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>

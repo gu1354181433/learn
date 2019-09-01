@@ -1,0 +1,3 @@
+前台代码svn://120.92.4.210/academy-html/trunk/kaichezu
+svn://120.92.4.210/academy-admin-html/trunk/kaiche-admin
+打包地址：svn://120.92.4.210/academy-admin-html/trunk/kaiche-admin

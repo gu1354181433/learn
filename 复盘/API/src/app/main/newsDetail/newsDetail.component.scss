@@ -1,0 +1,30 @@
+.head {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+    text-align: center;
+    padding: 50px;
+    margin-top: 20px
+}
+
+.title {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #000;
+    font-weight: bold
+}
+
+.time {
+    font-size: 6px;
+    color: #949698;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width:800px) {
+    .detailImg {
+        width: 100%;
+    }
+}

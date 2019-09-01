@@ -1,0 +1,113 @@
+.example{
+  background: #f7f7f7;
+  padding:  20px 0 ;
+  .example-l{
+    width: 300px;
+    display: inline-block;
+    .example-l-detail{
+      border-radius: 10px;
+      box-shadow: 0px  5px 10px #e1e1e1 ;
+      padding: 0 20px;
+      background: #fff;
+      display: inline-block;
+    }
+
+    img{
+      width: 100%;
+      object-fit: cover;
+      margin: 50px 0 ;
+    }
+    h2{
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 60px;
+      border-bottom: 1px solid #e1e1e1;
+      text-align: center;
+      color: #30353f;
+      margin: 0;
+    }
+    button{
+      height: 40px;
+      width: 120px;
+    }
+  }
+
+  .example-r{
+    width: calc( 100% -  300px );
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 20px;
+    .example-r-content{
+      text-align: left;
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px ;
+      margin-bottom: 20px;
+      .example-r-tit{
+        line-height: 80px;
+        font-size: 24px;
+        color: #333333;
+        text-align: center;
+        border-bottom: 1px solid #e1e1e1;
+        font-weight: bold;
+      }
+    }
+
+    .example-ul{
+      padding: 20px ;
+      li:hover{
+        box-shadow: 0px  5px 10px rgba(225, 225, 225,.65);
+      }
+      li{
+        overflow: hidden;
+        list-style: none;
+        cursor: pointer;
+        border-radius: 10px;
+        box-shadow: 0px  5px 10px rgb(225, 225, 225);
+        margin-bottom: 20px;
+        .example-li-l{
+          width: 240px;
+          display: inline-block;
+          vertical-align: top;
+          img{
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        .example-li-r{
+          width: calc( 100% - 240px);
+          display: inline-block;
+          vertical-align: top;
+          height: 240px;
+          padding: 15px 0 15px 35px;
+          .example-li-r-txt{
+            width: calc( 100% - 120px);
+            display: inline-block;
+          }
+          .example-li-r-tit{
+            font-size: 18px;
+            font-weight: bold;
+            text-align: left;
+          }
+          .example-li-r-content{
+            text-align: left;
+            padding-right: 75px;
+            height: 165px;
+            line-height: 22px;
+          }
+          .example-li-len{
+            width: 120px ;
+            display: inline-block;
+            text-align: center;
+            height: 210px;
+            font-weight: bold;
+            border-left: 1px solid #e1e1e1;
+            line-height: 200px;
+            vertical-align: top;
+
+          }
+        }
+      }
+    }
+  }
+}

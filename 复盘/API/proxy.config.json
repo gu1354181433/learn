@@ -1,0 +1,7 @@
+{
+    "/a": {
+      "target": "http://dev.gene.home.ptteng.com",
+      "secure": "false",
+      "changeOrigin": true
+    }
+  }

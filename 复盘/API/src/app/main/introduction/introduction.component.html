@@ -1,0 +1,238 @@
+<nz-content class='container'>
+    <div class="inline-block">
+        <ul class="flexUl">
+            <li *ngFor="let item of navbarList index as i" (click)='changeItem(i,item)' [ngClass]="{ 'click': i == num }" class="tabbar">
+                <span title>
+                <img *ngIf="i == 0 && !item.isClick " src="../../../assets/img/关于1.png" alt="">
+                <img *ngIf="i == 1 && !item.isClick " src="../../../assets/img/联系.png" alt="">
+                <img *ngIf="i == 2 && !item.isClick " src="../../../assets/img/新闻.png" alt="">
+                <img *ngIf="i == 0 && item.isClick " src="../../../assets/img/关于.png" alt="">
+                <img *ngIf="i == 1 && item.isClick " src="../../../assets/img/联系1.png" alt="">
+                <img *ngIf="i == 2 && item.isClick " src="../../../assets/img/新闻1.png" alt="">
+                <span style="margin-left: 10px;">{{item.name}} </span>
+                </span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="inline-block" style="width:calc(80% - 40px);vertical-align: top;">
+        <div style="margin-bottom:100px" *ngIf="activeItem==0">
+            <div class="margin">
+                <div class="flex-two">
+                    <div class="text displayNone">
+                        <span class="introduce_text">简介</span>
+                        <span class="introduce_text_two" style="padding-bottom: 20px;">/INTRODUTION</span><br>
+                        <span>
+                            成都二十三魔方生物科技有限公司成立于2015年3月，
+                            面向中国人提供基因检测服务，
+                            开展生命数据分析业务，
+                            公司依托互联网+基因检测，
+                            构建生命大数据库，以“数据化生命，
+                            使每个人受益”为使命，打造一家值得心来的科技企业，
+                            公司名称23魔方，源自人类拥有23对染色体，魔方表达了基因呢多态性。
+                        </span>
+                    </div>
+                    <!-- 这里为 响应式 下显示的文字 需要更换文案 -->
+                    <div class="imgDad">
+                        <img class="showcase" src="../../../assets/img/About_us_one.png" alt="">
+                    </div>
+                    <!-- 响应式页面 -->
+                    <div class="text display0">
+                        <span class="introduce_text">简介</span>
+                        <span class="introduce_text_two" style="padding-bottom: 20px;">/INTRODUTION</span><br>
+                        <span>
+                                成都二十三魔方生物科技有限公司成立于2015年3月，
+                                面向中国人提供基因检测服务，
+                                开展生命数据分析业务，
+                                公司依托互联网+基因检测，
+                                构建生命大数据库，以“数据化生命，
+                                使每个人受益”为使命，打造一家值得心来的科技企业，
+                                公司名称23魔方，源自人类拥有23对染色体，魔方表达了基因呢多态性。
+                            </span>
+                    </div>
+                </div>
+            </div>
+            <!-- 二 -->
+            <div class="margin">
+                <div class="flex-two">
+                    <!-- 这里为 响应式 下显示的文字 需要更换文案 -->
+                    <div class="imgDad">
+                        <img class="showcase" src="../../../assets/img/About_us_two.png" alt="">
+                    </div>
+                    <div class="text">
+                        <span class="introduce_text">团队</span>
+                        <span class="introduce_text_two" style="padding-bottom: 20px;">/INTRODUTION</span><br>
+                        <span>
+                            成都二十三魔方生物科技有限公司成立于2015年3月，
+                            面向中国人提供基因检测服务，
+                            开展生命数据分析业务，
+                            公司依托互联网+基因检测，
+                            构建生命大数据库，以“数据化生命，
+                            使每个人受益”为使命，打造一家值得心来的科技企业，
+                            公司名称23魔方，源自人类拥有23对染色体，魔方表达了基因呢多态性。
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- 三 -->
+            <div class="margin">
+                <div class="flex-two">
+                    <div class="text displayNone">
+                        <span class="introduce_text">业务</span>
+                        <span class="introduce_text_two" style="padding-bottom: 20px;">/BUISINESS</span><br>
+                        <span>
+                            成都二十三魔方生物科技有限公司成立于2015年3月，
+                            面向中国人提供基因检测服务，
+                            开展生命数据分析业务，
+                            公司依托互联网+基因检测，
+                            构建生命大数据库，以“数据化生命，
+                            使每个人受益”为使命，打造一家值得心来的科技企业，
+                            公司名称23魔方，源自人类拥有23对染色体，魔方表达了基因呢多态性。
+                        </span>
+                    </div>
+                    <!-- 这里为 响应式 下显示的文字 需要更换文案 -->
+                    <div class="imgDad">
+                        <img class="showcase" src="../../../assets/img/About_us_three.png" alt="">
+                    </div>
+                    <div class="text display0">
+                        <span class="introduce_text">业务</span>
+                        <span class="introduce_text_two" style="padding-bottom: 20px;">/BUISINESS</span><br>
+                        <span>
+                                成都二十三魔方生物科技有限公司成立于2015年3月，
+                                面向中国人提供基因检测服务，
+                                开展生命数据分析业务，
+                                公司依托互联网+基因检测，
+                                构建生命大数据库，以“数据化生命，
+                                使每个人受益”为使命，打造一家值得心来的科技企业，
+                                公司名称23魔方，源自人类拥有23对染色体，魔方表达了基因呢多态性。
+                            </span>
+                    </div>
+                </div>
+            </div>
+            <!-- 四 -->
+            <div class="margin">
+                <div class="flex-two">
+                    <!-- 这里为 响应式 下显示的文字 需要更换文案 -->
+                    <div class="imgDad">
+                        <img class="showcase" src="../../../assets/img/About_us_five.png" alt="">
+                    </div>
+                    <div class="text">
+                        <span class="introduce_text">产品</span>
+                        <span class="introduce_text_two" style="padding-bottom: 20px;">/PRODUCT</span><br>
+                        <span>
+                            成都二十三魔方生物科技有限公司成立于2015年3月，
+                            面向中国人提供基因检测服务，
+                            开展生命数据分析业务，
+                            公司依托互联网+基因检测，
+                            构建生命大数据库，以“数据化生命，
+                            使每个人受益”为使命，打造一家值得心来的科技企业，
+                            公司名称23魔方，源自人类拥有23对染色体，魔方表达了基因呢多态性。
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+            <!-- 五 -->
+            <div class="margin">
+                <div class="flex-two">
+                    <div class="text displayNone">
+                        <span class="introduce_text">技术</span>
+                        <span class="introduce_text_two" style="padding-bottom: 20px;">TECHNOLOGY</span><br>
+                        <span>
+                                成都二十三魔方生物科技有限公司成立于2015年3月，
+                                面向中国人提供基因检测服务，
+                                开展生命数据分析业务，
+                                公司依托互联网+基因检测，
+                                构建生命大数据库，以“数据化生命，
+                                使每个人受益”为使命，打造一家值得心来的科技企业，
+                                公司名称23魔方，源自人类拥有23对染色体，魔方表达了基因呢多态性。
+                            </span>
+                    </div>
+                    <!-- 这里为 响应式 下显示的文字 需要更换文案 -->
+                    <div class="imgDad">
+                        <img class="showcase" src="../../../assets/img/About_us_five.png" alt="">
+                    </div>
+                    <div class="text display0">
+                        <span class="introduce_text">技术</span>
+                        <span class="introduce_text_two" style="padding-bottom: 20px;">TECHNOLOGY</span><br>
+                        <span>
+                                    成都二十三魔方生物科技有限公司成立于2015年3月，
+                                    面向中国人提供基因检测服务，
+                                    开展生命数据分析业务，
+                                    公司依托互联网+基因检测，
+                                    构建生命大数据库，以“数据化生命，
+                                    使每个人受益”为使命，打造一家值得心来的科技企业，
+                                    公司名称23魔方，源自人类拥有23对染色体，魔方表达了基因呢多态性。
+                                </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div style="background:#fff;padding-bottom: 100px;margin-bottom: 100px" *ngIf="activeItem==1">
+            <div class="flex" style=" padding: 100px;">
+                <div style="text-align: center;">
+                    <img class="contact" src="http://jns.img.bucket.ks3-cn-beijing.ksyun.com/img/img/b0909d62-d8d0-45a4-8590-31252011b9f8.png" alt="QQ">
+                    <br> 官方QQ
+                </div>
+                <div style="text-align: center;">
+                    <img class="contact" src="http://jns.img.bucket.ks3-cn-beijing.ksyun.com/img/img/0a3c8580-86e1-43f6-b819-416a4c7ad7aa.png" alt="微博">
+                    <br> 官方微博
+                </div>
+                <div style="text-align: center;">
+                    <img class="contact" src="http://jns.img.bucket.ks3-cn-beijing.ksyun.com/img/img/2be62dc8-ed9b-43a1-bbd1-11ee0acca138.png" alt="微信">
+                    <br> 官方微信
+                </div>
+            </div>
+            <div style="padding-left: 90px;font-size: 14px;color: #000;">
+                <!-- &lt;!&ndash; <img
+                    src="http://jns.img.bucket.ks3-cn-beijing.ksyun.com/img/img/ae0dfeeb-b298-4fd5-ba77-8819d084618a.png"
+                    alt=""> &ndash;&gt; -->
+                公司电话：(010)4783274
+            </div>
+            <div style="padding-left: 90px;font-size: 14px;color: #000;margin-bottom: 150px">
+                <!-- &lt;!&ndash; <img
+                    src="http://jns.img.bucket.ks3-cn-beijing.ksyun.com/img/img/a7253145-5107-489c-91f4-3997d556c858.png"
+                    alt=""> &ndash;&gt; -->
+                公司邮箱：shuntangkeji@xina.com
+            </div>
+            <div id="logo">
+                <div>
+                    <img id="image" src="http://jns.img.bucket.ks3-cn-beijing.ksyun.com/img/img/658b8282-9850-4b77-a55b-a34d12ed9ffd.png" alt="">
+                    <div id="introduce">
+                        <span class="introduction">顺唐科技</span> <br>
+                        <span class="span">一句slogan一句slogan一句slogan一句slogan
+                            一句slogan一句slogan一句slogan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="background:#fff;" *ngIf="activeItem==2">
+            <div class="flex-three" *ngFor="let data of dataList.articleList as index" [ngClass]="{'pad':index != 0}">
+                <div>
+                    <img (click)="jump(data.id)" class="three-img" src="{{data.img.url}}" alt="">
+                </div>
+                <!--  -->
+                <div (click)="jump(data.id)" class="text-two">
+                    <div class="title" (click)="list()">{{data.title}}</div>
+                    <div class="avt">
+                        {{data.content[0].value}}
+                        <!-- 多运动会脱发，这是真的吗？多运动会脱发，这是真的吗？多运动会脱发，这是真的吗？多运动会
+                            脱发，这是真的吗？多运动会脱发，这是真的吗？多运动会脱发，这是真的吗？多运动会脱发，这
+                            是真的吗？多运动会脱发，这是真的吗？多运动会脱发，这是真的吗？多运动会脱发，这是真的
+                            吗？多运动会脱发，这是真的吗？多运动会脱发，这是真的吗... -->
+                    </div>
+                    <div>
+                        <span style="color:#949698;font-size: 12px">发布者:aaaa</span><span style="color:#949698;font-size: 12px">2019.03.03</span>
+                    </div>
+                </div>
+            </div>
+            <div style="margin: 20px 0;text-align: right">
+                <nz-pagination nzShowQuickJumper (nzPageIndexChange)='change($event)' [nzPageIndex]="params.page" [nzPageSize]="params.size" [nzTotal]="total"></nz-pagination>
+            </div>
+        </div>
+    </div>
+
+
+
+</nz-content>
